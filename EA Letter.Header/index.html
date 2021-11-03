@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Header</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 12pt;">
+
+    <center>
+      <table class="container" role="presentation" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px;">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    
+                    <!-- HEADER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <!-- EA LOGO -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <img src="EA_Logo.png" alt="" width="217" style="width: 217px;"/>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- EA LOGO -->
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Header Content -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                <tr>
+                                  <td align="left" valign="top">
+                                    
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                <p>[[General.Today]]</p>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                        <td align="right" valign="top">
+                                          <table border="0" cellspacing="0" cellpadding="0" width="55%" style="width:55%;border-collapse:collapse;border-spacing:0;text-align:left;">
+                                            <tr>
+                                              <td align="left" valign="top" style="text-align: left;">
+                                                <!-- <p style="color:#000;"><span style="font-weight:bold;color: #97BF0D">EnergyAustralia Pty Ltd</span><span style="text-align: left"><br>ABN 99 086 014 968<br><br>Locked Bag 14060<br>Melbourne City Mail Centre<br>Victoria 8001<br><br>Telephone 133 466<br><br>energyaustralia.com.au</span></p> -->
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                <tr>
+                                  <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+                                    <p>[[Account.Title]] [[Account.Firstname]] [[Account.Surname]]</p>            
+                                    <p>[[Account.SiteAddress.AddressLine1]] [[Account.SiteAddress.AddressLine2]]</p>          
+                                    <p>[[Account.SiteAddress.AddressLine3]]</p>
+                                    <p>[[Account.SiteAddress.Town]]</p>
+                                    <p>[[Account.SiteAddress.County]]</p>
+                                    <p>[[Account.SiteAddress.Postcode]]</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- Header Content -->
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- HEADER SECTION -->
+
+                  </table>
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- EDM MAIN WRAPPER -->
+
+          </td>
+        </tr>
+      </table>
+    </center>
+    
+  </body>
+</html>

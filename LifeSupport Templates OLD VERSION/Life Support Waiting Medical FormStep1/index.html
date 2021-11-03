@@ -1,0 +1,347 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<head>
+    <meta charset="UTF-8">
+    <title>EnergyAustralia Letterhead</title>
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+           url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      @page {
+        size: A4;
+      }
+  
+      html {
+        padding: 0;
+        margin: 0;
+      }
+  
+      body {
+        font-size: 13px;
+        font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+        color: #606163;
+        line-height: 16px;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .A4page {
+        page-break-before: always;
+      }
+  
+      .address {
+        font-size: 12px;
+        font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+        color: #606163;
+        line-height: 16px;
+        margin-top: 0;
+        margin-right: 10mm;
+      }
+
+      .special-formatting {
+          list-style-position: inside;
+          text-indent: 0px;
+          margin-left: -40px;
+      }
+      .special-formatting li {
+          margin: 2px;
+      }
+  
+      p, li {
+        font-size: 13px;
+        font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+        color: #606163;
+        line-height: 16px;
+        margin-top: 0;
+        margin-bottom: 7px;
+      }
+  
+      .roundel {
+        vertical-align: bottom;
+      }
+  
+      .alignRight {
+        text-align: right;
+      }
+  
+      .letter-page{
+           position: absolute;
+           top: 0mm;
+           left: 0mm;
+           font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+           font-weight: normal;
+           font-style: normal;
+           font-size: 12pt;
+           color: #303030;
+           width: 220mm;
+      }
+      .letter-header{
+        background-image: url("");
+        background-repeat: no-repeat;
+        position: absolute;   
+        top: 0px;
+        right: 0px;
+        width: 500px;
+        height: 30mm;       
+        margin:10mm
+      }   
+      .letter-footer{
+        font-size: 12px;
+        font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+        color: #606163;
+        vertical-align: bottom;
+        position: absolute;   
+        margin-left: 10mm;
+        margin-right: 10mm;
+        left: 0mm;
+        top: 285mm;  
+        page-break-after: always
+      }
+      .letter-address{
+           position: absolute;
+           top: 50mm;
+           left: 15mm;
+           font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+           font-weight: normal;
+           font-style: normal;
+           font-size: 12pt;
+           color: #303030;
+           width: 200mm;
+      }
+      .letter-content{
+           position: absolute;
+           top: 100mm;
+           left: 10mm;
+           margin-left:20px;
+           margin-right:20px;
+           font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+           font-weight: normal;
+           font-style: normal;
+           font-size: 12pt;
+           color: #303030;
+           width: 200mm;
+      }
+      .header-space, .footer-space {
+        height: 70px;
+      }
+    </style>
+    <style type="text/css" scoped>
+        .letter-address {
+          display: none;
+        }
+        .header-space {
+          display: none;
+        }
+      </style>
+  </head>
+  
+  <body>
+    <!----------------    PAGE 1    ------------------>
+    <div style="max-width: 800px; margin-left: auto; margin-right: auto;">
+      <div style="position:absolute">
+        <div id="letterDetail" class="letter-page">
+          <!--<div class="letter-footer" >
+            <span style="text-align:left">EnergyAustralia Pty Ltd ABN 99 086 014 968</span>
+          </div>-->
+          <table>
+           <thead><tr><td>
+              <div class="header-space" style="margin-top:40px;margin-left:50px">
+                <p>[[General.Today]]</p>
+             </div>
+           </td></tr>
+           </thead>
+           <tbody>
+             <table class="letter-header" cellspacing="0" cellpadding="0" border="0" width="100%" style="width:20%;border-collapse:collapse;border-spacing:0;text-align:left;">
+               <tr>
+                 <td align="right" valign="top" style="margin-left:60%; text-align: left;">
+                   <p style="color:#000;"><span style="font-weight:bold;color: #97BF0D">EnergyAustralia Pty Ltd</span><span style="text-align: left"><br>ABN 99 086 014 968<br><br>Locked Bag 14060<br>Melbourne City Mail Centre<br>Victoria 8001<br><br>Telephone 133 466<br><br>energyaustralia.com.au</span>
+                   </p>
+                 </td>
+               </tr>
+             </table>
+             <tr><td>
+                <div class="letter-address">
+                 <div>
+                  <p>[[Account.Title]] [[Account.Firstname]] [[Account.Surname]]</p>            
+                  <p>[[Account.SiteAddress.AddressLine1]] [[Account.SiteAddress.AddressLine2]]</p>          
+                  <p>[[Account.SiteAddress.AddressLine3]]</p>
+                  <p>[[Account.SiteAddress.Town]]</p>
+                  <p>[[Account.SiteAddress.County]]</p>
+                  <p>[[Account.SiteAddress.Postcode]]</p>
+               </div>
+              </div>
+               </td></tr>  
+           <div class="letter-content">
+      <tr>
+        <td>
+          <div style="margin-top: 50px; margin-left: 50px">
+            <p><datetime class="datetime">{{General.Today}}</datetime></p>
+          </div>
+          <div style="margin-top: 50px">
+            <div>
+              <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+              <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+              <p>{{Contact.Address.Line3}}</p>
+              <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+              <br><br>
+            </div>    
+            <p>
+              Service address: {{#if Account.SiteAddress.AddressLine1}}
+              {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+              Account.SiteAddress.AddressLine2}}
+              {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+              Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+              {{/if}} {{Account.SiteAddress.Postcode}}
+              <br /><br />
+              Account number: {{Account.Id}}<br />
+            </p>
+          </div>
+        </td>
+      </tr>
+<tr>
+  <td>
+    <br />
+    <br />
+    <p>
+      <b>Reminder - please complete and return your Medical Confirmation form</b
+      ><br />
+    </p>
+    <br />
+    <p>
+      Hello {{Account.FirstName}}<br />
+      <br />
+      We’ve temporarily registered life support on your account since someone at
+      your home or business premises depends on life support equipment. <br />
+      <br />
+      Your account is temporarily registered until we receive your completed
+      Medical Confirmation form which has been certified by a medical
+      practitioner.<br />
+      <br />
+      <b>What you need to do</b><br />
+      <br />
+      To ensure your account is permanently registered for life support with us
+      and your distributor, <b>{{Account.Distributor.Name}}</b>, (the company
+      responsible for the poles, wires and gas pipes in your area), please
+      complete the Medical Confirmation form which can be found here:
+      <br /><br />
+      <a
+        href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf"
+        >https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a
+      >
+      and return it by either by: <b>{{date: LifeSupport.DueDate}}</b
+      ><br />
+    </p>
+    <ul class="special-formatting">
+        <li><b>Email</b> - <a href="mailto:lifesupport@energyaustralia.com.au">lifesupport@energyaustralia.com.au</a></li>
+        <li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia<br>
+            <div style="">
+                Reply Paid 91702<br>
+                CLAYTON SOUTH VIC 3169<br>
+                (No stamp required).
+            </div>
+        </li>
+  </ul>
+  </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>What happens if I don’t complete and return the Medical Confirmation form?</b><br>
+        <br>
+        If you don’t provide us with your completed form, we may deregister life support from your account. This means you won’t receive notice in advance for planned interruptions or priority treatment in restoring your power for any unplanned interruption.<br>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>Need more time?</b><br>
+        <br>
+        If you need more time to provide a completed Medical Confirmation form, you can call us on 1300 258 763 to request a once off extension of 25 business days.<br>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>What else you need to know</b><br>
+        <br>
+        It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor <b>{{Account.Distributor.Name}}</b> needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor <b>{{Account.Distributor.Name}}</b> are required to provide you advanced notification of the interruption.<br>
+        <br>
+        In the event of an unplanned interruption you can contact your distributor <b>{{Account.Distributor.Name}}</b> on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763.
+    </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>Planning ahead will help</b><br>
+        <br>
+        You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+        <ul>
+            <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+            <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+            <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+            <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+        </ul>
+        <p>Please note if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home.<br>
+        <br>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>Any questions?</b><br>
+        <br>
+        For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we'll be happy to help.<br>
+        <ul>
+            <li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, <br>
+            8.00am-9.00pm & Saturdays, 9am-6pm AEST) or</li>
+            <li>Email us at <a href="mailto:lifesupport@energyaustralia.com.au">lifesupport@energyaustralia.com.au</a> or</li>
+            <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+        </ul>
+        <p>
+            Regards<br>
+        <br>
+        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+        <br>
+        Casey Kaminskyi<br>
+        GM - Pods & communities<br>
+    </td>
+</tr>
+<tr>
+    <td>
+        <br>
+        <br>
+        <p>  <b>What is life support equipment?</b><br>
+        <br>
+        Any of the following equipment fall within the definition of life support equipment:<br>
+        <ul>
+            <li>an oxygen concentrator</li>
+            <li>an intermittent peritoneal dialysis machine</li>
+            <li>a kidney dialysis machine</li>
+            <li>a chronic positive airways pressure respirator</li>
+            <li>a crigler najjar syndrome phototherapy equipment</li>
+            <li>a ventilator for life support</li>
+            <li>any other equipment that a medical practitioner certifies is required for life support at your home.</li>
+        </ul>
+    </td>
+</tr>
+</tbody>
+<tfoot>
+    <tr>
+        <td>
+            <div class="footer-space">&nbsp;</div>
+        </td>
+    </tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>

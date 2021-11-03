@@ -1,0 +1,205 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+  }
+  .header-space {
+    display: none;
+  }
+</style>
+[[INCLUDE:Letter.Header]]
+    <tr>
+      <td>
+        <div style="margin-top: 50px; margin-left: 50px">
+            <p><datetime class="datetime">{{General.Today}}</datetime></p>
+        </div>
+        <div style="margin-top: 200px">
+        <div>
+            <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+            <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+            <p>{{Contact.Address.Line3}}</p>
+            <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+            <br><br>
+        </div>   
+          <p>
+            Service address: {{#if Account.SiteAddress.AddressLine1}}
+            {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+            Account.SiteAddress.AddressLine2}}
+            {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+            Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+            {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+            {{/if}} {{Account.SiteAddress.Postcode}}
+            <br /><br />
+            Account number: {{Account.Id}}<br />
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+            <br>
+            <p><b>We’ve temporarily registered life support on your account</b><br></p>
+            <br>
+            <p>Hello {{Account.FirstName}}<br>
+            {{#if_eq LifeSupport.RegistrationOwner "EA"}}
+            <br>Thanks for letting us know that you or someone at your home or business premises depends on life support equipment. You are now temporarily registered for life support on your account.<br>
+            {{else}}
+            <br>Your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us you or someone at your home or business premises depends on life support equipment. You are now temporarily registered for life support on your account.<br>  
+            {{/if_eq}}
+            <br>
+            <b>What you need to do</b><br>
+            <br>
+            To ensure your account remains registered for life support with us and your distributor, {{Account.Distributor.Name}} 
+            {{#if_eq LifeSupport.RegistrationOwner "EA"}} (the company responsible for the poles, wires and gas pipes in your area)
+            {{/if_eq}}, 
+            please complete the Medical Confirmation form which can be found here
+            <br><br>
+            <a href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf">https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a>
+            <br><br>
+            and return it by <b>{{date: LifeSupport.DueDate}}</b> either by: <br>
+            <ul>
+                <li><b>Email</b> - <a href="mailto:lifesupport@energyaustralia.com.au">lifesupport@energyaustralia.com.au</a></li>
+                {{#if_neq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
+                {{#if_eq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia Customer Care<br>
+                <div style="padding-left:46px">Locked Bag 14060<br>
+                Melbourne City Mail Centre Vic 8001<br>
+                        (No stamp required).</div></li>{{/if_eq}}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            {{#if_eq Account.SiteAddress.County "Victoria"}}
+            <b>Life support rebates</b><br>
+            <br>
+            {{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "VIC"}}
+            <b>Life support rebates</b><br>
+            <br>
+            {{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "New South Wales"}}
+            <b>Life support rebates</b><br>
+            <br>
+            {{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "Australian Capital Territory"}}
+            <b>Life support rebates</b><br>
+            <br>
+            {{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "Victoria"}} You may be eligible for a life support concession offered by your State Government. A copy of the Victorian Life Support Concession application form has been included with this letter for you to complete with a registered medical practitioner should you feel you are eligible. If you have already applied for the Life Support Concession, you don't need to apply again. For more details on the Victorian Life Support Concession, please visit <a href="energyaustralia.com.au/home/bills-and-accounts/concessions/victoria">energyaustralia.com.au/home/bills-and-accounts/concessions/victoria</a> or call us on 1300 258 763.<br>
+            <br>{{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "VIC"}} You may be eligible for a life support concession offered by your State Government. A copy of the Victorian Life Support Concession application form has been included with this letter for you to complete with a registered medical practitioner should you feel you are eligible. If you have already applied for the Life Support Concession, you don't need to apply again. For more details on the Victorian Life Support Concession, please visit <a href="energyaustralia.com.au/home/bills-and-accounts/concessions/victoria">energyaustralia.com.au/home/bills-and-accounts/concessions/victoria</a> or call us on 1300 258 763.<br>
+            <br>{{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "New South Wales"}} You may be eligible for a life support rebate offered by your State Government. A copy of the NSW Life Support Rebate application form has been included with this letter for you to complete with a registered medical practitioner should you feel you are eligible. If you have already applied for the Life Support Rebate, you donate need to apply again. For more details on the NSW Life Support Rebate, please visit <a href="energyaustralia.com.au/home/bills-and-accounts/concessions/new-south-wales">energyaustralia.com.au/home/bills-and-accounts/concessions/new-south-wales</a> or call us on 1300 258 763.<br>
+            <br>{{/if_eq}}
+            {{#if_eq Account.SiteAddress.County "Australian Capital Territory"}} You may be eligible for a life support concession offered by your State Government. When you submit your completed medical confirmation form, we will assess whether you are eligible for the ACT Life Support Concession. For more details on the ACT Life Support Concession, please visit <a href="energyaustralia.com.au/home/bills-and-accounts/concessions/australian-capital-territory">energyaustralia.com.au/home/bills-and-accounts/concessions/australian-capital-territory</a> or call us on 1300 258 763.<br>
+            <br>{{/if_eq}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            <b>What happens if I don't complete and return the Medical Confirmation form?</b><br>
+            <br>
+            Your account will remain temporarily registered until we{{#if_neq LifeSupport.RegistrationOwner "EA"}} or your distributor {{Account.Distributor.Name}} {{/if_neq}} receive a completed Medical Confirmation form which has been certified by a medical practitioner. If you don't provide us a completed form, we or your distributor {{Account.Distributor.Name}}, may de-register life support from your account. This would result in you not receiving protections that apply to customers registered for life support.<br>
+            <br>    
+            <b>What else you need to know</b><br>
+            <br>
+            It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor {{Account.Distributor.Name}} needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor {{Account.Distributor.Name}} are required to provide you advanced notification of the interruption.
+            <br><br>
+            In the event of an unplanned interruption you can contact your distributor {{Account.Distributor.Name}} on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763. <br>
+            <br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            <b>Planning ahead will help</b><br>
+            <br>
+            You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+            <ul>
+                <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+                <li>Have access to a telephone that doesn't require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events. </li>
+                <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you. </li>
+                <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+            </ul>
+            <p>Please note, if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home or business premises.<br>
+            <br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            <b>Any questions?</b><br>
+            <br>
+            A list of eligible life support equipment can be found on the back page of this letter.<br>
+    
+            For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we'll be happy to help.<br>
+            <ul>
+                <li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, <br>
+                8.00am-9.00pm & Saturdays, 9.00am-6.00pm) or</li>
+                <li>Email us at <a href="mailto:lifesupport@energyaustralia.com.au">lifesupport@energyaustralia.com.au</a> or</li>
+                <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+            </ul>
+            <p>  <b>If you need an interpreter to help you, please call 1300 622 718</b><br>
+            <br>
+            <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Translation.png">
+            <br>
+            Regards<br>
+            <br>
+            <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+            <br>
+            Casey Kaminskyi<br>
+            GM - Pods & communities<br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+            <br>
+            <p>  <b>What is life support equipment?</b><br>
+            <br>
+            Any of the following equipment fall within the definition of life support equipment:<br>
+            <ul>
+                <li>oxygen concentrator</li>
+                <li>intermittent peritoneal dialysis machine</li>
+                <li>kidney dialysis machine</li>
+                <li>chronic positive airways pressure respirator</li>
+                <li>Crigler Najjar syndrome phototherapy equipment</li>
+                <li>ventilator for life support</li>
+            </ul>
+            <p>Any other equipment that a medical practitioner certifies is required for life support, this may include but is not limited to:<br>
+            <ul>
+                <li>external heart pump</li>
+                <li>respirator (iron lung) </li>
+                <li>suction pump (respiratory or gastric) </li>
+                <li>feeding pump (kangaroo pump, or total parenteral nutrition) </li>
+                <li>insulin pump </li>
+                <li>airbed vibrator </li>
+                <li>hot water </li>
+                <li>nebuliser, humidifier or vaporiser</li>
+                <li>apnoea monitor</li>
+                <li>medically required heating and air conditioning </li>
+                <li>medically required refrigeration </li>
+                <li>powered wheelchair</li>
+            </ul>
+        </td>
+    </tr>
+</tbody>
+<tfoot>
+    <tr>
+        <td>
+            <div class="footer-space">&nbsp;</div>
+        </td>
+    </tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>

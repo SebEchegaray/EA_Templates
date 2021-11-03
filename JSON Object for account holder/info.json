@@ -1,0 +1,287 @@
+{
+
+  "AccountId": 100000719,
+
+  "Person": {
+
+    "PersonId": 12275,
+
+    "Title": "Lieutenant",
+
+    "FirstName": "name2",
+
+    "LastName": "surname2",
+
+    "DOB": "01/01/2001",
+
+    "DisplayName": "Lieutenant name2 surname2",
+
+    "ContactDetails": [
+
+      {
+
+        "$type": "Common.Domain.ContactDetailAddress, CommonDomain",
+
+        "DisplayName": "129 Bushmans Way,\nSOUTH MORANG,\nVIC,\n3752",
+
+        "AddressDetail": {
+
+          "AddressId": 5615,
+
+          "UPRN": "70126745",
+
+          "County": "VIC",
+
+          "CreatedDateTime": null,
+
+          "LastUpdatedDatetime": null,
+
+          "additionalInformation": "{\"contactAddress\":{\"additionalInformation\":{\"Street\":\"Bushmans Way\",\"FullAddress\":\"129 Bushmans Way, SOUTH MORANG VIC 3752\",\"AddressLine1\":\"129 Bushmans Way\",\"AddressLine2\":null,\"SiteName\":null,\"GnafId\":null},\"deliveryPointIdentifier\":\"70126745\",\"houseNumber\":\"129\",\"isManualAddress\":false,\"postCode\":\"3752\",\"stateOrTerritory\":\"VIC\",\"streetName\":\"Bushmans\",\"streetType\":\"Way\",\"suburb\":\"SOUTH MORANG\"},\"source\":\"AddressFinder\"}",
+
+          "subBuildingNameNumber": null,
+
+          "buildingNameNumber": null,
+
+          "dependentThoroughfare": null,
+
+          "thoroughfare": null,
+
+          "doubleDependentLocality": null,
+
+          "dependentLocality": null,
+
+          "locality": null,
+
+          "addressFormat": "ThreeLine",
+
+          "DisplayName": "129 Bushmans Way,\nSOUTH MORANG,\nVIC,\n3752",
+
+          "ArePafFieldsPopulated": false,
+
+          "addressline1": "129 Bushmans Way",
+
+          "addressline2": null,
+
+          "addressline3": "",
+
+          "town": "SOUTH MORANG",
+
+          "postcode": "3752"
+
+        },
+
+        "ContactDetailId": 7649,
+
+        "PersonId": 12275,
+
+        "ContactMethod": "Address",
+
+        "Preference": 0,
+
+        "MarketingEnabled": false,
+
+        "ThirdPartyMarketingEnabled": false,
+
+        "Deleted": false,
+
+        "DeletedTime": null
+
+      },
+
+      {
+
+        "$type": "Common.Domain.ContactDetailEmail, CommonDomain",
+
+        "EmailAddress": email2@test.test,
+
+        "DisplayName": email2@test.test,
+
+        "ContactDetailId": 7650,
+
+        "PersonId": 12275,
+
+        "ContactMethod": "Email",
+
+        "Preference": 0,
+
+        "MarketingEnabled": false,
+
+        "ThirdPartyMarketingEnabled": false,
+
+        "Deleted": false,
+
+        "DeletedTime": null
+
+      },
+
+      {
+
+        "$type": "Common.Domain.ContactDetailPhone, CommonDomain",
+
+        "PhoneNumber": "+12345673222",
+
+        "DisplayName": "+12345673222",
+
+        "ContactDetailId": 7651,
+
+        "PersonId": 12275,
+
+        "ContactMethod": "Mobile",
+
+        "Preference": 0,
+
+        "MarketingEnabled": false,
+
+        "ThirdPartyMarketingEnabled": false,
+
+        "Deleted": false,
+
+        "DeletedTime": null
+
+      }
+
+    ],
+
+    "Email": email2@test.test,
+
+    "PrimaryAddress": {
+
+      "AddressId": 5615,
+
+      "UPRN": "70126745",
+
+      "County": "VIC",
+
+      "CreatedDateTime": null,
+
+      "LastUpdatedDatetime": null,
+
+      "additionalInformation": "{\"contactAddress\":{\"additionalInformation\":{\"Street\":\"Bushmans Way\",\"FullAddress\":\"129 Bushmans Way, SOUTH MORANG VIC 3752\",\"AddressLine1\":\"129 Bushmans Way\",\"AddressLine2\":null,\"SiteName\":null,\"GnafId\":null},\"deliveryPointIdentifier\":\"70126745\",\"houseNumber\":\"129\",\"isManualAddress\":false,\"postCode\":\"3752\",\"stateOrTerritory\":\"VIC\",\"streetName\":\"Bushmans\",\"streetType\":\"Way\",\"suburb\":\"SOUTH MORANG\"},\"source\":\"AddressFinder\"}",
+
+      "subBuildingNameNumber": null,
+
+      "buildingNameNumber": null,
+
+      "dependentThoroughfare": null,
+
+      "thoroughfare": null,
+
+      "doubleDependentLocality": null,
+
+      "dependentLocality": null,
+
+      "locality": null,
+
+      "addressFormat": "ThreeLine",
+
+      "DisplayName": "129 Bushmans Way,\nSOUTH MORANG,\nVIC,\n3752",
+
+      "ArePafFieldsPopulated": false,
+
+      "addressline1": "129 Bushmans Way",
+
+      "addressline2": null,
+
+      "addressline3": "",
+
+      "town": "SOUTH MORANG",
+
+      "postcode": "3752"
+
+    },
+
+    "ExternalPersonId": null
+
+  },
+
+  "MoveOutDate": "2021-11-05",
+
+  "HasError": false,
+
+  "RenovationsOrAlterations": "No",
+
+  "RenovationsInProgress": "No",
+
+  "ServiceTime": "Any Time",
+
+  "HasAccessDetails": "No",
+
+  "HazardDescription": [
+
+    "Dog"
+
+  ],
+
+  "serviceOrderType": "NotRequired",
+
+  "ForwardingAddress": {
+
+    "additionalInformationObj": {
+
+      "contactAddress": {
+
+        "additionalInformation": {
+
+          "Street": "Wollert Drive",
+
+          "FullAddress": "38 Wollert Drive, WOLLERT VIC 3750",
+
+          "SiteName": null,
+
+          "GnafId": null,
+
+          "addressline1": "38 Wollert Drive",
+
+          "addressline2": null
+
+        },
+
+        "deliveryPointIdentifier": "63583383",
+
+        "houseNumber": "38",
+
+        "isManualAddress": false,
+
+        "postCode": "3750",
+
+        "stateOrTerritory": "VIC",
+
+        "streetName": "Wollert",
+
+        "streetType": "Drive",
+
+        "suburb": "WOLLERT"
+
+      },
+
+      "source": "AddressFinder"
+
+    },
+
+    "ManualAddress": false,
+
+    "additionalInformation": "{\"contactAddress\":{\"additionalInformation\":{\"Street\":\"Wollert Drive\",\"FullAddress\":\"38 Wollert Drive, WOLLERT VIC 3750\",\"AddressLine1\":\"38 Wollert Drive\",\"AddressLine2\":null,\"SiteName\":null,\"GnafId\":null},\"deliveryPointIdentifier\":\"63583383\",\"houseNumber\":\"38\",\"isManualAddress\":false,\"postCode\":\"3750\",\"stateOrTerritory\":\"VIC\",\"streetName\":\"Wollert\",\"streetType\":\"Drive\",\"suburb\":\"WOLLERT\"},\"source\":\"AddressFinder\"}",
+
+    "county": "VIC",
+
+    "postcode": "3750",
+
+    "town": "WOLLERT",
+
+    "deliveryPointIdentifier": "63583383",
+
+    "uprn": "63583383",
+
+    "AddressSpecified": true,
+
+    "addressline1": "38 Wollert Drive",
+
+    "addressline2": null,
+
+    "addressline3": "",
+
+    "DisplayName": "38 Wollert Drive WOLLERT VIC 3750"
+
+  }
+
+}

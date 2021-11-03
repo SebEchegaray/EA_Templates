@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LS Ended</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+
+      b {
+        /* color: #97BF0D !important; */
+      }
+
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-double {
+        line-height: 50px;
+        height: 50px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #005321; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; ">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                    [[INCLUDE:Letter.Header]]
+
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <p><datetime class="datetime">{{General.Today}}</datetime></p>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="50" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top" style="margin-bottom: 1.2em;">
+                              <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+                              <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+                              <p>{{Contact.Address.Line3}}</p>
+                              <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+                                Service address: {{#if Account.SiteAddress.AddressLine1}}
+                                {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+                                Account.SiteAddress.AddressLine2}}
+                                {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+                                Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+                                {{/if}} {{Account.SiteAddress.Postcode}}
+                                <br /><br />
+                                Account number: {{Account.Id}}<br />
+                              </p>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr>
+                            <td align="left" valign="top" style="padding: 1.2em 0;">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <p style="margin-bottom: 1.2em;">
+                                            <b style="color: #97BF0D !important;">Important &ndash; you&rsquo;re no longer registered for life support</b>
+                                          </p>
+                                          Hello {{Account.FirstName}},<br />
+                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation" }}
+                                              {{if_eq LifeSupport.RegistrationOwner "DB"}}
+                                                Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.<br />
+                                              {{else}}
+                                                We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br /><br />
+                                                So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
+                                              {{/if_eq}}
+                                          {{else}}
+                                            {{if_eq LifeSupport.RegistrationOwner "EA"}}
+                                              We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
+                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.
+                                              <br/>
+                                            {{/if_eq}}
+                                          {{/if_eq}}
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Any questions?</b><br><br>
+                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation"}}<br>
+                                            If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
+                                            <ul>
+                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                            </ul>
+                                          {{else}}
+                                            {{#if_eq LifeSupport.RegistrationOwner "DB"}}
+                                              <br>
+                                              If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
+                                              <ul>
+                                                <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+                                                <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                              </ul>
+                                            {{else}}
+                                              <br>
+                                              <p>For more information on life support:</p>
+                                              <ul>
+                                              <li>Visit <a href="https://www.energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a></li>
+                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                              </ul>
+                                            {{/if_eq}}
+                                          {{/if_eq}}
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Regards<br>
+                                          <br>
+                                          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                          <br>
+                                          Casey Kaminskyi<br><br>
+                                          GM - Pods & communities<br>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- BODY SECTION -->
+
+                    <!-- FOOTER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Company Details -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                    <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                    ABN 99 086 014 968<br>
+                                    Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- FOOTER SECTION -->
+                  </table>
+
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+    </center>
+    
+  </body>
+</html>

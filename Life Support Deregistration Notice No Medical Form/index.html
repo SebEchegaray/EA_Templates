@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LS Deregistration Notice No Medical Form</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+
+      b {
+        /* color: #97BF0D !important; */
+      }
+
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-double {
+        line-height: 50px;
+        height: 50px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #005321; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; ">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                    [[INCLUDE:Letter.Header]]
+                    
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <p><datetime class="datetime">{{General.Today}}</datetime></p>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="50" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top" style="margin-bottom: 1.2em;">
+                              <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+                              <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+                              <p>{{Contact.Address.Line3}}</p>
+                              <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+                                Service address: {{#if Account.SiteAddress.AddressLine1}}
+                                {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+                                Account.SiteAddress.AddressLine2}}
+                                {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+                                Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+                                {{/if}} {{Account.SiteAddress.Postcode}}
+                                <br /><br />
+                                Account number: {{Account.Id}}<br />
+                              </p>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr>
+                            <td align="left" valign="top" style="padding: 1.2em 0;">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <p style="margin-bottom: 1.2em;">
+                                            <b style="color: #97BF0D !important;">Important – you’re at risk of having life support deregistered from your account</b>
+                                          </p>
+                                          <p>
+                                            Hello {{Account.FirstName}},<br />
+                                            <br />
+                                            We have not received a completed Medical Confirmation Form certified by a registered medical practitioner for this account. We’ll deregister life support from your account on {{LifeSupport.AdvisedConfirmationDuedate}} unless we receive your completed Medical Confirmation form certified by a registered medical practitioner before this date.<br />
+                                            <br />
+                                            If this occurs, life support will no longer be registered on your account and you won’t receive protections that apply to customers registered for life support such as receiving advanced notice of planned interruptions to your power supply.<br />
+                                            <br />
+                                            <b style="color: #97BF0D !important;">What you need to do</b><br />
+                                            <br />
+                                            To avoid deregistration of life support from your account, you must complete the Medical Confirmation form which can be found <a href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf">here</a>.<br>
+                                            <br />
+                                            <br />
+                                            <b style="color: #97BF0D !important;">and return it either by:</b>
+                                            <ul class="special-formatting">
+                                              <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+                                              {{#if_neq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
+                                              {{#if_eq Account.CommunicationsPreference "Email"}}
+                                                <li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia<br>
+                                                  <div style="padding-left:46px"> Reply Paid 91702<br>
+                                                    CLAYTON SOUTH VIC 3169<br>
+                                                    (No stamp required).
+                                                  </div>
+                                                </li>
+                                              {{/if_eq}}
+                                            </ul>
+                                          </p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Need more time?</b><br>
+                                          <br>
+                                          If you need more time to provide a completed Medical Confirmation form, you can call us on 1300 258 763 to request a once off extension of 25 business days.<br>
+                                          <br>    
+                                          <b style="color: #97BF0D !important;">What else you need to know</b><br>
+                                          <br>
+                                          It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor {{Account.Distributor.Name}} needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor {{Account.Distributor.Name}} are required to provide you advanced notification of the interruption..
+                                          <br><br>
+                                          In the event of an unplanned interruption you can contact your distributor {{Account.Distributor.Name}} on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763. <br>
+                                          <br>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b style="color: #97BF0D !important;">Planning ahead will help</b><br>
+                                          <br>
+                                          You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you:
+                                          <ul>
+                                            <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+                                            <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+                                            <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you. </li>
+                                            <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+                                          </ul>
+                                          <p>Please note if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home.</p>
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      
+                                      <tr>
+                                        <td>
+                                          <b style="color: #97BF0D !important;">Any questions?</b><br>
+                                          <br>
+                                          For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
+                                          <ul>
+                                            <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+                                            <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                          </ul>
+                                          <br>
+                                          Regards<br>
+                                          <br>
+                                          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                          <br>
+                                          Casey Kaminskyi<br>
+                                          GM - Pods & communities<br>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- BODY SECTION -->
+
+                    <!-- FOOTER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td>
+                              <b style="color: #97BF0D !important;">What is life support equipment?</b><br>
+                              <br>
+                              Any of the following equipment fall within the definition of life support equipment:
+                              <ul>
+                                <li>an oxygen concentrator</li>
+                                <li>an intermittent peritoneal dialysis machine</li>
+                                <li>a kidney dialysis machine</li>
+                                <li>a chronic positive airways pressure respirator</li>
+                                <li>a crigler najjar syndrome phototherapy equipment</li>
+                                <li>a ventilator for life support</li>
+                                <li>any other equipment that a medical practitioner certifies is required for life support at your home.</li>
+                              </ul>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Company Details -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                    <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                    ABN 99 086 014 968<br>
+                                    Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- FOOTER SECTION -->
+
+                  </table>
+                  
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- EDM MAIN WRAPPER -->
+
+          </td>
+        </tr>
+      </table>
+    </center>
+    
+  </body>
+</html>
