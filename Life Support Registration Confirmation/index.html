@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LS Ended</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Registration Confirmation</title>
 
     <!--[if mso]>
     <noscript>
@@ -99,7 +99,7 @@
               <tr>
                 <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                 <td align="left" valign="top">
-                  
+
                   <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
                     [[INCLUDE:Letter.Header]]
@@ -166,68 +166,70 @@
                                       <tr>
                                         <td align="left" valign="top">
                                           <p style="margin-bottom: 1.2em;">
-                                            <b style="color: #97BF0D !important;">Important &ndash; you&rsquo;re no longer registered for life support</b>
+                                            <b style="color: #97BF0D !important;">We’ve permanently registered life support on your account</b>
                                           </p>
-                                          Hello {{Account.FirstName}},<br />
-                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation" }}
-                                              {{if_eq LifeSupport.RegistrationOwner "DB"}}
-                                                Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.<br />
-                                              {{else}}
-                                                We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br /><br />
-                                                So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
-                                              {{/if_eq}}
-                                          {{else}}
-                                            {{if_eq LifeSupport.RegistrationOwner "EA"}}
-                                              We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
-                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.
-                                              <br/>
-                                            {{/if_eq}}
-                                          {{/if_eq}}
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="left" valing="top">
+                                          Hello {{Account.FirstName}},
+                                          <br /><br />
+                                          We confirm that we have permanently registered life support on this account.
+                                          
                                         </td>
                                       </tr>
 
                                       <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
 
                                       <tr>
                                         <td align="left" valign="top">
-                                          <b style="color: #97BF0D !important;">Any questions?</b><br><br>
-                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation"}}<br>
-                                            If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
-                                            <ul>
-                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
-                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                            </ul>
-                                          {{else}}
-                                            {{#if_eq LifeSupport.RegistrationOwner "DB"}}
-                                              <br>
-                                              If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
-                                              <ul>
-                                                <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
-                                                <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                              </ul>
-                                            {{else}}
-                                              <br>
-                                              <p>For more information on life support:</p>
-                                              <ul>
-                                              <li>Visit <a href="https://www.energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a></li>
-                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
-                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                              </ul>
-                                            {{/if_eq}}
-                                          {{/if_eq}}
+                                          <b style="color: #97BF0D !important;">What else you need to know</b>
+                                          <br><br>
+                                          Sometimes planned interruptions to your supply occur for maintenance or other reasons. If any of these interruptions are scheduled to happen, we or <b>{{Account.Distributor.Name}}</b> will let you know in advance.
+                                          <br><br>
+                                          In the event of an unplanned interruption you can contact your distributor <b>{{Account.Distributor.Name}}</b> (on {{Account.Distributor.PhoneNumber}}, or call us on 1300 258 763).
                                         </td>
                                       </tr>
 
                                       <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
 
                                       <tr>
                                         <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Planning ahead will help</b><br>
+                                          <br>
+                                          You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+                                          <ul>
+                                              <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+                                              <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+                                              <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+                                              <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+                                          </ul>
+                                          Please note, if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home or work premises.
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Any questions?</b>
+                                          <br><br>
+                                          For more information on life support, visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
+                                          <ul>
+                                            <!--<li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, 8am-9pm & Saturdays, 9am-6pm AEST) or</li>-->
+                                            <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+                                            <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                          </ul>
+                                          
                                           Regards<br>
                                           <br>
                                           <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
                                           <br>
-                                          Casey Kaminskyi<br><br>
-                                          GM - Pods & communities<br>
+                                          Casey Kaminskyi<br>
+                                          GM - Pods & communities
                                         </td>
                                       </tr>
                                     </table>
@@ -237,7 +239,7 @@
                               </table>
                             </td>
                           </tr>
-
+                          
                         </table>
                       </td>
                     </tr>
@@ -283,6 +285,7 @@
                       </td>
                     </tr>
                     <!-- FOOTER SECTION -->
+
                   </table>
 
                 </td>
@@ -294,7 +297,6 @@
           </td>
         </tr>
       </table>
-
     </center>
     
   </body>

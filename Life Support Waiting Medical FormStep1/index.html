@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LS Ended</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Waiting Medical FormStep1</title>
 
     <!--[if mso]>
     <noscript>
@@ -99,7 +99,7 @@
               <tr>
                 <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                 <td align="left" valign="top">
-                  
+
                   <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
                     [[INCLUDE:Letter.Header]]
@@ -166,23 +166,44 @@
                                       <tr>
                                         <td align="left" valign="top">
                                           <p style="margin-bottom: 1.2em;">
-                                            <b style="color: #97BF0D !important;">Important &ndash; you&rsquo;re no longer registered for life support</b>
+                                            <b style="color: #97BF0D !important;">Reminder - please complete and return your Medical Confirmation form</b>
                                           </p>
-                                          Hello {{Account.FirstName}},<br />
-                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation" }}
-                                              {{if_eq LifeSupport.RegistrationOwner "DB"}}
-                                                Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.<br />
-                                              {{else}}
-                                                We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br /><br />
-                                                So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
-                                              {{/if_eq}}
-                                          {{else}}
-                                            {{if_eq LifeSupport.RegistrationOwner "EA"}}
-                                              We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
-                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.
-                                              <br/>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Hello {{Account.FirstName}}<br />
+                                          <br />
+                                          We’ve temporarily registered life support on your account since someone at
+                                          your home or business premises depends on life support equipment. <br />
+                                          <br />
+                                          Your account is temporarily registered until we receive your completed
+                                          Medical Confirmation form which has been certified by a medical
+                                          practitioner.
+                                          <br /><br /><br />
+
+                                          <b style="color: #97BF0D !important;">What you need to do</b><br />
+                                          <br />
+                                          To ensure your account is permanently registered for life support with us
+                                          and your distributor, <b>{{Account.Distributor.Name}}</b>, (the company
+                                          responsible for the poles, wires and gas pipes in your area), please
+                                          complete the Medical Confirmation form which can be found <a href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf">here</a>.
+                                          <br /><br />
+                                          and return it by either by: <b>{{date: LifeSupport.DueDate}}</b>
+                                          <br />
+                                          <ul class="special-formatting">
+                                            <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+                                            {{#if_neq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
+                                            {{#if_eq Account.CommunicationsPreference "Email"}}
+                                              <li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia<br>
+                                                <div style="padding-left:46px">
+                                                  Reply Paid 91702<br>
+                                                  CLAYTON SOUTH VIC 3169<br>
+                                                  (No stamp required).
+                                                </div>
+                                              </li>
                                             {{/if_eq}}
-                                          {{/if_eq}}
+                                          </ul>
                                         </td>
                                       </tr>
 
@@ -190,46 +211,74 @@
 
                                       <tr>
                                         <td align="left" valign="top">
-                                          <b style="color: #97BF0D !important;">Any questions?</b><br><br>
-                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation"}}<br>
-                                            If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
-                                            <ul>
-                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
-                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                            </ul>
-                                          {{else}}
-                                            {{#if_eq LifeSupport.RegistrationOwner "DB"}}
-                                              <br>
-                                              If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
-                                              <ul>
-                                                <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
-                                                <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                              </ul>
-                                            {{else}}
-                                              <br>
-                                              <p>For more information on life support:</p>
-                                              <ul>
-                                              <li>Visit <a href="https://www.energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a></li>
-                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
-                                              <li>Call <b style="color: #97BF0D !important;">1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-                                              </ul>
-                                            {{/if_eq}}
-                                          {{/if_eq}}
-                                        </td>
-                                      </tr>
-
-                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
-
-                                      <tr>
-                                        <td align="left" valign="top">
-                                          Regards<br>
+                                          <b style="color: #97BF0D !important;">What happens if I don’t complete and return the Medical Confirmation form?</b><br>
                                           <br>
+                                          If you don’t provide us with your completed form, we may deregister life support from your account. This means you won’t receive notice in advance for planned interruptions or priority treatment in restoring your power for any unplanned interruption.<br>
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Need more time?</b><br>
+                                          <br>
+                                          If you need more time to provide a completed Medical Confirmation form, you can call us on 1300 258 763 to request a once off extension of 25 business days.<br>
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">What else you need to know</b><br>
+                                          <br>
+                                          It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor <b>{{Account.Distributor.Name}}</b> needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor <b>{{Account.Distributor.Name}}</b> are required to provide you advanced notification of the interruption.<br>
+                                          <br>
+                                          In the event of an unplanned interruption you can contact your distributor <b>{{Account.Distributor.Name}}</b> on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763.
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b style="color: #97BF0D !important;">Planning ahead will help</b><br>
+                                          <br>
+                                          You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+                                          <ul>
+                                            <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+                                            <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+                                            <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+                                            <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+                                          </ul>
+                                          Please note if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home.
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <b>Any questions?</b><br>
+                                          <br>
+                                          For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we'll be happy to help.<br>
+                                          <ul>
+                                              <!--<li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, <br>
+                                              8.00am-9.00pm & Saturdays, 9am-6pm AEST) or</li>-->
+                                              <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+                                              <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+                                          </ul>
+
+                                          Regards
+                                          <br><br>
                                           <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
                                           <br>
-                                          Casey Kaminskyi<br><br>
+                                          Casey Kaminskyi<br>
                                           GM - Pods & communities<br>
                                         </td>
                                       </tr>
+
                                     </table>
                                   </td>
                                   <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
@@ -237,7 +286,6 @@
                               </table>
                             </td>
                           </tr>
-
                         </table>
                       </td>
                     </tr>
@@ -262,6 +310,24 @@
 
                           <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
+                          <tr>
+                            <td align="left" valign="top">
+                              <b style="color: #97BF0D !important;">What is life support equipment?</b><br>
+                              <p>Any of the following equipment fall within the definition of life support equipment:<br></p>
+                              <ul>
+                                <li>oxygen concentrator</li>
+                                <li>intermittent peritoneal dialysis machine</li>
+                                <li>kidney dialysis machine</li>
+                                <li>chronic positive airways pressure respirator</li>
+                                <li>crigler Najjar syndrome phototherapy equipment</li>
+                                <li>ventilator for life support</li>
+                                <li>any other equipment that a medical practitioner certifies is required for life support at your home.</li>
+                              </ul>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
                           <!-- Company Details -->
                           <tr>
                             <td align="left" valign="top">
@@ -283,6 +349,7 @@
                       </td>
                     </tr>
                     <!-- FOOTER SECTION -->
+
                   </table>
 
                 </td>
@@ -294,7 +361,6 @@
           </td>
         </tr>
       </table>
-
     </center>
     
   </body>
