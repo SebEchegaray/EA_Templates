@@ -332,3 +332,162 @@
     
   </body>
 </html>
+
+<!-- 
+  <!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+  }
+  .header-space {
+    display: none;
+  }
+</style>
+[[INCLUDE:Letter.Header]]
+<tr>
+  <td>
+    <div style="margin-top: 50px;">
+          <p><datetime class="datetime">{{General.Today}}</datetime></p>
+      </div>
+      <div style="margin-top: 50px">
+      <div>
+          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+          <p>{{Contact.Address.Line3}}</p>
+          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+          <br><br>
+      </div>  
+      <p>
+          Service address: {{#if Account.SiteAddress.AddressLine1}}
+          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+          Account.SiteAddress.AddressLine2}}
+          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+          {{/if}} {{Account.SiteAddress.Postcode}}
+          <br /><br />
+          Account number: {{Account.Id}}<br />
+      </p>
+      </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <br />
+    <br />
+    <p>
+      <b>Important – you’re at risk of having life support deregistered from your account</b
+      ><br />
+    </p>
+    <br />
+    <p>
+      Hello {{Account.FirstName}}<br />
+      <br />
+      We have not received a completed Medical Confirmation Form certified by a registered medical practitioner for this account. We’ll deregister life support from your account on {{LifeSupport.AdvisedConfirmationDuedate}} unless we receive your completed Medical Confirmation form certified by a registered medical practitioner before this date.<br />
+      <br />
+      If this occurs, life support will no longer be registered on your account and you won’t receive protections that apply to customers registered for life support such as receiving advanced notice of planned interruptions to your power supply.<br />
+      <br />
+      <!--if (Account.SiteAddress.County=="Victoria") -->
+      <b>What you need to do</b><br />
+      <br />
+      To avoid deregistration of life support from your account, you must complete the Medical Confirmation form which can be found here
+      <br /><br />
+      <a href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf">https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a>
+      <br><br>
+      <b>and return it either by:</b><br>
+      <ul class="special-formatting">
+          <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+          {{#if_neq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
+          {{#if_eq Account.CommunicationsPreference "Email"}}<li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia<br>
+          <div style="padding-left:46px"> Reply Paid 91702<br>
+              CLAYTON SOUTH VIC 3169<br>
+                  (No stamp required).</div></li>{{/if_eq}}
+      </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Need more time?</b><br>
+      <br>
+      If you need more time to provide a completed Medical Confirmation form, you can call us on 1300 258 763 to request a once off extension of 25 business days.<br>
+      <br>    
+      <b>What else you need to know</b><br>
+      <br>
+      It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor {{Account.Distributor.Name}} needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor {{Account.Distributor.Name}} are required to provide you advanced notification of the interruption..
+      <br><br>
+      In the event of an unplanned interruption you can contact your distributor {{Account.Distributor.Name}} on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763. <br>
+      <br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Planning ahead will help</b><br>
+      <br>
+      You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+      <ul>
+          <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+          <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+          <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you. </li>
+          <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+      </ul>
+      <p>Please note if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home.<br>
+      <br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Any questions?</b><br>
+      <br>
+      For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
+      <ul>
+          <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+          <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+      </ul>
+      <br>
+      Regards<br>
+      <br>
+      <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+      <br>
+      Casey Kaminskyi<br>
+      GM - Pods & communities<br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <br>
+      <br>
+      <p>  <b>What is life support equipment?</b><br>
+      <br>
+      Any of the following equipment fall within the definition of life support equipment:<br>
+      <ul>
+          <li>an oxygen concentrator</li>
+          <li>an intermittent peritoneal dialysis machine</li>
+          <li>a kidney dialysis machine</li>
+          <li>a chronic positive airways pressure respirator</li>
+          <li>a crigler najjar syndrome phototherapy equipment</li>
+          <li>a ventilator for life support</li>
+          <li>any other equipment that a medical practitioner certifies is required for life support at your home.</li>
+      </ul>
+  </td>
+</tr>
+</tbody>
+<tfoot>
+  <tr>
+      <td>
+          <div class="footer-space">&nbsp;</div>
+      </td>
+  </tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>
+ -->

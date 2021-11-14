@@ -170,16 +170,38 @@
                                           </p>
                                           Hello {{Account.FirstName}},<br />
                                           {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation" }}
-                                              {{if_eq LifeSupport.RegistrationOwner "DB"}}
-                                                Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.<br />
-                                              {{else}}
-                                                We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br /><br />
-                                                So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
-                                              {{/if_eq}}
-                                          {{else}}
+                                            {{if_eq LifeSupport.RegistrationOwner "DB"}}
+                                              <br />
+                                              Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.
+                                              <br />
+                                            {{else}}
+                                              We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br />
+                                              <br />
+                                              So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
+                                            {{/if_eq}}
                                             {{if_eq LifeSupport.RegistrationOwner "EA"}}
+                                              <br />
                                               We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
-                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.
+                                              <p> 
+                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.        
+                                              <br/>
+                                            {{/if_eq}}
+                                          {{/if_eq}}
+                                          {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoCustomerResponse" }}
+                                            {{if_eq LifeSupport.RegistrationOwner "DB"}}
+                                              <br />
+                                              Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.
+                                              <br />
+                                            {{else}}
+                                              We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br />
+                                              <br />
+                                              So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
+                                            {{/if_eq}}
+                                            {{if_eq LifeSupport.RegistrationOwner "EA"}}
+                                              <br />
+                                              We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
+                                            <p> 
+                                              This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.        
                                               <br/>
                                             {{/if_eq}}
                                           {{/if_eq}}
@@ -299,3 +321,144 @@
     
   </body>
 </html>
+
+<!-- 
+  <!-- UseHandlebars --> 
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+}
+.header-space {
+    display: none;
+}
+.li-remove-point {
+list-style-type: none; 
+}
+</style>
+[[INCLUDE:Letter.Header]]
+<table>
+<tbody>
+<tr>
+<td>
+<div style="margin-top: 50px;">
+  <p><datetime class="datetime">{{General.Today}}</datetime></p>
+</div>
+<div style="margin-top: 50px">
+  <div>
+      <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+      <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+      <p>{{Contact.Address.Line3}}</p>
+      <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+      <br><br>
+  </div>
+<p>
+  Service address:
+  {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+  {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+  {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+  {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+  {{Account.SiteAddress.Postcode}}
+  <br /><br />
+  Account number: {{Account.Id}}<br />
+</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+<br />
+<p>
+  <b>Important &ndash; you&rsquo;re no longer registered for life support</b
+  ><br />
+</p>
+<br/>
+<p>
+  Hello {{Account.FirstName}}<br />
+  {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation" }}
+    {{if_eq LifeSupport.RegistrationOwner "DB"}}
+      <br />
+      Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.
+      <br />
+    {{else}}
+      We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br />
+      <br />
+      So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
+    {{/if_eq}}
+    {{if_eq LifeSupport.RegistrationOwner "EA"}}
+      <br />
+      We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
+      <p> 
+      This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.        
+      <br/>
+    {{/if_eq}}
+   {{/if_eq}}
+  {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoCustomerResponse" }}
+    {{if_eq LifeSupport.RegistrationOwner "DB"}}
+      <br />
+      Your distributor, {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area), has told us that you have been deregistered for life support. This means that you are no longer registered for life support.
+      <br />
+    {{else}}
+      We have sent you three letters advising that we need you to complete and return a Medical Confirmation form (that has been certified by a medical practitioner) for you to continue being registered for life support.<br />
+      <br />
+      So far, we haven&rsquo;t received your completed form and, as a result, you&rsquo;re no longer registered for life support with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area).
+    {{/if_eq}}
+    {{if_eq LifeSupport.RegistrationOwner "EA"}}
+      <br />
+      We confirm that you are no longer registered for life support. This means the person that depends on life support equipment, has either moved out of your home or business premises or no longer requires the life support equipment.
+    <p> 
+      This deregistration means that you won&rsquo;t receive notice in advance for planned interruptions to your power supply or priority treatment in restoring your power for any unplanned interruptions.        
+      <br/>
+    {{/if_eq}}
+  {{/if_eq}}
+
+</td>
+</tr>
+<tr>
+<td>
+  <p>
+  <b>Any questions?</b><br>
+  {{#if_eq LifeSupport.LifeSupportStatus "DeregisteredNoMedicalConfirmation"}}
+  <br>
+  If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
+  <ul>
+      <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+      <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+  </ul>
+    {{else}}
+      {{#if_eq LifeSupport.RegistrationOwner "DB"}}
+       <br>
+         If you have any questions about life support or you still depend on life support equipment, please contact us:<br>
+          <ul>
+          <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+          <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+          </ul>
+        {{else}}
+        <br>
+        <p>For more information on life support:</p>
+        <ul>
+        <li>Visit <a href="https://www.energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a></li>
+        <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+        <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+        </ul>
+        {{/if_eq}}         
+{{/if_eq}} 
+  <p>
+      Regards<br>
+  <br>
+  <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+  <br>
+  Casey Kaminskyi<br>
+  <p>
+  GM - Pods & communities<br>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+ -->

@@ -87,7 +87,7 @@
       }
     </style>
   </head>
-  <body style="background: #005321; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+  <body style="background: #bfcec5; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
 
     <center>
       <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; ">
@@ -302,3 +302,101 @@
     
   </body>
 </html>
+
+
+<!-- 
+  <!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+  }
+  .header-space {
+    display: none;
+  }
+</style>
+[[INCLUDE:Letter.Header]]
+<tr>
+  <td>
+      <div style="margin-top: 50px;">
+        <p><datetime class="datetime">{{General.Today}}</datetime></p>
+      </div>
+      <div style="margin-top: 50px">
+      <div>
+          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+          <p>{{Contact.Address.Line3}}</p>
+          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+          <br><br>
+      </div>  
+      <p>
+          Service address: {{#if Account.SiteAddress.AddressLine1}}
+          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+          Account.SiteAddress.AddressLine2}}
+          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+          {{/if}} {{Account.SiteAddress.Postcode}}
+          <br /><br />
+          Account number: {{Account.Id}}<br />
+      </p>
+      </div>
+  </td>
+</tr>
+<tr>
+    <td>
+      <br />
+      <br />
+      <p>
+        <b>Important – life support equipment deregistration</b
+        ><br />
+      </p>
+      <br />
+      <p>
+        Hello {{Account.FirstName}}<br />
+        <br />
+        You’ve advised us that the person who required life support equipment at your premises has either left the premises or no longer requires life support equipment.<br />
+        <br />
+        This means that we will now be deregistering your life support equipment needs from your account.<br />
+        <br />
+        Unless you’ve contacted us to specifically organise an earlier deregistration date, the deregistration will take effect on {{LifeSupport.RemovedDate}}. <br>
+        <br>
+        Once we’ve deregistered your account, your life support equipment needs won’t be registered with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area). This means that you won’t receive protections that apply to customers registered for life support, such as receiving advanced notice of planned interruptions to your power supply. <br>
+        <br>
+ 
+        <!--if (Account.SiteAddress.County=="Victoria") -->
+        <b>What do you need to do?</b><br />
+        <br />
+        If you do not want us to deregister life support on your account, <b>please contact us before the above deregistration date</b> so that we can maintain life support equipment registration on your account.
+        <br /><br />
+    </td>
+</tr>
+<tr>
+    <td>
+        <p>
+        <b>Any questions?</b><br>
+        <br>
+        If you have any questions please contact us:
+        <ul>
+            <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+            <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+        </ul>
+        <p>
+            Regards<br>
+        <br>
+        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+        <br>
+        Casey Kaminskyi<br>
+        GM - Pods & communities<br>
+    </td>
+</tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>
+ -->

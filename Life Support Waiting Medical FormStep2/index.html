@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LS Waiting Medical FormStep1</title>
+    <title>LS Waiting Medical FormStep2</title>
 
     <!--[if mso]>
     <noscript>
@@ -99,7 +99,7 @@
               <tr>
                 <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                 <td align="left" valign="top">
-
+                  
                   <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
                     [[INCLUDE:Letter.Header]]
@@ -155,7 +155,7 @@
                             </td>
                           </tr>
                           <!-- DIVIDER -->
-
+                          
                           <tr>
                             <td align="left" valign="top" style="padding: 1.2em 0;">
                               <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
@@ -166,7 +166,7 @@
                                       <tr>
                                         <td align="left" valign="top">
                                           <p style="margin-bottom: 1.2em;">
-                                            <b style="color: #97BF0D !important;">Reminder - please complete and return your Medical Confirmation form</b>
+                                            <b style="color: #97BF0D !important;">Second reminder - please complete and return your Medical Confirmation form</b>
                                           </p>
                                         </td>
                                       </tr>
@@ -286,6 +286,7 @@
                               </table>
                             </td>
                           </tr>
+
                         </table>
                       </td>
                     </tr>
@@ -380,75 +381,69 @@
   }
 </style>
 [[INCLUDE:Letter.Header]]
-    <tr>
-      <td>
-        <div style="margin-top: 50px;">
-          <p><datetime class="datetime">{{General.Today}}</datetime></p>
-        </div>
-        <div style="margin-top: 50px">
-          <div>
-            <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
-            <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
-            <p>{{Contact.Address.Line3}}</p>
-            <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
-            <br><br>
-          </div>    
-          <p>
-            Service address: {{#if Account.SiteAddress.AddressLine1}}
-            {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
-            Account.SiteAddress.AddressLine2}}
-            {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
-            Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
-            {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
-            {{/if}} {{Account.SiteAddress.Postcode}}
-            <br /><br />
-            Account number: {{Account.Id}}<br />
-          </p>
-        </div>
-      </td>
-    </tr>
 <tr>
-<td>
-  <br />
-  <br />
-  <p>
-    <b>Reminder - please complete and return your Medical Confirmation form</b
-    ><br />
-  </p>
-  <br />
-  <p>
-    Hello {{Account.FirstName}}<br />
+  <td>
+      <div style="margin-top: 50px;">
+          <p><datetime class="datetime">{{General.Today}}</datetime></p>
+      </div>
+      <div style="margin-top: 50px">
+      <div>
+          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+          <p>{{Contact.Address.Line3}}</p>
+          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+          <br><br>
+      </div>    
+      <p>
+          Service address: {{#if Account.SiteAddress.AddressLine1}}
+          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+          Account.SiteAddress.AddressLine2}}
+          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+          {{/if}} {{Account.SiteAddress.Postcode}}
+          <br /><br />
+          Account number: {{Account.Id}}<br />
+      </p>
+      </div>
+  </td>
+</tr>
+<tr>
+  <td>
     <br />
-    We’ve temporarily registered life support on your account since someone at
-    your home or business premises depends on life support equipment. <br />
     <br />
-    Your account is temporarily registered until we receive your completed
-    Medical Confirmation form which has been certified by a medical
-    practitioner.<br />
+    <p>
+      <b>Second reminder - please complete and return your Medical Confirmation form</b
+      ><br />
+    </p>
     <br />
-    <b>What you need to do</b><br />
-    <br />
-    To ensure your account is permanently registered for life support with us
-    and your distributor, <b>{{Account.Distributor.Name}}</b>, (the company
-    responsible for the poles, wires and gas pipes in your area), please
-    complete the Medical Confirmation form which can be found here:
-    <br /><br />
-    <a
-      href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf"
-      >https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a
-    >
-    and return it by either by: <b>{{date: LifeSupport.DueDate}}</b
-    ><br />
-  </p>
-  <ul class="special-formatting">
-    <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
-    {{#if_neq Account.CommunicationsPreference "Email"}} <li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
-    {{#if_eq Account.CommunicationsPreference "Email"}} <li><b>Mail</b> - &nbsp;&nbsp;EnergyAustralia<br>
-    <div style="padding-left:46px">Reply Paid 91702<br>
-      CLAYTON SOUTH VIC 3169<br>
-            (No stamp required).</div></li>{{/if_eq}}
-</ul>
-</td>
+    <p>
+      Hello {{Account.FirstName}}<br />
+      <br />
+      We’ve temporarily registered life support on your account since someone at your home or business premises depends on life support equipment. <br />
+      <br />
+      Your account is temporarily registered until we receive your completed Medical Confirmation form which has been certified by a medical practitioner.<br />
+      <br />
+      <b>What you need to do</b><br />
+      <br />
+      To ensure your account is permanently registered for life support with us and your distributor, <b>{{Account.Distributor.Name}}</b>, (the company responsible for the poles, wires and gas pipes in your area), please complete the Medical Confirmation form which can be found here:
+      <br /><br />
+      <a
+        href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf"
+        >https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a
+      >
+      and return it by either by: <b>{{date: LifeSupport.DueDate}}</b
+      ><br />
+    </p>
+    <ul class="special-formatting">
+      <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+      {{#if_neq Account.CommunicationsPreference "Email"}} <li><b>Mail</b> - use the reply paid envelope supplied; no stamp required. </li>{{/if_neq}}
+      {{#if_eq Account.CommunicationsPreference "Email"}} <li><b>Mail</b> - EnergyAustralia<br>
+      <div style="padding-left:46px">Reply Paid 91702<br>
+        CLAYTON SOUTH VIC 3169<br>
+              (No stamp required).</div></li>{{/if_eq}}
+  </ul>
+  </td>
 </tr>
 <tr>
   <td>
@@ -497,7 +492,7 @@
       <p>
       <b>Any questions?</b><br>
       <br>
-      For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we'll be happy to help.<br>
+      For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
       <ul>
           <!--<li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, <br>
           8.00am-9.00pm & Saturdays, 9am-6pm AEST) or</li>-->

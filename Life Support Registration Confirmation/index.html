@@ -301,3 +301,122 @@
     
   </body>
 </html>
+
+<!-- 
+  <!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+  }
+  .header-space {
+    display: none;
+  }
+</style>
+[[INCLUDE:Letter.Header]]
+<tr>
+  <td>
+      <div style="margin-top: 50px;">
+          <p><datetime class="datetime">{{General.Today}}</datetime></p>
+      </div>
+      <div style="margin-top: 50px">
+      <div>
+          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+          <p>{{Contact.Address.Line3}}</p>
+          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+          <br><br>
+      </div>    
+      <p>
+          Service address: {{#if Account.SiteAddress.AddressLine1}}
+          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+          Account.SiteAddress.AddressLine2}}
+          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+          {{/if}} {{Account.SiteAddress.Postcode}}
+          <br /><br />
+          Account number: {{Account.Id}}<br />
+      </p>
+      </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <br />
+    <br />
+    <p>
+      <b>We’ve permanently registered life support on your account</b
+      ><br />
+    </p>
+    <br />
+    <p>
+      Hello {{Account.FirstName}}<br />
+      <br />
+      We confirm that we have permanently registered life support on this account.<br />
+      <br />
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>What else you need to know</b><br>
+      <br>
+      Sometimes planned interruptions to your supply occur for maintenance or other reasons. If any of these interruptions are scheduled to happen, we or <b>{{Account.Distributor.Name}}</b> will let you know in advance.<br>
+      <br>
+      In the event of an unplanned interruption you can contact your distributor <b>{{Account.Distributor.Name}}</b> (on {{Account.Distributor.PhoneNumber}}, or call us on 1300 258 763).
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Planning ahead will help</b><br>
+      <br>
+      You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+      <ul>
+          <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+          <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+          <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+          <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+      </ul>
+      <p>Please note, if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home or work premises.<br>
+      <br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Any questions?</b><br>
+      <br>
+      For more information on life support, visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
+      <ul>
+          <!--<li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, 8am-9pm & Saturdays, 9am-6pm AEST) or</li>-->
+          <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+          <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+      </ul>
+      <p>
+          Regards<br>
+      <br>
+      <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+      <br>
+      Casey Kaminskyi<br>
+      GM - Pods & communities<br>
+  </td>
+</tr>
+</tbody>
+<tfoot>
+  <tr>
+      <td>
+          <div class="footer-space">&nbsp;</div>
+      </td>
+  </tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>
+ -->
