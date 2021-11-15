@@ -374,3 +374,194 @@
     
   </body>
 </html>
+
+<!-- 
+  <!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<style type="text/css" scoped>
+  .letter-address {
+    display: none;
+  }
+  .header-space {
+    display: none;
+  }
+</style>
+[[INCLUDE:Letter.Header]]
+<tr>
+  <td>
+      <div style="margin-top: 50px;">
+          <p><datetime class="datetime">{{General.Today}}</datetime></p>
+      </div>
+      <div style="margin-top: 50px">
+      <div>
+          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
+          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
+          <p>{{Contact.Address.Line3}}</p>
+          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
+          <br><br>
+      </div>    
+      <p>
+          Service address: {{#if Account.SiteAddress.AddressLine1}}
+          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
+          Account.SiteAddress.AddressLine2}}
+          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
+          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
+          {{/if}} {{Account.SiteAddress.Postcode}}
+          <br /><br />
+          Account number: {{Account.Id}}<br />
+      </p>
+      </div>
+  </td>
+</td>
+</tr>
+<tr>
+  <td>
+    <br />
+    <br />
+    <p>
+      <b>Please contact EA immediately regarding return of your Medical Confirmation form</b
+      ><br />
+    </p>
+    <br />
+    <p>
+      Hello {{Account.FirstName}}<br />
+      <br />
+      We’ve been attempting to contact you regarding the Medical confirmation form that we need to ensure your account continues to be registered for life support protections.<br />
+      <br />
+      Your account is currently temporarily registered until we receive your completed Medical Confirmation form which has been certified by a medical practitioner.<br />
+      <br />
+      <b>What you need to do</b><br />
+      <br />
+      To ensure your account is permanently registered for life support with us and your distributor, <b>{{Account.Distributor.Name}}</b>, (the company responsible for the poles, wires and gas pipes in your area), please complete the Medical Confirmation form which can be found here:
+      <br /><br />
+      <a
+        href="https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf"
+        >https://www.energyaustralia.com.au/sites/default/files/2019-12/120919_Medical_Confirmation_Form_Interactive.pdf</a
+      >
+      and return it to us as soon as possible, either by:</b
+          ></b
+      ><br />
+    </p>
+    <ul>
+      <li><b>Email</b> - <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a></li>
+      <li>
+        <b>Mail</b> - use the reply paid envelope supplied; no stamp required.
+      </li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>What happens if I don't complete and return the Medical Confirmation form?</b><br>
+      <br>
+      If you don’t provide us with your completed form, we may deregister life support from your account. This means you won’t receive priority treatment in restoring your power for any unplanned interruption.<br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Need more time?</b><br>
+      <br>
+      If you need more time to provide a completed Medical Confirmation form, you can call us on 1300 258 763 to request a once off extension of 25 business days, if you haven’t already.<br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>What else you need to know</b><br>
+      <br>
+      It is important to note that there may be planned interruptions to your supply (e.g. we need to interrupt supply for metering purposes or your distributor <b>{{Account.Distributor.Name}}</b> (needs to interrupt supply for maintenance purposes). If this were to occur, we or your distributor <b>{{Account.Distributor.Name}}</b> are required to provide you advanced notification of the interruption.<br>
+      <br>
+      In the event of an unplanned interruption you can contact your distributor <b>{{Account.Distributor.Name}}</b> (on {{Account.Distributor.PhoneNumber}}, or us on 1300 258 763).
+  </td>
+</tr>
+<tr>
+  <td>
+      <p><br>
+      <b>Planning ahead will help</b><br>
+      <br>
+      You should also ensure you have a plan in the event of any unplanned interruption to your power supply, including if your life support equipment unexpectedly stops working. In your plan, we recommend you: <br>
+      <ul>
+          <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+          <li>Have access to a telephone that doesn't require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+          <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+          <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+      </ul>
+      <p>Please note if you ever change energy retailers, you must advise your new retailer that you depend on life support equipment in your home.<br>
+      <br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <p>
+      <b>Any questions?</b><br>
+      <br>
+      For more information on life support visit <a href="https://energyaustralia.com.au/lifesupport">energyaustralia.com.au/lifesupport</a> or contact us and we’ll be happy to help.<br>
+      <ul>
+          <!--<li>Chat with us online at <a href="https://energyaustralia.com.au/livechat">energyaustralia.com.au/livechat</a> (Monday to Friday, 8am-9pm & Saturdays, 9am-6pm AEST) or</li>-->
+          <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
+          <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
+      </ul>
+      <p>
+          Regards<br>
+      <br>
+      <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+      <br>
+      Casey Kaminskyi<br>
+      GM - Pods & communities<br>
+  </td>
+</tr>
+<tr>
+  <td>
+      <br>
+      <br>
+      <p>  <b>What is life support equipment?</b><br>
+      <br>
+      Life Support Equipment means any of the following:<br>
+      <ol type="a">
+          <li>an oxygen concentrator</li>
+          <li>an intermittent peritoneal dialysis machine</li>
+          <li>a kidney dialysis machine</li>
+          <li>a chronic positive airways pressure respirator</li>
+          <li>crigler najjar syndrome phototherapy equipment</li>
+          <li>a ventilator for life support</li>
+          <li>in relation to a particular customer – any other equipment (whether fuelled by electricity or gas) that a registered medical practitioner certifies is required for a person residing at the customer’s premises for life support.</li>
+      </ol>
+      <p>
+      <br>
+      ‘Other’ life support equipment may include, but is not limited to, the following:<br>
+      <ol type="i">
+          <li>external heart pumps</li>
+          <li>respirators (iron lung)</li>
+          <li>suction pumps (respiratory or gastric)</li>
+          <li>feeding pumps (kangaroo pump, or total parenteral nutrition)</li>
+          <li>insulin pumps</li>
+          <li>airbed vibrator</li>
+          <li>hot water</li>
+          <li>nebulizer, humidifiers or vaporizers</li>
+          <li>apnoea monitors</li>
+          <li>medically required heating and air conditioning</li>
+          <li>medically required refrigeration</li>
+          <li>powered wheelchair</li>
+      </ol>
+  </td>
+</tr>
+</tbody>
+<tfoot>
+  <tr>
+      <td>
+          <div class="footer-space">&nbsp;</div>
+      </td>
+  </tr>
+</tfoot>
+</table>
+</div> 
+</div>
+</div>
+</div>
+</body>
+ -->
