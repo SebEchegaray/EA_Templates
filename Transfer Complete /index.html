@@ -1,0 +1,710 @@
+<!-- UseHandlebars -->
+<!-- require: Registration -->
+<!-- require: Account -->
+<!-- require: General -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Complete</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+
+      b {
+        /* color: #97BF0D !important; */
+      }
+
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter-xs {
+        width: 4px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-s {
+        width: 8px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-double {
+        line-height: 50px;
+        height: 50px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #CECECE; margin: 0; padding: 0; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 12pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; backgorund: #FFFFFF !important;">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- EA LOGO -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr>
+                            <td align="left" valign="top">
+                              <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Logo_Horizontal.png" alt="" width="217" style="width: 217px;"/>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- EA LOGO -->
+
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>Your {{Account.SingleServiceName}} has been transferred to EnergyAustralia</p>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                <tr>
+                                  <td align="right" valign="top">
+                                    {{Account.SingleServiceName}} account number: {{Account.Id}}<br />
+                                  </td>
+                                </tr>
+                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                <tr>
+                                  <td align="right" valign="top">
+                                    Service address:
+                                    {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                    {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                    {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                    {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                    {{Account.SiteAddress.Postcode}}<br />
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr>
+                            <td align="left" valign="top" style="padding: 1.2em 0;">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Hi {{Account.FirstName}},<br />
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Great news! Your {{Account.SingleServiceName}} account for 
+                                          {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                          {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                          {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                          {{Account.SiteAddress.Postcode}}
+                                          was transferred to EnergyAustralia on {{Account.PendingSupplyStartDate}}.
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Your {{Account.SingleServiceName}} account number is {{Account.Id}}.
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valing="top">
+                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                <img width="100%" style="border-radius: 7px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group_4.png" alt="" />
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                            <tr>
+                                              <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                              <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                              <td align="left" valign="top" style="border: 1.5px solid #0D8924; border-radius: 5px;">
+                                                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-radius: 7px !important;">
+                                                  <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                                  <tr>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                    <td align="left" valign="top">
+                                                      <b style="color: #000000 !important;">Power at your fingertips with MyAccount 24/7</b>
+                                                    </td>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                  </tr>
+                                                  <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                                </table>
+                                              </td>
+                                              <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                              <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                            </tr>
+                                          </table>
+
+                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                  <tr>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                    <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                                    <td align="left" valign="top">
+                                                      <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                        <tr>
+                                                          <td align="center" valign="middle">
+                                                            <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Bill.png">
+                                                          </td>
+                                                          <td align="left" valign="middle">View your bills and payments.</td>
+                                                        </tr>
+                                                        <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+                                                        <tr>
+                                                          <td align="center" valign="middle">
+                                                            <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Eye.png">
+                                                          </td>
+                                                          <td align="left" valign="middle">View your energy plan.</td>
+                                                        </tr>
+                                                      </table>
+                                                    </td>
+                                                    <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+
+                                            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                  <!-- DIVIDER -->
+                                                  <tr>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                    <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                                    <td align="left" valign="top">
+                                                      <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                        <tr>
+                                                          <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                        </tr>
+                                                      </table>
+                                                    </td>
+                                                    <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                    <td class="gutter-xs" width="4" align="left" valign="top">&nbsp;</td>
+                                                  </tr>
+                                                  <!-- DIVIDER -->
+
+                                                </table>
+                                              </td>
+                                            </tr>
+
+                                            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                  <tr>
+                                                    <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                    <td align="left" valign="top">
+
+                                                      <!-- CTA Button -->
+                                                      <table width="180" border="0" cellspacing="0" cellpadding="0" style="min-width: 180px !important;">
+                                                        <tr>
+                                                          <td align="left" valign="top">
+                                                            <a class="btn-url" href="https://www.energyaustralia.com.au/myaccount-login" target="_blank">
+                                                              <table class="" width="100%" bgcolor="#0D8924" border="0" cellspacing="0" cellpadding="0" style="width: 100% !important; border-radius: 5px;">
+                                                                <tr><td class="btn-spacer" height="10" align="left" valign="top">&nbsp;</td></tr>
+                                                                <tr>
+                                                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                                  <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                                  <td align="center" valign="middle" width="100%" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: bold; color: #FFFFFF;">
+                                                                    Login now
+                                                                  </td>
+                                                                  <td class="gutter-s" width="8" align="left" valign="top">&nbsp;</td>
+                                                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                                </tr>
+                                                                <tr><td class="btn-spacer" height="10" align="left" valign="top">&nbsp;</td></tr>
+                                                              </table>
+                                                            </a>
+                                                          </td>
+                                                        </tr>
+                                                      </table>
+                                                      <!-- CTA Button -->
+
+                                                    </td>
+                                                    <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+
+                                            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                            <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                            <tr>
+                                              <td align="left" valign="top">
+                                                Thanks,
+                                              </td>
+                                            </tr>
+
+                                            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                            <tr>
+                                              <td>
+                                                <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                                <br>
+                                                Casey Kaminskyi<br>
+                                                GM - Pods & communities<br>
+                                              </td>
+                                            </tr>
+                                            
+                                          </table>
+                                        </td>
+                                      </tr>
+
+                                    </table>
+                                  </td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- BODY SECTION -->
+
+                    <!-- FOOTER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Company Details -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="0" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                    <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                    ABN 99 086 014 968<br>
+                                    Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="middle" style="font-size: 9px;">
+                                    All rights reserved
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" valign="middle" style="font-size: 9px;">
+                                    <p>Don't miss an email, add <a style="color: #333333 !important; font-size: 9px; letter-spacing: 0;" href="emailto: donotreply@eb.customer.energyaustralia.com.au">donotreply@eb.customer.energyaustralia.com.au</a> to your address book or safe list.</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- FOOTER SECTION -->
+
+                  </table>
+
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+    
+  </body>
+</html>
+
+<!--
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'museo_sans_rounded300';
+    src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded300_italic';
+    src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+         url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded500_italic';
+    src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded700';
+    src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded700_italic';
+    src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded900_italic';
+    src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+    font-weight: normal;
+   font-style: normal;
+}  
+
+.yFix { }
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+body { width: 100%; margin: 0; padding: 0; background-color: #ffffff; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 100%; -webkit-font-smoothing: antialiased; }
+body, table, td, th, span, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 0px !important; }
+table td { border-collapse: collapse; }
+html { width: 100%; height: 100%; }
+
+.header {
+  background-image: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  }
+
+  .subheader {
+  background-image: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group_4.png');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  }
+
+.body-h1 {
+  height: 35px;
+  width: 500px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px; 
+  }
+.body-h2 {
+  height: 30px;
+  width: 500px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+  }
+.body-h3 { 
+  width: 500px;
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  }
+
+.text-h1 {
+  height: 28px;
+  width: 335px;
+  color: #333333;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 68px;
+  margin-left: 20.5px;
+  
+  }
+.text-h2 {
+  height: 24px;
+  width: 185px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 20px;
+  }
+.text-h3 { 
+  height: 22px;
+  width: 295px;
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 20px;}
+
+  .text-h4 { 
+   color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 35px;
+   }
+  .elec_text_benefit {
+    height: 48px;
+    width: 491px;
+    color: #333333;
+   font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-left:10px
+  }
+  .elec_subtext_benefit {
+  height: 39.2px;    
+  width: 491px;    
+  color: #666666;    
+  font-size: 13px;    
+  letter-spacing: 0;    
+  line-height: 19.6px;
+  }
+  .elec {
+    visibility: visible;
+    /* height:1000px;*/
+ border-radius: 0px 0px 5px 5px;    
+  }
+  .eleconly {
+    visibility: visible;
+    height: 1000px
+    border-radius: 0px 0px 5px 5px;    
+  }
+  .gas {
+    visibility: hidden;
+    height: 0px;
+    border-radius: 0px 0px 5px 5px;
+  }
+
+</style>
+
+<body>
+
+<div style="padding-left: 0px; background-color:#EAEAEA; min-width:1200px">
+
+<div style="box-sizing: border-box; margin-left: 25%; height: auto;   width: 50%;  min-width: 601px;  border: 1px solid #EAEAEA; border-bottom: 0px;  border-radius: 5px 5px 0px 0px;  background-color: #FFFFFF;  position: center;">
+ 
+  <div class="header" style="height: 164px;width: 600px; background-color:rgb(18, 70, 18);">
+    <div style="padding-top: 18px; margin-left: 20px; height: 48px;width: 437px;color: #FFFFFF;font-size: 30px;letter-spacing: 0;line-height: 42px"><b>Your [[Account.SingleServiceName]] has been transferred to EnergyAustralia</b></div>
+  </div>
+
+  <div style="margin-left: 20.5px;">
+    <div class="body-h3" style="margin-top: 28px;">Hi [[Account.FirstName]],</div>
+    <div class="body-h3" style="margin-top: 18px;">Great news! Your [[Account.SingleServiceName]] account for [[Account.SiteAddress.AddressLine1]] [[Account.SiteAddress.AddressLine2]], [[Account.SiteAddress.Town]], [[Account.SiteAddress.County]], [[Account.SiteAddress.Postcode]] was transferred to EnergyAustralia on [[Account.PendingSupplyStartDate]].</div>
+    <div class="body-h3" style="margin-top: 18px;">Your [[Account.SingleServiceName]] account number is [[Account.Id]].</div><br>
+  </div>
+
+</div>
+
+<div style="margin-left:25%; width: 50%; min-width:600px; margin-top: 20px;box-sizing: border-box;  height: 164px;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="subheader" style="height: 164px;min-width: 600px;"></div>
+</div>
+
+  <div style="padding-bottom:20px;margin-left:25%; width: 50%; min-width:600px; box-sizing: border-box;  height: auto; border: 0px 1px 1px 1px solid #EAEAEA;  border-radius: 0px 0px 5px 5px;  background-color: #FFFFFF;">
+
+    <div class="text-h1" style="min-width: 500px;padding-top:10px; line-height: 40px"><b>Power at your fingertips with MyAccount 24/7</b></div><br>
+    
+
+    <table  style="margin-left: 28.8px;">
+        <tbody>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Bill.png"></td>
+            <td class = "elec_text_benefit">View your bills and payments.</td>
+          </tr>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Eye.png"></td>
+            <td class = "elec_text_benefit">View your energy plan.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="box-sizing: border-box;  height: 1px;  min-width: 600px;  border: 1px solid #EAEAEA;">
+          <div style="margin-top: 10px;margin-left: 20px; text-align: center; height: 44px;  width: 241px;  border-radius: 5px;  background-color: #0D8924;">
+            <a href="https://www.energyaustralia.com.au/myaccount-login" style="padding-top: 14px; text-decoration: none; height: 30px; width: 181px;color: #FFFFFF; font-size: 20px;letter-spacing: 0;line-height: 42px;">Log in now</a>
+          </div>
+  </div>
+  
+  <div style="margin-left: 25%; width: 50%; min-width:600px;">
+     <div class = "body-h2" style="height: 40px;padding-top: 20px;">Thanks,</div>
+     <div class = "body-h2" style="height: 24px;"><b>Casey Kaminskyj</b></div>
+     <div class = "body-h2">GM - Pods & communities</div>
+  </div>  
+    <div style="margin-left: 25%; width: 50%; min-width:600px;">
+[[INCLUDE:Footer.Supplier]]
+  </div>
+</div>
+</body>
+
+  -->
