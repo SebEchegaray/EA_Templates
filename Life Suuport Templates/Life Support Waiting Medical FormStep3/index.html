@@ -1,3 +1,7 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -108,8 +112,26 @@
                     <tr>
                       <td align="left" valign="top">
                         <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
                           <tr>
+                            <td align="left" valign="top">
+                              Service address:
+                              {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                              {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                              {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                              {{Account.SiteAddress.Postcode}}
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td align="left" valign="top">
+                              Account number: {{Account.Id}}
+                            </td>
+                          </tr>
+
+                          <!--<tr>
                             <td align="left" valign="top">
                               <p><datetime class="datetime">{{General.Today}}</datetime></p>
                             </td>
@@ -140,7 +162,7 @@
                                 Account number: {{Account.Id}}<br />
                               </p>
                             </td>
-                          </tr>
+                          </tr>-->
 
                           <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 

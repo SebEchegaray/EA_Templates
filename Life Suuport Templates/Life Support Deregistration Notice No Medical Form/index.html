@@ -1,3 +1,7 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,43 +106,28 @@
                   
                   <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
-                    [[INCLUDE:Letter.Header]]
+                    [[INCLUDE:Letter.Header.Handlebar]]
                     
                     <!-- BODY SECTION -->
                     <tr>
                       <td align="left" valign="top">
                         <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
                           <tr>
                             <td align="left" valign="top">
-                              <p><datetime class="datetime">{{General.Today}}</datetime></p>
+                              Service address:
+                              {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                              {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                              {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                              {{Account.SiteAddress.Postcode}}
                             </td>
                           </tr>
-
-                          <tr><td class="spacer" height="50" align="left" valign="top">&nbsp;</td></tr>
-
-                          <tr>
-                            <td align="left" valign="top" style="margin-bottom: 1.2em;">
-                              <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
-                              <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
-                              <p>{{Contact.Address.Line3}}</p>
-                              <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
-                            </td>
-                          </tr>
-
+                          
                           <tr>
                             <td align="left" valign="top">
-                              <p>
-                                Service address: {{#if Account.SiteAddress.AddressLine1}}
-                                {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
-                                Account.SiteAddress.AddressLine2}}
-                                {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
-                                Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
-                                {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
-                                {{/if}} {{Account.SiteAddress.Postcode}}
-                                <br /><br />
-                                Account number: {{Account.Id}}<br />
-                              </p>
+                              Account number: {{Account.Id}}
                             </td>
                           </tr>
 

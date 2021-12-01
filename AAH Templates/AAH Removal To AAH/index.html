@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>AAH Removal To AAH</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      .yFix { }
+      .ReadMsgBody { width: 100%; background-color: #ffffff; }
+      .ExternalClass { width: 100%; background-color: #ffffff; }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; background: #FFFFFF;">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  
+                  <!-- HEADER SECTION -->
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        
+                        <!-- EA LOGO -->
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr>
+                            <td align="left" valign="top">
+                              <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Logo_Horizontal.png" alt="" width="217" style="width: 217px;"/>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- EA LOGO -->
+
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- HEADER SECTION -->
+
+                  <!-- BODY SECTION -->
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                          <tr>
+                            <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px; line-height: 40px; font-weight: 700;">
+                              You’ve been removed as an additional account holder
+                            </td>
+                          </tr>
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                <tr>
+                                  <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+                                    Hi [[TasklistItem.Attributes{"firstName"}]],
+                                  </td>
+                                </tr>
+                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                <tr>
+                                  <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+                                    This is a courtesy message to let you know that [[Account.FirstName]] has removed you as an additional account holder from their EnergyAustralia account/s.<br />
+                                  </td>
+                                </tr>
+                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                <tr>
+                                  <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+                                    If you would like to discuss these changes, please call us on <b>1300 258 763</b>.
+                                  </td>
+                                </tr>
+                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                <tr>
+                                  <td align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+                                    Thanks.
+                                  </td>
+                                </tr>
+
+                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                    <br>
+                                    Casey Kaminskyi<br><br>
+                                    GM - Pods & communities<br>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                    <!-- DIVIDER -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                          <tr>
+                            <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- DIVIDER -->
+                  </table>
+                  <!-- BODY SECTION -->
+
+                  <!-- FOOTER SECTION -->
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    <tr>
+                      <td class="gutrer-m mobileOnly" width="32" align="left" valign="top">&nbsp;</td>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Company Details -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                    <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                    ABN 99 086 014 968<br>
+                                    Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="gutrer-m mobileOnly" width="32" align="left" valign="top">&nbsp;</td>
+                    </tr>
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                  </table>
+                  <!-- FOOTER SECTION -->
+
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- EDM MAIN WRAPPER -->
+
+          </td>
+        </tr>
+      </table>
+    </center>
+
+  </body>
+</html>
+
+<!-- 
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'museo_sans_rounded300';
+    src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded300_italic';
+    src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+         url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded500_italic';
+    src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded700';
+    src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded700_italic';
+    src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans_rounded900_italic';
+    src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}  
+.yFix { }
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+body { width: 100%; margin: 0; padding: 0; background-color: #ffffff; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 100%; -webkit-font-smoothing: antialiased; }
+body, table, td, th, span, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 0px !important; }
+table td { border-collapse: collapse; }
+html { width: 100%; height: 100%; }
+  .header {
+  background: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  }
+
+.text-h1 {
+  color: #333333;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 68px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  font-weight: bold;
+  }
+.text-h2 {
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+.text-h3 { 
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+
+  .text-h4 { 
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+   }
+  .elec_text_benefit {
+    color: #333333;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .elec_subtext_benefit {
+  color: #666666;    
+  font-size: 13px;    
+  letter-spacing: 0;    
+  line-height: 19.6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+  div.elec {
+    visibility: visible;
+    /* height:1000px;*/
+ border-radius: 0px 0px 5px 5px;    
+  }
+</style>
+
+<body style="padding-left: 0px;background-color:#EAEAEA; min-width:1200px;">
+
+<!--<div style="background-color:#EAEAEA; width: 100%; height: auto;"> -->
+  <div style="min-width: 600px; margin-left: 25%; box-sizing: border-box; height: auto; width: 50%; border: 1px solid #EAEAEA; border-bottom: 0px;  border-radius: 5px 5px 0px 0px;  background-color: #FFFFFF;">
+ 
+    <div class="header" style="min-height: 164px ; background-color:rgb(18, 70, 18) ; border-radius: 5px 5px 0px 0px; ">
+        <div style="margin-bottom: 10px; border: 0px;padding: 20px; color: #FFFFFF;font-size: 30px;letter-spacing: 0;font-weight: bold;">You’ve been removed
+  </div>
+        <div style="margin-bottom: 10px; border: 0px;padding-left: 20px; color: #FFFFFF;font-size: 30px;letter-spacing: 0;font-weight: bold;">as an additional account holder</div>
+  </div>
+  </div>
+    
+  <div style="width: 50%; min-width: 600px; margin-left: 25%; margin-top: 20px; padding-bottom: 20px; box-sizing: border-box; height: auto ; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="text-h4" style="margin-left: 0px; margin-right: 20px; margin-bottom: 20px;padding:20px;">Hi [[Person.FirstName]],</div>
+    <div class="text-h4" style="margin-left: 0px; margin-right: 20px; margin-bottom: 20px;padding:20px;">This is a courtesy message to let you know that [[Account.FirstName]] has removed you as an additional account holder from their EnergyAustralia account/s.</div>
+    <div class="text-h4" style="margin-left: 0px; margin-right: 20px; margin-bottom: 20px;padding:20px;">If you would like to discuss these changes, please call us on [POD number].</div>
+  </div>
+    
+  <div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+  
+  <div style="width: 50%;min-width: 600px; margin-left: 25%;box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;  background-color: #FFFFFF;">
+    <table style="margin-left: 20px;margin-top: 15.5px;margin-bottom: 15.5px;">
+      <tbody>
+        <tr>
+          <td><div style="vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;"><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"></div></td>
+       </tr>
+        <tr>
+         <td><div style="vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Casey Kaminskyj</div></td>
+        </tr>
+        <tr>
+         <td><div style="vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Community Area Manager</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+  
+  </body>
+ -->
