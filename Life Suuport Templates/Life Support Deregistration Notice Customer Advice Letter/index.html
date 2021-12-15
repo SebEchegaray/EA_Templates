@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Life Support Deregistration Notice Customer Advice</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Deregistration Notice Customer Advice</title>
 
     <!--[if mso]>
     <noscript>
@@ -91,10 +91,10 @@
       }
     </style>
   </head>
-  <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
+  <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11.5pt;">
 
     <center>
-      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; ">
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="100%" cellspacing="0" cellpadding="0" style="width: 100%; ">
         <tr>
           <td align="left" valign="top">
 
@@ -107,11 +107,30 @@
                   <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
                     [[INCLUDE:Letter.Header.Handlebar]]
-                    
-                    <!-- BODY SECTION -->
+
+                    <!-- HEADER SECTION -->
                     <tr>
                       <td align="left" valign="top">
                         <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              Hello {{Account.FirstName}} {{Account.Surname}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              {{#if Account.SiteAddress.AddressLine1}}{{Account.SiteAddress.AddressLine1}}{{/if}}<br>
+                              {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}<br>
+                              {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                              {{Account.SiteAddress.Postcode}}
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
                           <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
                           <tr>
@@ -130,7 +149,17 @@
                               {{Account.SiteAddress.Postcode}}
                             </td>
                           </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- HEADER SECTION -->
 
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                           <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
                           <!-- DIVIDER -->
@@ -144,69 +173,84 @@
                             </td>
                           </tr>
                           <!-- DIVIDER -->
+
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
 
                           <tr>
                             <td align="left" valign="top" style="padding: 1.2em 0;">
                               <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
                                 <tr>
                                   <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                                   <td align="left" valign="top">
-                                    <p style="margin-bottom: 1.2em;">
-                                      <b style="color: #97BF0D !important; font-family: Arial, Helvetica, sans-serif; font-size: 25px; line-height: 30px; font-weight: 700;">We’re deregistering life support from your account</b>
-                                    </p>
-                                    <p>
-                                      Hello {{Account.FirstName}},<br />
-                                      <br />
-                                      You’ve advised us that the person who required life support equipment at 
-                                      {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
-                                      {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
-                                      {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
-                                      {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
-                                      {{Account.SiteAddress.Postcode}} 
-                                      has either left the premises or no longer requires the life support equipment.<br /><br />
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                            Hi {{Account.FirstName}},<br />
+                                            <br />
+                                            You’ve advised us that the person who required life support equipment at 
+                                            {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                            {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                            {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                            {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                            {{Account.SiteAddress.Postcode}} 
+                                            has either left the premises or no longer requires the life support equipment.<br><br>
 
-                                      We will now be deregistering the life support equipment from your {{Account.FuelType}} account. Unless you’ve contacted us to specifically organise an earlier date, the deregistration will take effect on {{date: LifeSupport.DueDate}}.<br /><br />
+                                            We will now be deregistering the life support equipment from your {{Account.FuelType}} account. Unless you’ve contacted us to specifically organise an earlier date, the deregistration will take effect on {{date: LifeSupport.DueDate}}.<br><br>
 
-                                      Once you’re deregistered, your life support equipment won’t be registered with us or {{Account.Distributor.Name}}. This means that you won’t receive protections that apply to customers registered for life support, such as receiving advanced notice of planned interruptions to your power supply.<br /><br />
+                                            Once you’re deregistered, your life support equipment won’t be registered with us or {{Account.Distributor.Name}}. This means that you won’t receive protections that apply to customers registered for life support, such as receiving advanced notice of planned interruptions to your power supply.<br><br>
 
-                                      If you do not want us to deregister life support on your account, please email <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or call us on <b>1300 258 763</b>, Monday to Friday, between 9am – 5pm, before the above deregistration date so that we can keep your life support equipment registration.
-                                    </p>
+                                            If you do not want us to deregister life support on your account, please email <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or call us on <b>1300 258 763</b>, Monday to Friday, between 9am – 5pm, before the above deregistration date so that we can keep your life support equipment registration.
+                                        </td>
+                                      </tr>
+                                    </table>
                                   </td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                                   <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
                                 </tr>
                               </table>
                             </td>
                           </tr>
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="left" valing="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td align="left" valign="top">
+                                          Thanks.<br>
+                                          <br>
+                                          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                          <br>
+                                          Casey Kaminskyi<br>
+                                          GM - Pods & communities<br>
+                                        </td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
                         </table>
                       </td>
                     </tr>
                     <!-- BODY SECTION -->
 
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
                     <!-- FOOTER SECTION -->
                     <tr>
                       <td align="left" valign="top">
                         <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
-                          <tr>
-                            <td align="left" valign="top">
-                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
-                                <tr>
-                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
-                                  <td align="left" valign="top">
-                                    Thanks.<br>
-                                    <br>
-                                    <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
-                                    <br>
-                                    Casey Kaminskyi<br>
-                                    GM - Pods & communities<br>
-                                  </td>
-                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-
-                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
-
+                                      
                           <!-- DIVIDER -->
                           <tr>
                             <td align="left" valign="top">
@@ -220,7 +264,6 @@
                           <!-- DIVIDER -->
 
                           <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
-                          <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
 
                           <!-- Company Details -->
                           <tr>
@@ -243,7 +286,7 @@
                       </td>
                     </tr>
                     <!-- FOOTER SECTION -->
-
+                  
                   </table>
                   
                 </td>
@@ -259,101 +302,3 @@
     
   </body>
 </html>
-
-
-<!-- 
-  <!-- UseHandlebars -->
-<!-- require: Account -->
-<!-- require: LifeSupport -->
-<!-- require: General -->
-<style type="text/css" scoped>
-  .letter-address {
-    display: none;
-  }
-  .header-space {
-    display: none;
-  }
-</style>
-[[INCLUDE:Letter.Header]]
-<tr>
-  <td>
-      <div style="margin-top: 50px;">
-        <p><datetime class="datetime">{{General.Today}}</datetime></p>
-      </div>
-      <div style="margin-top: 50px">
-      <div>
-          <p>{{Account.Title}} {{Account.Firstname}} {{Account.Surname}}</p>            
-          <p>{{Contact.Address.Line1}} {{Contact.Address.Line2}}</p>      
-          <p>{{Contact.Address.Line3}}</p>
-          <p>{{Contact.Address.Town}} {{Contact.Address.County}} {{Contact.Address.PostCode}}</p>
-          <br><br>
-      </div>  
-      <p>
-          Service address: {{#if Account.SiteAddress.AddressLine1}}
-          {{Account.SiteAddress.AddressLine1}}, {{/if}} {{#if
-          Account.SiteAddress.AddressLine2}}
-          {{Account.SiteAddress.AddressLine2}}, {{/if}} {{#if
-          Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
-          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}},
-          {{/if}} {{Account.SiteAddress.Postcode}}
-          <br /><br />
-          Account number: {{Account.Id}}<br />
-      </p>
-      </div>
-  </td>
-</tr>
-<tr>
-    <td>
-      <br />
-      <br />
-      <p>
-        <b>Important – life support equipment deregistration</b
-        ><br />
-      </p>
-      <br />
-      <p>
-        Hello {{Account.FirstName}}<br />
-        <br />
-        You’ve advised us that the person who required life support equipment at your premises has either left the premises or no longer requires life support equipment.<br />
-        <br />
-        This means that we will now be deregistering your life support equipment needs from your account.<br />
-        <br />
-        Unless you’ve contacted us to specifically organise an earlier deregistration date, the deregistration will take effect on {{LifeSupport.RemovedDate}}. <br>
-        <br>
-        Once we’ve deregistered your account, your life support equipment needs won’t be registered with us or your distributor {{Account.Distributor.Name}} (the company responsible for the poles, wires and gas pipes in your area). This means that you won’t receive protections that apply to customers registered for life support, such as receiving advanced notice of planned interruptions to your power supply. <br>
-        <br>
- 
-        <!--if (Account.SiteAddress.County=="Victoria") -->
-        <b>What do you need to do?</b><br />
-        <br />
-        If you do not want us to deregister life support on your account, <b>please contact us before the above deregistration date</b> so that we can maintain life support equipment registration on your account.
-        <br /><br />
-    </td>
-</tr>
-<tr>
-    <td>
-        <p>
-        <b>Any questions?</b><br>
-        <br>
-        If you have any questions please contact us:
-        <ul>
-            <li>Email us at <a href="mailto:podzero@energyaustralia.com.au">podzero@energyaustralia.com.au</a> or</li>
-            <li>Call <b>1300 258 763</b> (Monday to Friday, 8.00am-8.00pm)</li>
-        </ul>
-        <p>
-            Regards<br>
-        <br>
-        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
-        <br>
-        Casey Kaminskyi<br>
-        GM - Pods & communities<br>
-    </td>
-</tr>
-</tfoot>
-</table>
-</div> 
-</div>
-</div>
-</div>
-</body>
- -->
