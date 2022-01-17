@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overcharge Greater than $50</title>
+  <title>Undercharge</title>
 
   <!--[if mso]>
     <noscript>
@@ -140,7 +140,7 @@
                             <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                               <tr>
                                 <td align="left" valign="top">
-                                  <b>We’ve applied a credit to your closed {{Account.SingleServiceName}} account after receiving revised meter data</b>
+                                  <b>We’ve adjusted your {{Account.SingleServiceName}} account based on revised information</b>
                                 </td>
                               </tr>
 
@@ -201,33 +201,25 @@
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        We’ve received revised meter data for your {{Account.SingleServiceName}} account for the billing period [[day] [month] [year] - [day] [month] [year]].
+                                        [Your bill was calculated using incomplete usage data and we’ve received a confirmed meter reading that shows you used more than we had previously billed you for/We recently found an issue with your account set up]. As a result, we unfortunately undercharged you for your {{Account.SingleServiceName}} account for the billing period[s] [impacted start date] - [impacted end date].
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        We’ve now recalculated your bill and found that you were overcharged by $[credit value]. Since we’ve already issued the bill, we’ve applied a credit adjustment for the overcharged amount.
+                                        After we recalculated your account, we found that you were undercharged by $[debit value]. Since we’ve already issued the bill, we’ve applied a debit adjustment for the undercharged amount. [We’re only adjusting for undercharged usage within the last four months and any earlier undercharged amounts have been waived.]
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
-                                        This adjustment [puts your account is in credit by $[account balance]/reduces your account balance to $[account balance]].
+                                        This recent adjustment puts your account balance to $[balance] but you don’t need to pay anything yet, just wait for your next bill which will have a breakdown of the previous adjustments, as well as your current charges.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
-                                        [You don’t need to do anything. The credit will automatically be applied to your next bill and you’ll find a breakdown of the adjusted charges on there too. However, if you’d prefer a refund, you can arrange this by contacting us on [1300 258 763]/We owe you a refund for your final bill, please contact us on [1300 258 763]].
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        [You’ll find a breakdown of the adjusted charges on your next bill and you can view your updated account balance by going to MyAccount./You can view your updated account balance by going to MyAccount.]
+                                        When you receive your next bill, if you have any questions or need more time to pay, please contact us on <b>1300 258 763</b> and we’ll be happy to help.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>

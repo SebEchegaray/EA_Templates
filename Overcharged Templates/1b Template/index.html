@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overcharge Greater than $50</title>
+  <title>1a Template Email</title>
 
   <!--[if mso]>
     <noscript>
@@ -108,7 +108,7 @@
 <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt;">
 
   <center>
-    <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="600" cellspacing="0" cellpadding="0" style="width: 600px; ">
+    <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="100%" cellspacing="0" cellpadding="0" style="width: 100%; ">
       <tr>
         <td align="left" valign="top">
 
@@ -127,49 +127,42 @@
                       <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
 
                         [[INCLUDE:Letter.Header.Handlebar]]
+
+                        <tr>
+                          <td align="left" valign="top">
+                            <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+    
+                              <tr>
+                                <td align="right" valign="top">
+                                  {{Account.FuelType}} Account number: {{Account.Id}}
+                                </td>
+                              </tr>
+    
+                              <tr>
+                                <td align="right" valign="top">
+                                  Service address:
+                                  {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                  {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                  {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                  {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                  {{Account.SiteAddress.Postcode}}
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
                       </table>
                       <!-- HEADER SECTION -->
 
                       <!-- BODY SECTION -->
                       <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                         <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                        <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
 
                         <tr>
                           <td align="left" valign="top">
-
-                            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
-                              <tr>
-                                <td align="left" valign="top">
-                                  <b>We’ve applied a credit to your closed {{Account.SingleServiceName}} account after receiving revised meter data</b>
-                                </td>
-                              </tr>
-
-                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
-
-                              <tr>
-                                <td align="right" valign="top">
-                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
-                                    <tr>
-                                      <td align="right" valign="top">
-                                        {{Account.SingleServiceName}} Account number: {{Account.Id}}
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td align="right" valign="top">
-                                        Service address:
-                                        {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
-                                        {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
-                                        {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
-                                        {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
-                                        {{Account.SiteAddress.Postcode}}
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              
-                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
-                            </table>
 
                             <!-- DIVIDER -->
                             <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
@@ -194,55 +187,63 @@
                                 <td align="left" valign="top">
                                   <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                                     <tr>
+                                      <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
                                       <td align="left" valign="top">
-                                        Hi {{Account.FirstName}},
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              Hi {{Account.FirstName}},
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              We’ve received revised meter data for your {{Account.SingleServiceName}} account for the billing period [[day] [month] [year] - [day] [month] [year]].
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              We’ve now recalculated your bill and found that you were overcharged by $[credit value]. Since we’ve already issued the bill, we’ve applied a credit adjustment for the overcharged amount.
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
+                                              This adjustment [puts your account is in credit by $[account balance]/reduces your account balance to $[account balance]].
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
+                                              [<b>You don’t need to do anything</b>. The credit will automatically be applied to your next bill and you’ll find a breakdown of the adjusted charges on there too. However, if you’d prefer a refund, you can arrange this by contacting us on [1300 258 763]/We owe you a refund for your final bill, please contact us on [1300 258 763]].
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              [You’ll find a breakdown of the adjusted charges on your next bill and you can view your updated account balance by going to <a href="https://www.energyaustralia.com.au/myaccount" target="_blank">MyAccount</a>./You can view your updated account balance by going to <a href="https://www.energyaustralia.com.au/myaccount" target="_blank">MyAccount</a>.]
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              Thanks.
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"><br>
+                                              Casey Kaminskyi<br>
+                                              GM - Pods & communities
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        We’ve received revised meter data for your {{Account.SingleServiceName}} account for the billing period [[day] [month] [year] - [day] [month] [year]].
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        We’ve now recalculated your bill and found that you were overcharged by $[credit value]. Since we’ve already issued the bill, we’ve applied a credit adjustment for the overcharged amount.
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
-                                        This adjustment [puts your account is in credit by $[account balance]/reduces your account balance to $[account balance]].
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        <!-- I need to ask about the IF conditions here. Context and what I'm comparing here -->
-                                        [You don’t need to do anything. The credit will automatically be applied to your next bill and you’ll find a breakdown of the adjusted charges on there too. However, if you’d prefer a refund, you can arrange this by contacting us on [1300 258 763]/We owe you a refund for your final bill, please contact us on [1300 258 763]].
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        [You’ll find a breakdown of the adjusted charges on your next bill and you can view your updated account balance by going to MyAccount./You can view your updated account balance by going to MyAccount.]
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        Thanks.
-                                      </td>
-                                    </tr>
-                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
-                                    <tr>
-                                      <td align="left" valign="top">
-                                        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"><br>
-                                        Casey Kaminskyi<br>
-                                        GM - Pods & communities
-                                      </td>
+                                      <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
                                     </tr>
                                   </table>
                                 </td>
