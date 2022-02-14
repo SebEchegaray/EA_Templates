@@ -1,0 +1,687 @@
+<statement statement-id="ctrl.statementId" account-id="ctrl.accountId"><!-- ngInclude: undefined --><ng-include src="dynamicTemplateUrl"><link rel="stylesheet" href="statement.css">
+<!-- ngIf: !ctrl.statement -->
+<!-- <div id="billDetal" class="statement" ng-init="prefix = 'resource/'"> -->
+<!-- ngIf: ctrl.statement --><div id="billDetail" ng-if="ctrl.statement" class="statement" ng-init="prefix = 'app/custom/energyaustralia/'">
+    <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+    <div class="page first-page">
+        <div class="inner-page">
+            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="page-section header" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                <div class="header-icon">
+                    <img ng-src="images/header-icon.png" src="../Bill%20Images/images%2024.11/header-icon.png">
+                </div>
+
+                <div class="header-text">
+                    <div class="title">Your electricity bill</div>
+                    <div class="company-info">EnergyAustralia Pty Ltd ABN <span class="">99 086 014 968</span></div>
+                    <div class="header-barcode"></div>
+                </div>
+
+                <div class="company-logo">
+                    <img style="width:100px;" ng-src="images/company-logo.jpg" src="../Bill%20Images/images%2024.11/company-logo.jpg">
+                </div>
+            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+            <div class="page-section contact-details">
+
+                <div class="customer-details">
+                    <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="customer-address" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                        <div class="billing-contacts">
+                            <div class="name">
+                                Mr Second Customer
+                            </div>
+                        </div> <div class="address-line"><span ng-bind="ctrl.statement.accountAttributes.address.addressLine1">17</span> <span ng-bind="ctrl.statement.accountAttributes.address.addressLine2">Cecil Street</span></div>
+                        <div class="address-line"><span ng-bind="ctrl.statement.accountAttributes.address.addressLine3"></span> <span ng-bind="ctrl.statement.accountAttributes.address.addressLine4">ELTHAM</span> <span ng-bind="ctrl.statement.accountAttributes.address.additionalDetails.contactAddress.stateOrTerritory">VIC</span>
+                            <span ng-bind="ctrl.statement.accountAttributes.address.postcode">3095</span></div>
+                    </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                    <div class="invoice-details">
+                        <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                        <div class="invoice-detail customer-account-number">
+                            <div class="invoice-detail-name">Electricity account number</div>
+                            <div class="invoice-detail-value" ng-bind="accountId">100000692</div>
+                        </div>
+                        <!-- ngIf: ctrl.statement.accountAttributes.additional.CompanyRegistrationNumber -->
+
+                        <div class="invoice-detail customer-service-address">
+                            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div ng-if="ctrl.brand.attributes.Segment != 'B2B'" class="invoice-detail-name">Service address</div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                            <div class="invoice-detail-value">
+                                <div class="address-line"><span ng-bind="ctrl.statement.bill.sites[0].address.addressLine1">17</span> <span ng-bind="ctrl.statement.bill.sites[0].address.addressLine2">Cecil Street</span></div>
+                                <div class="address-line"><span ng-bind="ctrl.statement.bill.sites[0].address.addressLine3"></span> <span ng-bind="ctrl.statement.bill.sites[0].address.addressLine4">ELTHAM</span> <span ng-bind="ctrl.statement.bill.sites[0].address.additionalDetails.contactAddress.stateOrTerritory">VIC</span>
+                                    <span ng-bind="ctrl.statement.bill.sites[0].address.postcode">3095</span></div>
+
+                            </div>
+                        </div>
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="invoice-detail issue-date" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                            <div class="invoice-detail-name">Tax invoice</div>
+                            <div class="invoice-detail-value">Issue Date <span ng-bind="ctrl.statement.creationDetail.createdDate | date: 'dd MMM yyyy'">04 Oct 2021</span></div>
+                        </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                    </div>
+                </div>
+
+                <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="company-details" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                    <div class="company-details-group enquires-and-complaints">
+                        <div class="contact-heading">Enquiries &amp; complaints</div>
+                        <div class="contact online-account">
+                            <div class="contact-icon"><img ng-src="images/internet.png" src="../Bill%20Images/images%2024.11/internet.png"></div>
+                            <div class="contact-info"><a href="https://energyaustralia.com.au/myaccount" class="">energyaustralia.com.au/myaccount</a>
+                            </div>
+                        </div>
+                        <div class="contact live-chat tbd">
+                            <div class="contact-icon"><img ng-src="images/contact-chat.jpg" src="../Bill%20Images/images%2024.11/contact-chat.jpg"></div>
+                            <div class="contact-info"><a href="https://energyaustralia.com.au/livechat" class="">energyaustralia.com.au/livechat</a>
+                            </div>
+                        </div>
+                        <div class="contact phone">
+                            <div class="contact-icon"><img ng-src="images/contact-phone.png" src="../Bill%20Images/images%2024.11/contact-phone.png"></div>
+                            <div class="contact-info">1300 258 763</div>
+                        </div>
+                    </div>
+
+                    <div class="company-details-group faults-and-emergencies">
+                        <div class="contact-heading">Faults &amp; emergencies (24 hrs)</div>
+                        <div class="contact">
+                            <div class="contact-icon"><img ng-src="images/contact-phone.png" src="../Bill%20Images/images%2024.11/contact-phone.png"></div>
+                            <!-- ngIf: ctrl.networkOperator --><div class="contact-info" ng-if="ctrl.networkOperator">
+                                132 412 (Powercor)
+                            </div><!-- end ngIf: ctrl.networkOperator -->
+                        </div>
+                    </div>
+
+                </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+            </div>
+
+            <div class="page-section bill-details">
+                <div class="bill-breakdown">
+                    <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="bill-breakdown-title" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                        <span style="font-weight: bold">Billing period:</span>
+                        <span ng-bind="ctrl.statement.bill.meteredLineItemsTotal.minDate | date: 'dd MMM yyyy'">15 Feb 2021</span>
+                        to
+                        <span ng-bind="ctrl.statement.bill.meteredLineItemsTotal.maxDate | date: 'dd MMM yyyy'">30 Apr 2021</span>
+                        (<span ng-bind="ctrl.getDateDifference(ctrl.statement.bill.meteredLineItemsTotal.minDate, ctrl.statement.bill.meteredLineItemsTotal.maxDate)+1">75</span>
+                        days)
+                    </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                    <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+                    <table width="100%">
+                        <tbody><tr>
+                            <td class="bill-breakdown-item-title bill-breakdown-pre-bill-balance-title" width="70%">Opening balance
+                                <span ng-bind="ctrl.statement.previousStatement.creationDetail.createdDate || ctrl.statement.bill.meteredLineItemsTotal.minDate | date: 'dd MMM yyyy'">15 Feb 2021</span>
+                            </td>
+                            <td class="bill-breakdown-item-value bill-breakdown-pre-bill-balance-value"><span ng-bind="abs(ctrl.statement.previousStatement.closingBalance ||0)  | currency : '$'">$0.00</span>
+                            </td>
+
+                        </tr>
+                        <!-- ngIf: ctrl.statement.transactionSummary.details.Payment --><tr class="bill-breakdown-item bill-breakdown-payment-received" ng-if="ctrl.statement.transactionSummary.details.Payment">
+                            <td class="bill-breakdown-item-title bill-breakdown-payment-received-title">
+                                Total payment received
+                            </td>
+                            <td class="bill-breakdown-item-value bill-breakdown-payment-received-value"><span ng-bind="abs(ctrl.statement.transactionSummary.totals.Payment) | currency: '$': 2"></span>
+                            </td>
+                            <td><span class="bill-breakdown-value-suffix" ng-bind="debitOrCredit(ctrl.statement.transactionSummary.totals.Payment, 'Cr')"></span>
+                            </td>
+                        </tr><!-- end ngIf: ctrl.statement.transactionSummary.details.Payment -->
+
+                        <!-- ngRepeat: payment in ctrl.statement.transactionSummary.details.Payment -->
+                        <!-- ngRepeat: refund in ctrl.statement.transactionSummary.details.Refund -->
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values --><tr ng-if="ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values">
+                            <td class="bill-breakdown-item-title bill-breakdown-electricity-charges-title">Adjustments since last bill (refer to page 2)</td>
+                            <td class="bill-breakdown-item-value bill-breakdown-electricity-charges-value">
+                                <span ng-bind="abs(ctrl.statement.bill.OtherLineItems.Groups.Adhoc.TotalWithTax) | currency : '$'">$220.00</span>
+                            </td>
+                            <td class="bill-breakdown-value-suffix" ng-bind="debitOrCredit(ctrl.statement.bill.OtherLineItems.Groups.Adhoc.TotalWithTax,'Cr','')">Cr</td>
+                        </tr><!-- end ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values -->
+                        <tr style="border-bottom: solid; border-bottom-width: 1px;: ">
+                            <td class="bill-breakdown-item-title bill-breakdown-pre-bill-balance-title">Balance before this
+                                bill
+                            </td>
+                            <td class="bill-breakdown-item-value bill-breakdown-pre-bill-balance-value"><span ng-bind="abs((ctrl.statement.previousStatement.closingBalance ||0) + (ctrl.statement.transactionSummary.totals.Payment ||0) + (ctrl.statement.bill.OtherLineItems.Groups.Adhoc.TotalWithTax|| 0))  | currency : '$'">$220.00</span>
+                            </td>
+                            <td class="bill-breakdown-value-suffix" ng-bind="debitOrCredit((ctrl.statement.previousStatement.closingBalance ||0) + (ctrl.statement.transactionSummary.totals.Payment  || 0)  + (ctrl.statement.bill.OtherLineItems.Groups.Adhoc.TotalWithTax|| 0),'Cr','')">Cr</td>
+                        </tr>
+                        <!-- ngIf: ctrl.statement.transactionSummary.totals.Other -->
+
+                        <tr>
+                            <td class="bill-breakdown-item-title bill-breakdown-electricity-charges-title">Electricity
+                                charges
+                            </td>
+                            <td class="bill-breakdown-item-value bill-breakdown-electricity-charges-value">
+                                <span ng-bind="abs(ctrl.statement.bill.groupedTotalsWithTax.Electricity +  ctrl.statement.bill.groupedTotalsWithTax.Fixed) | currency : '$'">$331.68</span>
+                            </td>
+                            <td class="bill-breakdown-value-suffix" ng-bind="debitOrCredit(ctrl.statement.bill.groupedTotalsWithTax.Electricity + ctrl.statement.bill.groupedTotalsWithTax.Fixed,'Cr','')"></td>
+                        </tr>
+
+
+                        <!-- ngIf: ctrl.statement.bill.discountTotal.gross --><tr ng-if="ctrl.statement.bill.discountTotal.gross">
+                            <td class="bill-breakdown-item-title bill-breakdown-electricity-discount-title">
+                                Total Plan (Home)
+                                10%
+                                discount on usage &amp; supply
+                            </td>
+                            <td class="bill-breakdown-item-value bill-breakdown-electricity-discount-value">
+                                <span ng-bind="abs(ctrl.statement.bill.discountTotal.gross) | currency : '$'">$11.17</span>
+                            </td>
+                            <td class="bill-breakdown-value-suffix" ng-bind="debitOrCredit(ctrl.statement.bill.discountTotal.gross,'Cr','')">Cr</td>
+                        </tr><!-- end ngIf: ctrl.statement.bill.discountTotal.gross -->
+                        <!-- ngIf: ctrl.statement.bill.groupedTotalsWithTax.Solar -->
+
+
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><tr class="bill-breakdown-item bill-breakdown-total" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                            <td class="bill-breakdown-item-title bill-breakdown-total-title">Total amount payable</td>
+                            <td class="bill-breakdown-item-value bill-breakdown-total-value"><span ng-bind="abs(ctrl.statement.closingBalance) | currency: '$': 2">$100.51</span></td>
+                            <td class="bill-breakdown-value-suffix bill-breakdown-total-suffix" ng-bind="debitOrCredit(ctrl.statement.closingBalance,'Cr','')"></td>
+                        </tr><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><tr ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                            <td style="font-size: x-small">All values shown incl. GST unless stated otherwise</td>
+                        </tr><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                        <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+                    </tbody></table>
+
+                    <div class="bill-breakdown-bill-message">
+                        <img ng-src="images/important.png" src="../Bill%20Images/images%2024.11/important.png">
+                        <div style="padding-top:10px; font-size: x-small">
+                            <ul>
+                                <li>If you have a concession card which is eligible to receive energy concessions or rebates
+                                    and
+                                    your bill does not show a concession or rebate, please call us on 1300 258 763 to
+                                    register your
+                                    concession details.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bill-breakdown-post-amble" style="font-size: x-small">
+                        <div>
+                            The Victorian Default Offer is a reasonably priced electricity offer set by Victoria's
+                            independent regulator.
+                            Call <span class="">1300 258 763</span> to discuss the suitability of this plan for you.
+                            You can go to Victorian Energy Compare to compare other energy plans at <a href="https://compare.energy.vic.gov.au/" class="">compare.energy.vic.gov.au</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bill-ammount-summary" ng-class="{'bill-ammount-summary-b2b': ctrl.brand.attributes.Segment == 'B2B'}">
+                    <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="bill-ammount-summary-container" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                        <div class="bill-ammount-summary-icons">
+                            <div class="bill-ammount-summary-icon-group season">
+                                <div class="bill-ammount-summary-icon-image season-icon"><img ng-src="images/season-Autumn.png" src="../Bill%20Images/images%2024.11/season-Autumn.png">
+                                    <span class="bill-ammount-summary-icon-text season-text">Autumn bill period</span>
+                                </div>
+                            </div>
+                            <div class="bill-ammount-summary-icon-group reading-type">
+                                <div class="bill-ammount-summary-icon-image reading-type-icon"><img ng-src="images/meter-reading.png" src="../Bill%20Images/images%2024.11/meter-reading.png">
+                                    <span class="bill-ammount-summary-icon-text reading-type-text">Actual meter reading</span>
+                                </div>
+                            </div>
+                            <div class="bill-ammount-summary-icon-group eco-friendly tbd">
+                                <div class="bill-ammount-summary-icon-image eco-friendly-icon"></div>
+                                <div class="bill-ammount-summary-icon-text eco-friendly-text">Carbon neutral</div>
+                            </div>
+                        </div>
+                        <div class="bill-ammount-summary-text">
+                            <!-- ngIf: ctrl.statement.bill.discountTotal --><div class="bill-ammount-summary-discounts" ng-if="ctrl.statement.bill.discountTotal">
+                                <div class="bill-ammount-summary-discount-title">Total discounts/rewards <span style="padding-left:10px" ng-bind="abs(ctrl.statement.bill.discountTotal.gross)| currency: '$': 2">$11.17</span><span class="bill-breakdown-value-suffix" ng-bind="debitOrCredit(ctrl.statement.bill.discountTotal.gross,'Cr','')">Cr</span>
+                                </div>
+                            </div><!-- end ngIf: ctrl.statement.bill.discountTotal -->
+                            <div class="bill-ammount-summary-total">
+                                <div class="bill-ammount-summary-total-title"><!-- ngIf: ctrl.statement.closingBalance > 0 --><span ng-if="ctrl.statement.closingBalance > 0">Amount due</span><!-- end ngIf: ctrl.statement.closingBalance > 0 --><!-- ngIf: ctrl.statement.closingBalance < 0 --> <span style="padding-left:30px" ng-bind="ctrl.statement.closingBalance | currency: '$': 2">$100.51</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                    <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="bill-ammount-summary-due-date" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                        <div class="bill-ammount-summary-due-date-title"><!-- ngIf: ctrl.statement.closingBalance > 0 --><span class="bill-ammount-summary-due-date-title" ng-if="ctrl.statement.closingBalance > 0">Pay by</span><!-- end ngIf: ctrl.statement.closingBalance > 0 --><!-- ngIf: ctrl.statement.closingBalance <= 0 -->
+                        </div>
+                        <!-- ngIf: ctrl.statement.closingBalance > 0 --><div class="bill-ammount-summary-due-date-value" ng-if="ctrl.statement.closingBalance > 0" ng-bind="ctrl.statement.collectionDate | date: 'dd MMM yyyy'">18 Oct 2021</div><!-- end ngIf: ctrl.statement.closingBalance > 0 -->
+                    </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                    <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                    <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                    <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+
+
+                    <!-- ngIf: ctrl.statement.cheapestTariff -->
+
+                </div>
+            </div>
+
+            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="page-section payment-options" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                <div class="payment-options-title">Payment options</div>
+                <div class="payment-options-explanation">If your bill has been delayed, you are entitled to an extended
+                    amount of time to pay
+                </div>
+
+                <div class="payment-options-items">
+                    <!-- ngIf: ctrl.statement.accountAttributes.additional['BPay Customer Reference'] --><div class="payment-option" ng-if="ctrl.statement.accountAttributes.additional['BPay Customer Reference']">
+                        <div class="payment-option-title">Bpay</div>
+                        <div class="payment-option-description">To pay fee-free from your savings or cheque account use your
+                            internet or phone banking
+                        </div>
+                        <div class="payment-option-sub-text">
+                            <div class="payment-option-bpay-logo"><img ng-src="images/bpay-logo.png" src="../Bill%20Images/images%2024.11/bpay-logo.png"></div>
+                            <div class="payment-option-bpay-biller-code">Biller code: <span>347674</span></div>
+                            <div class="payment-option-bpay-reference">Ref: <span ng-bind="ctrl.statement.accountAttributes.additional['BPay Customer Reference'] | limitTo:4:0">1012</span>
+                                <span ng-bind="ctrl.statement.accountAttributes.additional['BPay Customer Reference'] | limitTo:4:4">3456</span>
+                                <span ng-bind="ctrl.statement.accountAttributes.additional['BPay Customer Reference'] | limitTo:2:8">78</span>
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: ctrl.statement.accountAttributes.additional['BPay Customer Reference'] -->
+                </div>
+            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="page-section payment-help" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                <div class="payment-help-title">Need help with your bill?</div>
+                <div class="payment-help-description">To request a payment extension visit energyaustralia.com.au/myaccount.
+                    For details on eligible concessions and how to apply, visit energyaustralia.com.au/vic-concessions. To
+                    discuss payment or government assistance including concessions, rebates and the Utility Relief Grant
+                    Scheme, call us on
+                    <span>1300 258 763</span>.
+                </div>
+            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+        </div>
+    </div>
+
+
+    <div class="page-section header">
+        <div class="header-icon" style="text-align: right;">
+            <img ng-src="images/company-logo.jpg" style="width: 75px;" src="../Bill%20Images/images%2024.11/company-logo.jpg">
+        </div>
+    </div>
+    <div class="page second-page" ng-class="{'page-background' : ctrl.brand.attributes.Segment == 'B2B'}">
+        <div class="inner-page">
+
+            <div class="page-section meter-read-details">
+                <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="meter-read-details-title" ng-if="ctrl.brand.attributes.Segment != 'B2B'">Meter read details</div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                <!-- TODO: iterate all sites, meterpoints, and meters -->
+                <table class="meter-reading-for-bill">
+                    <tbody><tr>
+                        <td class="nmi">NMI <span ng-bind="ctrl.statement.bill.sites[0].services[0].meterpoints[0].meterPointNumber">3410000692</span>
+                        </td>
+                        <td class="billing-period">
+                            Billing period
+                            <span style="white-space: nowrap;" ng-bind="ctrl.statement.bill.meteredLineItemsTotal.minDate | date: 'dd MMM yyyy'">15 Feb 2021</span>
+                            to
+                            <span style="white-space: nowrap;" ng-bind="ctrl.statement.bill.meteredLineItemsTotal.maxDate | date: 'dd MMM yyyy'">30 Apr 2021</span>
+                            (<span ng-bind="ctrl.getDateDifference(ctrl.statement.bill.meteredLineItemsTotal.minDate, ctrl.statement.bill.meteredLineItemsTotal.maxDate)+1">75</span>
+                            days)
+                        </td>
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><td class="next-read-date" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                            <img style="width:25px;" ng-src="images/meter.png" src="../Bill%20Images/images%2024.11/meter.png">
+                        </td><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                        <td class="next-read-date">
+                            Next meter read scheduled between
+                            <span style="white-space: nowrap;" ng-bind="ctrl.addDays(ctrl.statement.bill.sites[0].services[0].meterpoints[0].attributes['Next Scheduled Read Date'],-5) |  date: 'dd MMM yyyy'">26 Sep 2021</span>
+                            to
+                            <span style="white-space: nowrap;" ng-bind="ctrl.addDays(ctrl.statement.bill.sites[0].services[0].meterpoints[0].attributes['Next Scheduled Read Date'],5) |  date: 'dd MMM yyyy'">06 Oct 2021</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="meter-number">Meter number <span ng-bind="ctrl.statement.bill.sites[0].services[0].meterpoints[0].meters[0]">MG07K04003</span></td>
+                        <td class="service-address">Service address: <span ng-bind="ctrl.statement.bill.sites[0].address.additionalDetails.contactAddress.additionalInformation.FullAddress">17 Cecil Street, ELTHAM VIC 3095</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody></table>
+
+            </div>
+
+            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="page-section usage-details" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                <div class="usage-details-title">Usage &amp; service calculations</div>
+                <table>
+                    <tbody><tr>
+                        <th class="product"></th>
+                        <th class="usage">Usage</th>
+                        <th class="rate">Charge / Rate</th>
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <th class="total">Total $</th>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight: bold;"><span ng-bind="ctrl.statement.bill.meteredLineItemsTotal.minDate | date: 'dd MMM yyyy'">15 Feb 2021</span>
+                            to
+                            <span ng-bind="ctrl.statement.bill.meteredLineItemsTotal.maxDate | date: 'dd MMM yyyy'">30 Apr 2021</span>
+                            (<span ng-bind="ctrl.getDateDifference(ctrl.statement.bill.meteredLineItemsTotal.minDate, ctrl.statement.bill.meteredLineItemsTotal.maxDate)+1">75</span>
+                            days)
+                        </td>
+                    </tr>
+                    <!-- TODO: for each product -->
+                    <tr class="product">
+                        <td class="product-name" colspan="5"><span ng-bind="ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].name">Total Plan (Home)</span>
+                            Charges
+                        </td>
+                    </tr>
+                    <!-- TODO: for each component -->
+                    <!-- ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values --><!-- ngIf: component.Units >0 --><tr class="component charge" ng-repeat="component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values" ng-if="component.Units >0">
+                        <td class="component-name"><span ng-bind="component.AdditionalDetails.Description">Peak (First 11.178 kWh/day)</span></td>
+                        <td class="usage"><span ng-bind="component.Units">780.493</span> <span>kWh</span></td>
+                        <td class="rate">$<span ng-bind="component.AdjustedUnitRate /100.0  | number:6">0.270300</span> per kWh</td>
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <td class="total" style="text-align:left;"><span ng-bind="component.AdjustedChargeValue | currency :'$'">$210.97</span></td>
+                        <td width="10%"></td>
+                    </tr><!-- end ngIf: component.Units >0 --><!-- end ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values --><!-- ngIf: component.Units >0 --><tr class="component charge" ng-repeat="component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values" ng-if="component.Units >0">
+                        <td class="component-name"><span ng-bind="component.AdditionalDetails.Description">Peak (Balance of usage &gt; 11.178 kWh/day)</span></td>
+                        <td class="usage"><span ng-bind="component.Units">115.863</span> <span>kWh</span></td>
+                        <td class="rate">$<span ng-bind="component.AdjustedUnitRate /100.0  | number:6">0.288200</span> per kWh</td>
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <td class="total" style="text-align:left;"><span ng-bind="component.AdjustedChargeValue | currency :'$'">$33.39</span></td>
+                        <td width="10%"></td>
+                    </tr><!-- end ngIf: component.Units >0 --><!-- end ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values -->
+                    <!-- ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.StandingCharge.$values --><tr class="component charge" ng-repeat="component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.StandingCharge.$values">
+                        <td class="component-name"><span ng-bind="component.AdditionalDetails.Description">Supply Charge</span></td>
+                        <td class="usage"><span ng-bind="component.Units">75</span> days</td>
+                        <td class="rate">$<span ng-bind="component.AdjustedUnitRate /100.0 | number:6">1.164295</span> per day</td>
+
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <td class="total" style="text-align:left;"><span ng-bind="component.AdjustedChargeValue | currency :'$'">$87.32</span></td>
+                    </tr><!-- end ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.StandingCharge.$values -->
+                    <tr>
+                        <td>Discounts &amp; Credits</td>
+                    </tr>
+                    <!-- ngRepeat: lineitem in ctrl.statement.bill.OtherLineItems.Groups.Additional.LineItems.$values --><tr class="component charge" ng-repeat="lineitem in ctrl.statement.bill.OtherLineItems.Groups.Additional.LineItems.$values">
+                        <td colspan="3" class="component-name"> Discount
+                            10%
+                        </td>
+
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <td class="total" style="text-align:left;"><span ng-bind="abs(lineitem.AdjustedAmount) | currency : '$'">$11.17</span> <span ng-bind="debitOrCredit(lineitem.AdjustedAmount,'Cr','')">Cr</span></td>
+                    </tr><!-- end ngRepeat: lineitem in ctrl.statement.bill.OtherLineItems.Groups.Additional.LineItems.$values -->
+
+                    <!-- ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values --><!-- ngIf: component.Units <=0 --><!-- end ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values --><!-- ngIf: component.Units <=0 --><!-- end ngRepeat: component in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].rawLineItems.UnitCharge.$values -->
+
+                    <!-- ngRepeat: transaction in ctrl.statement.transactionSummary.details.Other -->
+
+                    <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc --><tr ng-if="ctrl.statement.bill.OtherLineItems.Groups.Adhoc">
+                        <td>Adjustments since last bill</td>
+                    </tr><!-- end ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc -->
+                    <!-- ngRepeat: lineitem in ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values --><tr class="component charge" ng-repeat="lineitem in ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values">
+                        <td colspan="3" class="component-name">
+                            Foundation Discount Adjustment 01 Apr 2021 - 30 Apr 2021
+                        </td>
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                        <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length==1 --><td class="total" style="text-align:left;" ng-if="ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length==1"><span ng-bind="abs(lineitem.AdjustedAmount) | currency : '$'">$220.00</span> <span ng-bind="debitOrCredit(lineitem.AdjustedAmount,'Cr','')">Cr</span></td><!-- end ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length==1 -->
+                    </tr><!-- end ngRepeat: lineitem in ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values -->
+                    <!-- ngIf: ctrl.statement.bill.OtherLineItems.Groups.Adhoc.LineItems.$values.length>1 -->
+                    <tr class="usage-details-total">
+                        <td>Total current charges (incl. GST of <span ng-bind="ctrl.statement.bill.total.tax | currency :'$'">$9.14</span>)
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td style="text-align:left;"><span ng-bind="ctrl.statement.bill.total.gross + (ctrl.statement.transactionSummary.totals.Other ||0) | currency :'$'">$100.51</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:xx-small">All rates shown above include GST</td>
+                    </tr>
+                </tbody></table>
+            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+
+            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+            <div class="page-section ">
+                <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="usage-comparison-title" ng-if="ctrl.brand.attributes.Segment != 'B2B'">Your electricity usage</div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                <div class="usage-comparison">
+                    <div class="usage-comparison-historic">
+
+                        <div class="usage-comparison-annual">
+                            <!-- ngIf: ctrl.statement.HistoricConsumption.LastYearAverage && ctrl.brand.attributes.Segment != 'B2B' --><div ng-if="ctrl.statement.HistoricConsumption.LastYearAverage &amp;&amp; ctrl.brand.attributes.Segment != 'B2B'">Your usage has <!-- ngIf: ctrl.statement.BenchmarkUsage > ctrl.statement.HistoricConsumption.LastYearAverage --><!-- ngIf: ctrl.statement.BenchmarkUsage <= ctrl.statement.HistoricConsumption.LastYearAverage --><span ng-if="ctrl.statement.BenchmarkUsage <= ctrl.statement.HistoricConsumption.LastYearAverage">decreased</span><!-- end ngIf: ctrl.statement.BenchmarkUsage <= ctrl.statement.HistoricConsumption.LastYearAverage -->
+                                4%
+                                compared to the same time last year.
+                            </div><!-- end ngIf: ctrl.statement.HistoricConsumption.LastYearAverage && ctrl.brand.attributes.Segment != 'B2B' -->
+
+                            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div style="font-size: smaller" ng-if="ctrl.brand.attributes.Segment != 'B2B'">Visit www.energyaustralia.com.au/energytips for energy savings
+                                tips.
+                            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+                            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+                            <billing-consumption-history data="ctrl.statement.HistoricConsumption"><table style="">
+    <tbody><tr>
+
+        <td style="padding-left: 70px; font-size: smaller">Winter</td>
+        <td style="padding-left: 20px; font-size: smaller">Spring</td>
+        <td style="padding-left: 20px; font-size: smaller">Summer</td>
+        <td style="padding-left: 20px; font-size: smaller">Autumn</td>
+        <td style="padding-left: 20px; font-size: smaller">Winter</td>
+    </tr>
+</tbody></table>
+<angular-chart options="consumptionHistoryOptions" class="text-align-center c3" id="chartid213471570" style="display: block; max-height: 250px; position: relative;"><svg width="400" height="250" style="overflow: hidden;"><defs><clipPath id="c3-1637278192788-clip"><rect width="280" height="166"></rect></clipPath><clipPath id="c3-1637278192788-clip-xaxis"><rect x="-61" y="-20" width="402" height="100"></rect></clipPath><clipPath id="c3-1637278192788-clip-yaxis"><rect x="-59" y="-4" width="80" height="190"></rect></clipPath><clipPath id="c3-1637278192788-clip-grid"><rect width="280" height="166"></rect></clipPath><clipPath id="c3-1637278192788-clip-subchart"><rect width="280"></rect></clipPath></defs><g transform="translate(60.5,4.5)"><text class="c3-text c3-empty" text-anchor="middle" dominant-baseline="middle" x="140" y="83" style="opacity: 0;"></text><rect class="c3-zoom-rect" width="280" height="166" style="opacity: 0;"></rect><g clip-path="url(http://localhost/#c3-1637278192788-clip)" class="c3-regions" style="visibility: visible;"></g><g clip-path="url(http://localhost/#c3-1637278192788-clip-grid)" class="c3-grid" style="visibility: visible;"><g class="c3-xgrid-focus"><line class="c3-xgrid-focus" x1="-10" x2="-10" y1="0" y2="166" style="visibility: hidden;"></line></g></g><g clip-path="url(http://localhost/#c3-1637278192788-clip)" class="c3-chart"><g class="c3-event-rects c3-event-rects-single" style="fill-opacity: 0;"><rect class=" c3-event-rect c3-event-rect-0" x="0" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-1" x="19" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-2" x="38" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-3" x="56" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-4" x="75" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-5" x="94" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-6" x="112" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-7" x="131" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-8" x="150" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-9" x="168" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-10" x="187" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-11" x="206" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-12" x="224" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-13" x="243" y="0" width="20" height="166"></rect><rect class=" c3-event-rect c3-event-rect-14" x="262" y="0" width="20" height="166"></rect></g><g class="c3-chart-bars"><g class="c3-chart-bar c3-target c3-target-Greenhouse" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-Greenhouse c3-bars c3-bars-Greenhouse" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-LastYear" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-LastYear c3-bars c3-bars-LastYear" style="cursor: pointer;"><path class=" c3-shape c3-shape-0 c3-bar c3-bar-0" d="M 5,166 L5,166 L8.333333333333334,166 L8.333333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-1 c3-bar c3-bar-1" d="M 24,166 L24,76.06933097847646 L27.333333333333332,76.06933097847646 L27.333333333333332,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-2 c3-bar c3-bar-2" d="M 43,166 L43,57.05221520189807 L46.333333333333336,57.05221520189807 L46.333333333333336,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-3 c3-bar c3-bar-3" d="M 61,166 L61,166 L64.33333333333333,166 L64.33333333333333,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-4 c3-bar c3-bar-4" d="M 80,166 L80,166 L83.33333333333333,166 L83.33333333333333,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-5 c3-bar c3-bar-5" d="M 99,166 L99,166 L102.33333333333333,166 L102.33333333333333,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-6 c3-bar c3-bar-6" d="M 117,166 L117,166 L120.33333333333333,166 L120.33333333333333,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-7 c3-bar c3-bar-7" d="M 136,166 L136,166 L139.33333333333334,166 L139.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-8 c3-bar c3-bar-8" d="M 155,166 L155,166 L158.33333333333334,166 L158.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-9 c3-bar c3-bar-9" d="M 173,166 L173,166 L176.33333333333334,166 L176.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-10 c3-bar c3-bar-10" d="M 192,166 L192,166 L195.33333333333334,166 L195.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-11 c3-bar c3-bar-11" d="M 211,166 L211,166 L214.33333333333334,166 L214.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-12 c3-bar c3-bar-12" d="M 229,166 L229,166 L232.33333333333334,166 L232.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-13 c3-bar c3-bar-13" d="M 248,166 L248,166 L251.33333333333334,166 L251.33333333333334,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path><path class=" c3-shape c3-shape-14 c3-bar c3-bar-14" d="M 267,166 L267,166 L270.3333333333333,166 L270.3333333333333,166 z" style="stroke: rgb(50, 50, 50); fill: rgb(50, 50, 50); opacity: 1;"></path></g></g><g class="c3-chart-bar c3-target c3-target-Other" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-Other c3-bars c3-bars-Other" style="cursor: pointer;"><path class=" c3-shape c3-shape-0 c3-bar c3-bar-0" d="M 8.333333333333334,166 L8.333333333333334,83.86326377690061 L11.666666666666668,83.86326377690061 L11.666666666666668,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-1 c3-bar c3-bar-1" d="M 27.333333333333332,166 L27.333333333333332,166 L30.666666666666664,166 L30.666666666666664,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-2 c3-bar c3-bar-2" d="M 46.333333333333336,166 L46.333333333333336,166 L49.66666666666667,166 L49.66666666666667,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-3 c3-bar c3-bar-3" d="M 64.33333333333333,166 L64.33333333333333,16.850187937640875 L67.66666666666666,16.850187937640875 L67.66666666666666,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-4 c3-bar c3-bar-4" d="M 83.33333333333333,166 L83.33333333333333,1 L86.66666666666666,1 L86.66666666666666,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-5 c3-bar c3-bar-5" d="M 102.33333333333333,166 L102.33333333333333,4.342478162603694 L105.66666666666666,4.342478162603694 L105.66666666666666,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-6 c3-bar c3-bar-6" d="M 120.33333333333333,166 L120.33333333333333,73.64272393305681 L123.66666666666666,73.64272393305681 L123.66666666666666,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-7 c3-bar c3-bar-7" d="M 139.33333333333334,166 L139.33333333333334,77.47047334750911 L142.66666666666669,77.47047334750911 L142.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-8 c3-bar c3-bar-8" d="M 158.33333333333334,166 L158.33333333333334,78.42596868060633 L161.66666666666669,78.42596868060633 L161.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-9 c3-bar c3-bar-9" d="M 176.33333333333334,166 L176.33333333333334,75.09828690242594 L179.66666666666669,75.09828690242594 L179.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-10 c3-bar c3-bar-10" d="M 195.33333333333334,166 L195.33333333333334,81.77772593174663 L198.66666666666669,81.77772593174663 L198.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-11 c3-bar c3-bar-11" d="M 214.33333333333334,166 L214.33333333333334,62.91158343352116 L217.66666666666669,62.91158343352116 L217.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-12 c3-bar c3-bar-12" d="M 232.33333333333334,166 L232.33333333333334,72.75719794324937 L235.66666666666669,72.75719794324937 L235.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-13 c3-bar c3-bar-13" d="M 251.33333333333334,166 L251.33333333333334,166 L254.66666666666669,166 L254.66666666666669,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path><path class=" c3-shape c3-shape-14 c3-bar c3-bar-14" d="M 270.3333333333333,166 L270.3333333333333,166 L273.66666666666663,166 L273.66666666666663,166 z" style="stroke: rgb(150, 150, 150); fill: rgb(150, 150, 150); opacity: 1;"></path></g></g><g class="c3-chart-bar c3-target c3-target-CurrentPeriod" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-CurrentPeriod c3-bars c3-bars-CurrentPeriod" style="cursor: pointer;"><path class=" c3-shape c3-shape-0 c3-bar c3-bar-0" d="M 11.666666666666666,166 L11.666666666666666,166 L15,166 L15,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-1 c3-bar c3-bar-1" d="M 30.666666666666668,166 L30.666666666666668,166 L34,166 L34,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-2 c3-bar c3-bar-2" d="M 49.666666666666664,166 L49.666666666666664,166 L53,166 L53,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-3 c3-bar c3-bar-3" d="M 67.66666666666667,166 L67.66666666666667,166 L71,166 L71,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-4 c3-bar c3-bar-4" d="M 86.66666666666667,166 L86.66666666666667,166 L90,166 L90,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-5 c3-bar c3-bar-5" d="M 105.66666666666667,166 L105.66666666666667,166 L109,166 L109,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-6 c3-bar c3-bar-6" d="M 123.66666666666667,166 L123.66666666666667,166 L127,166 L127,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-7 c3-bar c3-bar-7" d="M 142.66666666666666,166 L142.66666666666666,166 L146,166 L146,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-8 c3-bar c3-bar-8" d="M 161.66666666666666,166 L161.66666666666666,166 L165,166 L165,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-9 c3-bar c3-bar-9" d="M 179.66666666666666,166 L179.66666666666666,166 L183,166 L183,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-10 c3-bar c3-bar-10" d="M 198.66666666666666,166 L198.66666666666666,166 L202,166 L202,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-11 c3-bar c3-bar-11" d="M 217.66666666666666,166 L217.66666666666666,166 L221,166 L221,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-12 c3-bar c3-bar-12" d="M 235.66666666666666,166 L235.66666666666666,166 L239,166 L239,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-13 c3-bar c3-bar-13" d="M 254.66666666666666,166 L254.66666666666666,71.22840541029377 L258,71.22840541029377 L258,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path><path class=" c3-shape c3-shape-14 c3-bar c3-bar-14" d="M 273.6666666666667,166 L273.6666666666667,84.91104842301093 L277,84.91104842301093 L277,166 z" style="stroke: rgb(130, 189, 0); fill: rgb(130, 189, 0); opacity: 1;"></path></g></g></g><g class="c3-chart-lines"><g class="c3-chart-line c3-target c3-target-Greenhouse" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-Greenhouse c3-lines c3-lines-Greenhouse"><path class=" c3-shape c3-shape c3-line c3-line-Greenhouse" d="M10,83.91772151898735L29,76.18987341772151L48,57.183544303797476L66,16.87341772151898L85,1L104,4.341772151898733L122,73.68354430379746L141,77.44303797468355L160,78.48734177215188L178,75.14556962025316L197,86.84177215189874L216,69.0886075949367L234,78.27848101265823L253,76.81645569620254L272,89.76582278481013" style="stroke: rgb(20, 20, 20); opacity: 1;"></path></g><g class=" c3-shapes c3-shapes-Greenhouse c3-areas c3-areas-Greenhouse"><path class=" c3-shape c3-shape c3-area c3-area-Greenhouse" d="M 10 83.91772151898735" style="fill: rgb(20, 20, 20); opacity: 0.2;"></path></g><g class=" c3-selected-circles c3-selected-circles-Greenhouse"></g><g class=" c3-shapes c3-shapes-Greenhouse c3-circles c3-circles-Greenhouse" style="cursor: pointer;"><circle class=" c3-shape c3-shape-0 c3-circle c3-circle-0" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="10" cy="83.91772151898735"></circle><circle class=" c3-shape c3-shape-1 c3-circle c3-circle-1" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="29" cy="76.18987341772151"></circle><circle class=" c3-shape c3-shape-2 c3-circle c3-circle-2" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="48" cy="57.183544303797476"></circle><circle class=" c3-shape c3-shape-3 c3-circle c3-circle-3" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="66" cy="16.87341772151898"></circle><circle class=" c3-shape c3-shape-4 c3-circle c3-circle-4" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="85" cy="1"></circle><circle class=" c3-shape c3-shape-5 c3-circle c3-circle-5" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="104" cy="4.341772151898733"></circle><circle class=" c3-shape c3-shape-6 c3-circle c3-circle-6" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="122" cy="73.68354430379746"></circle><circle class=" c3-shape c3-shape-7 c3-circle c3-circle-7" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="141" cy="77.44303797468355"></circle><circle class=" c3-shape c3-shape-8 c3-circle c3-circle-8" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="160" cy="78.48734177215188"></circle><circle class=" c3-shape c3-shape-9 c3-circle c3-circle-9" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="178" cy="75.14556962025316"></circle><circle class=" c3-shape c3-shape-10 c3-circle c3-circle-10" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="197" cy="86.84177215189874"></circle><circle class=" c3-shape c3-shape-11 c3-circle c3-circle-11" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="216" cy="69.0886075949367"></circle><circle class=" c3-shape c3-shape-12 c3-circle c3-circle-12" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="234" cy="78.27848101265823"></circle><circle class=" c3-shape c3-shape-13 c3-circle c3-circle-13" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="253" cy="76.81645569620254"></circle><circle class=" c3-shape c3-shape-14 c3-circle c3-circle-14" r="2.5" style="fill: rgb(20, 20, 20); opacity: 1;" cx="272" cy="89.76582278481013"></circle></g></g><g class="c3-chart-line c3-target c3-target-LastYear" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-LastYear c3-lines c3-lines-LastYear"></g><g class=" c3-shapes c3-shapes-LastYear c3-areas c3-areas-LastYear"></g><g class=" c3-selected-circles c3-selected-circles-LastYear"></g><g class=" c3-shapes c3-shapes-LastYear c3-circles c3-circles-LastYear" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-Other" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-Other c3-lines c3-lines-Other"></g><g class=" c3-shapes c3-shapes-Other c3-areas c3-areas-Other"></g><g class=" c3-selected-circles c3-selected-circles-Other"></g><g class=" c3-shapes c3-shapes-Other c3-circles c3-circles-Other" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-CurrentPeriod" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-CurrentPeriod c3-lines c3-lines-CurrentPeriod"></g><g class=" c3-shapes c3-shapes-CurrentPeriod c3-areas c3-areas-CurrentPeriod"></g><g class=" c3-selected-circles c3-selected-circles-CurrentPeriod"></g><g class=" c3-shapes c3-shapes-CurrentPeriod c3-circles c3-circles-CurrentPeriod" style="cursor: pointer;"></g></g></g><g class="c3-chart-arcs" transform="translate(140,78)"><text class="c3-chart-arcs-title" style="text-anchor: middle; opacity: 0;"></text></g><g class="c3-chart-texts"><g class="c3-chart-text c3-target c3-target-Greenhouse" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-Greenhouse"><text class=" c3-text c3-text-0" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="10" y="77.91772151898735"></text><text class=" c3-text c3-text-1" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="29" y="70.18987341772151"></text><text class=" c3-text c3-text-2" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="48" y="51.183544303797476"></text><text class=" c3-text c3-text-3" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="66" y="10.87341772151898"></text><text class=" c3-text c3-text-4" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="85" y="-5"></text><text class=" c3-text c3-text-5" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="104" y="-1.6582278481012667"></text><text class=" c3-text c3-text-6" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="122" y="67.68354430379746"></text><text class=" c3-text c3-text-7" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="141" y="71.44303797468355"></text><text class=" c3-text c3-text-8" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="160" y="72.48734177215188"></text><text class=" c3-text c3-text-9" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="178" y="69.14556962025316"></text><text class=" c3-text c3-text-10" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="197" y="80.84177215189874"></text><text class=" c3-text c3-text-11" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="216" y="63.088607594936704"></text><text class=" c3-text c3-text-12" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="234" y="72.27848101265823"></text><text class=" c3-text c3-text-13" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="253" y="70.81645569620254"></text><text class=" c3-text c3-text-14" text-anchor="middle" style="stroke: none; fill: rgb(20, 20, 20); fill-opacity: 1;" x="272" y="83.76582278481013"></text></g></g><g class="c3-chart-text c3-target c3-target-LastYear" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-LastYear"><text class=" c3-text c3-text-0" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="6.666666666666667" y="163"></text><text class=" c3-text c3-text-1" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="25.666666666666664" y="73.06933097847646"></text><text class=" c3-text c3-text-2" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="44.66666666666667" y="54.05221520189807"></text><text class=" c3-text c3-text-3" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="62.666666666666664" y="163"></text><text class=" c3-text c3-text-4" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="81.66666666666666" y="163"></text><text class=" c3-text c3-text-5" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="100.66666666666666" y="163"></text><text class=" c3-text c3-text-6" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="118.66666666666666" y="163"></text><text class=" c3-text c3-text-7" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="137.66666666666669" y="163"></text><text class=" c3-text c3-text-8" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="156.66666666666669" y="163"></text><text class=" c3-text c3-text-9" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="174.66666666666669" y="163"></text><text class=" c3-text c3-text-10" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="193.66666666666669" y="163"></text><text class=" c3-text c3-text-11" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="212.66666666666669" y="163"></text><text class=" c3-text c3-text-12" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="230.66666666666669" y="163"></text><text class=" c3-text c3-text-13" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="249.66666666666669" y="163"></text><text class=" c3-text c3-text-14" text-anchor="middle" style="stroke: none; fill: rgb(50, 50, 50); fill-opacity: 1;" x="268.66666666666663" y="163"></text></g></g><g class="c3-chart-text c3-target c3-target-Other" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-Other"><text class=" c3-text c3-text-0" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="10" y="80.86326377690061"></text><text class=" c3-text c3-text-1" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="29" y="163"></text><text class=" c3-text c3-text-2" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="48" y="163"></text><text class=" c3-text c3-text-3" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="66" y="13.850187937640875"></text><text class=" c3-text c3-text-4" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="85" y="-2"></text><text class=" c3-text c3-text-5" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="104" y="1.342478162603694"></text><text class=" c3-text c3-text-6" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="122" y="70.64272393305681"></text><text class=" c3-text c3-text-7" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="141" y="74.47047334750911"></text><text class=" c3-text c3-text-8" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="160" y="75.42596868060633"></text><text class=" c3-text c3-text-9" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="178" y="72.09828690242594"></text><text class=" c3-text c3-text-10" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="197" y="78.77772593174663"></text><text class=" c3-text c3-text-11" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="216" y="59.91158343352116"></text><text class=" c3-text c3-text-12" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="234" y="69.75719794324937"></text><text class=" c3-text c3-text-13" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="253" y="163"></text><text class=" c3-text c3-text-14" text-anchor="middle" style="stroke: none; fill: rgb(150, 150, 150); fill-opacity: 1;" x="272" y="163"></text></g></g><g class="c3-chart-text c3-target c3-target-CurrentPeriod" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-CurrentPeriod"><text class=" c3-text c3-text-0" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="13.333333333333332" y="163"></text><text class=" c3-text c3-text-1" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="32.333333333333336" y="163"></text><text class=" c3-text c3-text-2" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="51.33333333333333" y="163"></text><text class=" c3-text c3-text-3" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="69.33333333333334" y="163"></text><text class=" c3-text c3-text-4" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="88.33333333333334" y="163"></text><text class=" c3-text c3-text-5" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="107.33333333333334" y="163"></text><text class=" c3-text c3-text-6" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="125.33333333333334" y="163"></text><text class=" c3-text c3-text-7" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="144.33333333333331" y="163"></text><text class=" c3-text c3-text-8" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="163.33333333333331" y="163"></text><text class=" c3-text c3-text-9" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="181.33333333333331" y="163"></text><text class=" c3-text c3-text-10" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="200.33333333333331" y="163"></text><text class=" c3-text c3-text-11" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="219.33333333333331" y="163"></text><text class=" c3-text c3-text-12" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="237.33333333333331" y="163"></text><text class=" c3-text c3-text-13" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="256.3333333333333" y="68.22840541029377"></text><text class=" c3-text c3-text-14" text-anchor="middle" style="stroke: none; fill: rgb(130, 189, 0); fill-opacity: 1;" x="275.33333333333337" y="81.91104842301093"></text></g></g></g></g><g clip-path="url(http://localhost/#c3-1637278192788-clip-grid)" class="c3-grid c3-grid-lines"><g class="c3-xgrid-lines"></g><g class="c3-ygrid-lines"></g></g><g class="c3-axis c3-axis-x" clip-path="url(http://localhost/#c3-1637278192788-clip-xaxis)" transform="translate(0,166)" style="visibility: visible; opacity: 1;"><text class="c3-axis-x-label" transform="" style="text-anchor: end;" x="280" dx="-0.5em" dy="-0.5em"></text><g class="tick" transform="translate(10, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Feb 20</tspan></text></g><g class="tick" transform="translate(29, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Mar 20</tspan></text></g><g class="tick" transform="translate(48, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Apr 20</tspan></text></g><g class="tick" transform="translate(66, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">May 20</tspan></text></g><g class="tick" transform="translate(85, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jun 20</tspan></text></g><g class="tick" transform="translate(104, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jul 20</tspan></text></g><g class="tick" transform="translate(122, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Aug 20</tspan></text></g><g class="tick" transform="translate(141, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Sep 20</tspan></text></g><g class="tick" transform="translate(160, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Oct 20</tspan></text></g><g class="tick" transform="translate(178, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Nov 20</tspan></text></g><g class="tick" transform="translate(197, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Dec 20</tspan></text></g><g class="tick" transform="translate(216, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jan 21</tspan></text></g><g class="tick" transform="translate(234, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Feb 21</tspan></text></g><g class="tick" transform="translate(253, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Mar 21</tspan></text></g><g class="tick" transform="translate(272, 0)" style="opacity: 1;"><line y2="0" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Apr 21</tspan></text></g><path class="domain" d="M0,6V0H280V6"></path></g><g class="c3-axis c3-axis-y" clip-path="url(http://localhost/#c3-1637278192788-clip-yaxis)" transform="translate(0,0)" style="visibility: visible; opacity: 1;"><text class="c3-axis-y-label" transform="rotate(-90)" style="text-anchor: middle;" x="-83" dx="0" dy="-37.123046875">Total monthly usage (kWh)</text><g class="tick" transform="translate(0,166)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,154)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">50</tspan></text></g><g class="tick" transform="translate(0,141)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">100</tspan></text></g><g class="tick" transform="translate(0,129)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">150</tspan></text></g><g class="tick" transform="translate(0,116)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">200</tspan></text></g><g class="tick" transform="translate(0,104)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">250</tspan></text></g><g class="tick" transform="translate(0,91)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">300</tspan></text></g><g class="tick" transform="translate(0,79)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">350</tspan></text></g><g class="tick" transform="translate(0,66)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">400</tspan></text></g><g class="tick" transform="translate(0,54)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">450</tspan></text></g><g class="tick" transform="translate(0,41)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">500</tspan></text></g><g class="tick" transform="translate(0,29)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">550</tspan></text></g><g class="tick" transform="translate(0,16)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">600</tspan></text></g><g class="tick" transform="translate(0,3)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">650</tspan></text></g><path class="domain" d="M-6,1H0V166H-6"></path></g><g class="c3-axis c3-axis-y2" transform="translate(280,0)" style="visibility: visible; opacity: 1;"><text class="c3-axis-y2-label" transform="rotate(-90)" style="text-anchor: middle;" x="-83" dx="0" dy="49.9013671875">Greenhouse gas emissions (Tonnes)</text><g class="tick" transform="translate(0,166)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.00</tspan></text></g><g class="tick" transform="translate(0,125)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.20</tspan></text></g><g class="tick" transform="translate(0,84)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.40</tspan></text></g><g class="tick" transform="translate(0,43)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.59</tspan></text></g><g class="tick" transform="translate(0,1)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.79</tspan></text></g><path class="domain" d="M6,1H0V166H6"></path></g></g><g transform="translate(40.5,250.5)" style="visibility: hidden;"><g clip-path="url(http://localhost/#c3-1637278192788-clip-subchart)" class="c3-chart"><g class="c3-chart-bars"></g><g class="c3-chart-lines"></g></g><g clip-path="url(http://localhost/#c3-1637278192788-clip)" class="c3-brush" style="pointer-events: all; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect class="background" x="0" width="280" style="visibility: hidden; cursor: crosshair;"></rect><rect class="extent" x="0" width="0" style="cursor: move;"></rect><g class="resize e" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g><g class="resize w" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g></g><g class="c3-axis-x" transform="translate(0,0)" clip-path="url(http://localhost/#c3-1637278192788-clip-xaxis)" style="visibility: hidden; opacity: 1;"><g class="tick" transform="translate(10, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Feb 20</tspan></text></g><g class="tick" transform="translate(29, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Mar 20</tspan></text></g><g class="tick" transform="translate(48, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Apr 20</tspan></text></g><g class="tick" transform="translate(66, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">May 20</tspan></text></g><g class="tick" transform="translate(85, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jun 20</tspan></text></g><g class="tick" transform="translate(104, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jul 20</tspan></text></g><g class="tick" transform="translate(122, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Aug 20</tspan></text></g><g class="tick" transform="translate(141, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Sep 20</tspan></text></g><g class="tick" transform="translate(160, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Oct 20</tspan></text></g><g class="tick" transform="translate(178, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Nov 20</tspan></text></g><g class="tick" transform="translate(197, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Dec 20</tspan></text></g><g class="tick" transform="translate(216, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Jan 21</tspan></text></g><g class="tick" transform="translate(234, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Feb 21</tspan></text></g><g class="tick" transform="translate(253, 0)" style="opacity: 1;"><line y2="6" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Mar 21</tspan></text></g><g class="tick" transform="translate(272, 0)" style="opacity: 1;"><line y2="0" x1="10" x2="10"></line><text y="-3.5" x="0" transform="rotate(90)" style="text-anchor: start; display: block;"><tspan x="0" dy=".71em" dx="8">Apr 21</tspan></text></g><path class="domain" d="M0,6V0H280V6"></path></g></g><g transform="translate(0,250)" style="visibility: hidden;"></g><text class="c3-title" x="200" y="0"></text></svg><div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none;"></div></angular-chart>
+<!-- ngIf: data.Mode =='Comparison' --><table ng-if="data.Mode =='Comparison'" style="margin-left:auto; margin-right: auto;">
+    <tbody><tr>
+        <td style="width:9px; background-color:rgb(50, 50, 50) !important"></td>
+        <td style="font-size:xx-small; padding-right: 10px; font-weight: bold;">Same period last year</td>
+        <td style="width:9px; background-color:rgb(130, 189, 0) !important"></td>
+        <td style="font-size:xx-small; padding-right: 10px;; font-weight: bold;">Current Period</td>
+        <td style="    width: 15px;
+    border-bottom: solid;"> </td>
+        <td style="font-size:xx-small;">Greenhouse gas emissions</td>
+    </tr>
+</tbody></table><!-- end ngIf: data.Mode =='Comparison' -->
+<!-- ngIf: data.Mode =='Components' -->
+</billing-consumption-history>
+
+
+                            <table style="margin-top: 15px">
+                                <tbody><tr>
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;">Greenhouse gas
+                                        emissions (this period)
+                                    </td>
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;">Avg daily usage
+                                        (this period)
+                                    </td>
+                                    <!-- ngRepeat: (cost,value) in ctrl.statement.bill.Statistics.AverageCosts --><td style="font-size:xx-small;text-align: center;padding-right: 3px;" ng-repeat="(cost,value) in ctrl.statement.bill.Statistics.AverageCosts">Avg daily
+                                        peak cost (this period)
+                                    </td><!-- end ngRepeat: (cost,value) in ctrl.statement.bill.Statistics.AverageCosts -->
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;">Avg daily usage
+                                        (same time last year)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;"><span ng-bind="ctrl.statement.CarbonEmissions | number:2">1.01</span> tonnes
+                                    </td>
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;"><span ng-bind="ctrl.statement.BenchmarkUsage | number :2">11.95</span> kWh
+                                    </td>
+                                    <!-- ngRepeat: (cost,value) in ctrl.statement.bill.Statistics.AverageCosts --><td style="font-size:xx-small;text-align: center;padding-right: 3px;" ng-repeat="(cost,value) in ctrl.statement.bill.Statistics.AverageCosts" ng-bind="value | currency :'$'">$2.93</td><!-- end ngRepeat: (cost,value) in ctrl.statement.bill.Statistics.AverageCosts -->
+                                    <td style="font-size:xx-small;text-align: center;padding-right: 3px;"><span ng-bind="ctrl.statement.HistoricConsumption.LastYearAverage | number:2">12.45</span>
+                                        kWh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" style="font-size: xx-small">To reduce your greenhouse gas emissions,
+                                        call us on 1300 258 763 to find out how you can support green energy. For more
+                                        information visit
+                                        Switchon.vic.gov.au.
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+
+                    <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="usage-comparison-household" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                        <div class="usage-comparison-household-description">
+                            Compare your electricity usage with similar households in your area
+                        </div>
+                        <div class="usage-comparison-household-breakdown">
+                            <div class="usage-comparison-household-info">
+                                <div class="household-icon"><img ng-src="images/household-customer.jpg" src="../Bill%20Images/images%2024.11/household-customer.jpg"></div>
+                                <div class="household-description">Your home</div>
+                                <div class="household-usage"><span ng-bind="ctrl.statement.BenchmarkUsage | number :2">11.95</span> kWh
+                                </div>
+                            </div>
+                            <!-- ngRepeat: benchmark in ctrl.statement.Benchmarks --><div class="usage-comparison-household-info" ng-repeat="benchmark in ctrl.statement.Benchmarks">
+                                <div class="household-icon"><img ng-src="images/household-1-person.jpg" src="../Bill%20Images/images%2024.11/household-1-person.jpg">
+                                </div>
+                                <div class="household-description">1 person home</div>
+                                <div class="household-usage">7.44 kWh</div>
+                            </div><!-- end ngRepeat: benchmark in ctrl.statement.Benchmarks --><div class="usage-comparison-household-info" ng-repeat="benchmark in ctrl.statement.Benchmarks">
+                                <div class="household-icon"><img ng-src="images/household-2-person.jpg" src="../Bill%20Images/images%2024.11/household-2-person.jpg">
+                                </div>
+                                <div class="household-description">2 person home</div>
+                                <div class="household-usage">12.25 kWh</div>
+                            </div><!-- end ngRepeat: benchmark in ctrl.statement.Benchmarks --><div class="usage-comparison-household-info" ng-repeat="benchmark in ctrl.statement.Benchmarks">
+                                <div class="household-icon"><img ng-src="images/household-3-person.jpg" src="../Bill%20Images/images%2024.11/household-3-person.jpg">
+                                </div>
+                                <div class="household-description">3 person home</div>
+                                <div class="household-usage">12.67 kWh</div>
+                            </div><!-- end ngRepeat: benchmark in ctrl.statement.Benchmarks --><div class="usage-comparison-household-info" ng-repeat="benchmark in ctrl.statement.Benchmarks">
+                                <div class="household-icon"><img ng-src="images/household-4-person.jpg" src="../Bill%20Images/images%2024.11/household-4-person.jpg">
+                                </div>
+                                <div class="household-description">4 person home</div>
+                                <div class="household-usage">14.57 kWh</div>
+                            </div><!-- end ngRepeat: benchmark in ctrl.statement.Benchmarks --><div class="usage-comparison-household-info" ng-repeat="benchmark in ctrl.statement.Benchmarks">
+                                <div class="household-icon"><img ng-src="images/household-5x-person.jpg" src="../Bill%20Images/images%2024.11/household-5x-person.jpg">
+                                </div>
+                                <div class="household-description">5+ person home</div>
+                                <div class="household-usage">18.68 kWh</div>
+                            </div><!-- end ngRepeat: benchmark in ctrl.statement.Benchmarks -->
+                        </div>
+                        <div class="usage-comparison-household-sub-text">
+                            This benchmark applies to residential electricity usage. Calculations are based on data from the
+                            Australian Energy Regulator (AER) and are indicative only. Usage benchmarks exclude some large
+                            appliances (e.g., pool pumps, solar PV systems). For more info, energy efficiency tips, or to
+                            compare plans, visit <span>energymadeeasy.gov.au</span>
+                        </div>
+                    </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                </div>
+            </div>
+
+            <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="page-section" ng-if="ctrl.brand.attributes.Segment != 'B2B'">
+                <div style="font-size: x-small">For this billing period the following index reads have been provided by your
+                    distributor. A value of zero may be the result of the information not being available
+                </div>
+                <!-- TODO: iterate all meters -->
+                <!-- ngRepeat: (meterserial,meter) in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].meteredLineItemsByRegisterWithActuals --><table class="meter-status" ng-repeat="(meterserial,meter) in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].meteredLineItemsByRegisterWithActuals">
+                    <tbody><tr>
+                        <th style="font-size: x-small; padding-right:15px;">Meter number</th>
+                        <th style="font-size: x-small; padding-right:15px;">Start Date</th>
+                        <th style="font-size: x-small; padding-right:15px;">Reading</th>
+                        <th style="font-size: x-small; padding-right:15px;">End Date</th>
+                        <th style="font-size: x-small; padding-right:15px;">Reading</th>
+                    </tr>
+
+                    <!-- ngRepeat: register in meter --><tr ng-repeat="register in meter">
+                        <td style="font-size: x-small; padding-right:15px;" ng-bind="meterserial">MG07K04003</td>
+                        <td style="font-size: x-small; padding-right:15px;"><span ng-bind="register.meteredLineItems[0].fromDate | date: 'dd MMM yyyy'">15 Feb 2021</span>
+                        </td>
+                        <td style="font-size: x-small; padding-right:15px;"><span ng-bind="register.meteredLineItems[0].fromReading | number:3">46,608.000</span>
+                        </td>
+                        <td style="font-size: x-small; padding-right:15px;"><span ng-bind="register.meteredLineItems[0].toDate | date: 'dd MMM yyyy'">30 Apr 2021</span>
+                        </td>
+                        <td style="font-size: x-small; padding-right:15px;"><span ng-bind="register.meteredLineItems[0].toReading | number:3">47,504.300</span>
+                        </td>
+                    </tr><!-- end ngRepeat: register in meter -->
+                </tbody></table><!-- end ngRepeat: (meterserial,meter) in ctrl.statement.bill.sites[0].services[0].products[0].Versions[0].meteredLineItemsByRegisterWithActuals -->
+
+                <div style="font-size: xx-small; padding-top:10px;">^^Estimated savings or best plan confirmation shown on
+                    the front of your bill are based on your past 12 months usage, or your available usage data (if less
+                    than 12 months) and our current in market plans at the time this bill was issued. We update our plans
+                    from time to time. If you switch plans, the amount you may save will depend on the plan you choose and
+                    the amount of energy you use. Go to energyaustralia.com.au/vic-changes to find out more.
+                </div>
+
+            </div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+
+
+
+
+            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+        </div>
+    </div>
+
+    <div class="page third-page">
+        <div class="inner-page">
+            <div class="page-section header">
+                <div class="header-icon">
+                    <img ng-src="images/company-logo.jpg" style="width: 75px;" src="../Bill%20Images/images%2024.11/company-logo.jpg">
+                </div>
+            </div>
+            <div class="page-section contact-details">
+                <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><div class="contact-details-title" ng-if="ctrl.brand.attributes.Segment != 'B2B'">Contact us</div><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                <table>
+                    <tbody><tr>
+                        <th width="33%" colspan="2">Enquiries &amp; Payment</th>
+                        <th width="33%">Interpreter Service</th>
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><th ng-if="ctrl.brand.attributes.Segment != 'B2B'">Life Support</th><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                        <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+
+                    </tr>
+                    <tr>
+                        <td class="icon"><img ng-src="images/contact-phone.jpg" src="../Bill%20Images/images%2024.11/contact-phone.jpg"></td>
+                        <td class="contact">
+                            <div><span style="font-weight: bold">1300 258 763</span> (Mon-Fri 9am-5pm AEST)</div>
+                        </td>
+                        <td class="interperet  ">1300 622 718</td>
+                        <!-- ngIf: ctrl.brand.attributes.Segment != 'B2B' --><td ng-if="ctrl.brand.attributes.Segment != 'B2B'" class="life-support" rowspan="4" style="vertical-align: top;">If someone in your house is
+                            dependent on life support
+                            equipment, call us on <span class="">1300 258 763</span> so we can register your
+                            equipment.
+                        </td><!-- end ngIf: ctrl.brand.attributes.Segment != 'B2B' -->
+                        <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+                    </tr>
+                    <tr>
+                        <td class="icon"><img ng-src="images/contact-mail.jpg" src="../Bill%20Images/images%2024.11/contact-mail.jpg"></td>
+                        <td class="contact">
+                            <div>Post:</div>
+                            <div class="">EnergyAustralia, Locked Bag 14060</div>
+                            <div class="">Melbourne City Mail Centre, 8001</div>
+                        </td>
+                        <td class="interperet" rowspan="2">
+                            <div>口译服务</div>
+                            <div>خدمة المترجمين الفوريين</div>
+                            <div>Dịch vụ thông dịch viên</div>
+                            <div>口譯服務</div>
+                            <div>통역 서비스</div>
+                            <div>مترجم سرویس</div>
+                            <div>Υπηρεσία διερμηνέα</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="icon tbd"><img ng-src="images/contact-chat.jpg" src="../Bill%20Images/images%2024.11/contact-chat.jpg"></td>
+                        <td class="contact tbd"><a href="https://energyaustralia.com.au/livechat" class="">energyaustralia.com.au/livechat</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <th>Hearing Impaired Service</th>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+
+                        <td class="hearing-impaired-contact-details">
+                            If you are deaf, hearing or speech impaired, contact us <span class="tbd">via live chat at <span class="">energyaustralia.com.au/livechat</span> or </span>the National Relay Service
+                            (NRS) - quote <span class="">1300 258 763</span>. Telephone Typing (TTY) service is
+                            available for the cost of local call. General Enquiries <span class="">1300 368 536</span>
+                            Network Faults <span class="">1800 500 529</span>
+                        </td>
+                        <td rowspan="2" style="vertical-align: top;">If you do not wish to receive information about
+                            EnergyAustralia's products and
+                            services, call us on <span class="">1300 258 763</span>.
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <!-- ngIf: ctrl.brand.attributes.Segment == 'B2B' -->
+        </div>
+
+
+    </div>
+
+    <div class="page-barcode todo tbd">
+        <img ng-src="images/barcode-example.png" src="../Bill%20Images/images%2024.11/barcode-example.png">
+    </div>
+</div><!-- end ngIf: ctrl.statement -->
+</ng-include></statement>

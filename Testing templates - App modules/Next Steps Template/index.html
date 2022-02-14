@@ -1,0 +1,318 @@
+<!-- UseHandlebars -->
+<!-- require: Registration -->
+<!-- require: TasklistItem -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you page</title>
+
+  <!--  Icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--[if mso]>
+  <noscript>
+      <xml>
+          <o:OfficeDocumentSettings>
+              <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+      </xml>
+  </noscript>
+  <![endif]-->
+
+  <style>
+    @font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+        url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    /* @page {
+      size: A4;
+    } */
+    a {
+      /* color: #0D8924 !important; */
+      color: #97BF0D !important;
+    }
+    ul {
+      list-style-position: inside;
+      text-indent: -22px;
+      margin-left: 22px;
+      padding: 0 0 0 15px;
+    }
+
+    b {
+      /* color: #97BF0D !important; */
+    }
+
+    .btn-url {
+      text-decoration: none !important;
+    }
+
+    .mobileOnly {
+      display: none;
+    }
+    .mobileOff {
+      display: block;
+    }
+
+    /* GUTTERS & SPACERS */
+    .gutter-xs {
+      width: 8px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-s {
+      width: 12px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter {
+      width: 24px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-m {
+      width: 32px;
+      line-height: 0;
+      height: 0;
+    }
+
+    .spacer {
+      line-height: 24px;
+      height: 24px;
+    }
+    .spacer-s {
+      line-height: 16px;
+      height: 16px;
+    }
+    .spacer-xs {
+      line-height: 12px;
+      height: 12px;
+    }
+    .spacer-double {
+      line-height: 50px;
+      height: 50px;
+    }
+    .spacer-add {
+      line-height: 8px;
+      height: 8px;
+    }
+    .spacer-xs-add {
+      line-height: 4px;
+      height: 4px;
+    }
+
+    .btn-spacer {
+      line-height: 10px;
+      height: 10px;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-wrapper {
+      position: relative;
+      color: #FFFFFF;
+      overflow: hidden;
+      border: 1px solid #97BF0D;
+      border-radius: 10px;
+      transition: all 0.2s ease-out;
+      z-index: 1;
+    }
+    .dropdown-wrapper:hover {
+      color: #FFFFFF !important;
+      box-shadow: 0 0px 12px #AAAAAA;
+    }
+    .dropdown-title {
+      cursor: pointer;
+      background: #97BF0D;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dropdown-title:hover {
+      
+    }
+
+    .label-wrap > .dropdown-content {
+      color: #000000;
+      max-height: 0px;
+      padding: 0 12px;
+      overflow: hidden;
+      position: relative;
+      transition: all .4s ease-in-out;
+    }
+    .label-wrap .dropdown-title .remove-outline {
+      display: none;
+    }
+
+    #dropdownWrap,
+    #dropdownWrapTwo {
+      display: none;
+    }
+    #dropdownWrap:checked + .label-wrap > .dropdown-content,
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-content {
+      max-height: 200px;
+      padding: 15px 12px;
+    }
+    #dropdownWrap:checked + .label-wrap > .dropdown-title > .down-outline { display: none; }
+    #dropdownWrap:checked + .label-wrap > .dropdown-title > .remove-outline { display: block; }
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-title > .down-outline { display: none; }
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-title > .remove-outline { display: block; }
+
+    .material-icons {
+      font-size: 30px;
+    }
+    /* Dropdown Styling */
+
+    @media only screen and (max-width: 599px) {
+      .container { width: 100% !important; }
+
+      .mobileOnly {
+        display: block !important;
+      }
+      .mobileOff {
+        display: none !important;
+      }
+      .mobileFont {
+        font-size: 10.5pt;
+      }
+    }
+  </style>
+</head>
+<body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt; line-height: 15pt;">
+
+  <center>
+    <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="800" cellspacing="0" cellpadding="0" style="width: 800px !important;">
+      <tr>
+        <td align="left" valign="top">
+
+          <!-- EDM MAIN WRAPPER -->
+          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+            <tr>
+              <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              <td align="left" valign="top">
+                
+                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                  <tr>
+                    <td align="left" valign="top">
+                      
+                      <!-- BODY SECTION -->
+                      <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                        <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                        <tr>
+                          <td align="left" valign="top">
+
+                            <table class="container" bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                              <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                              <tr>
+                                <td bgcolor="#FFFFFF" class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                <td align="left" valign="top">
+                                  <table class="container" bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr>
+                                      <td align="left" valign="middle">
+                                        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/circle element 1.png" height="50px">
+                                      </td>
+                                      <td bgcolor="#FFFFFF" class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      <td align="left" valign="middle">
+                                        <table class="container" bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr>
+                                            <td align="left" valign="middle" style="font-size: 14pt;">
+                                              <b>First step</b>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="middle">
+                                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, non. Illum, tempore quis! Rem maxime in quibusdam, error eaque pariatur dicta officia quae numquam odit consectetur dignissimos dolor architecto fugiat!
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                    <tr>
+                                      <td align="left" valign="middle">
+                                        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/circle element 2.png" height="50px">
+                                      </td>
+                                      <td bgcolor="#FFFFFF" class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      <td align="left" valign="middle">
+                                        <table class="container" bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr>
+                                            <td align="left" valign="middle" style="font-size: 14pt;">
+                                              <b>Second step</b>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="middle">
+                                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, non. Illum, tempore quis! Rem maxime in quibusdam, error eaque pariatur dicta officia quae numquam odit consectetur dignissimos dolor architecto fugiat!
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                    <tr>
+                                      <td align="left" valign="middle">
+                                        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/circle element 3.png" height="50px">
+                                      </td>
+                                      <td bgcolor="#FFFFFF" class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      <td align="left" valign="middle">
+                                        <table class="container" bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr>
+                                            <td align="left" valign="middle" style="font-size: 14pt;">
+                                              <b>Third step</b>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="middle">
+                                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, non. Illum, tempore quis! Rem maxime in quibusdam, error eaque pariatur dicta officia quae numquam odit consectetur dignissimos dolor architecto fugiat!
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                  </table>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                              </tr>
+                              
+                              <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                            </table>
+
+                          </td>
+                        </tr>
+
+                        <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                      </table>
+                      <!-- BODY SECTION -->
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+              <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+            </tr>
+          </table>
+          <!-- EDM MAIN WRAPPER -->
+
+        </td>
+      </tr>
+    </table>
+  </center>
+  
+</body>
+</html>

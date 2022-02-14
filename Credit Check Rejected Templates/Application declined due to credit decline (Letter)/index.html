@@ -1,0 +1,623 @@
+<!-- UseHandlebars -->
+<!-- require: Registration -->
+<!-- require: Quote -->
+<!-- require: General -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application declined due to credit decline</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+
+      b {
+        /* color: #97BF0D !important; */
+      }
+
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+      .mobileOff {
+        display: block;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter-s {
+        width: 16px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-s {
+        line-height: 16px;
+        height: 16px;
+      }
+      .spacer-double {
+        line-height: 50px;
+        height: 50px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+        .mobileOff {
+          display: none !important;
+        }
+        .mobileFont {
+          font-size: 8pt !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11.5pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="800" cellspacing="0" cellpadding="0" style="width: 800px; ">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- HEADER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                          <tr>
+                            <td align="left" valign="top">
+                              {{Registration.CreatedDateTime}}
+                            </td>
+                          </tr>
+                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              Hello {{Registration.Title}} {{Registration.FirstName}} {{Registration.Surname}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              {{#if_eq Registration.BillingAddress.AddressLine1 "" }}
+                                {{#if Registration.SiteAddress.AddressLine1}}{{Registration.SiteAddress.AddressLine1}}{{/if}}<br>
+                                {{#if Registration.SiteAddress.AddressLine2}} {{Registration.SiteAddress.AddressLine2}}, {{/if}}<br>
+                                {{#if Registration.SiteAddress.Town}} {{Registration.SiteAddress.Town}}, {{/if}}
+                                {{#if Registration.SiteAddress.County}} {{Registration.SiteAddress.County}}, {{/if}}
+                                {{Registration.SiteAddress.Postcode}}
+                              {{else}}
+                                {{#if Registration.BillingAddress.AddressLine1}}{{Registration.BillingAddress.AddressLine1}}{{/if}}<br>
+                                {{#if Registration.BillingAddress.AddressLine2}} {{Registration.BillingAddress.AddressLine2}}, {{/if}}<br>
+                                {{#if Registration.BillingAddress.Town}} {{Registration.BillingAddress.Town}}, {{/if}}
+                                {{#if Registration.BillingAddress.County}} {{Registration.BillingAddress.County}}, {{/if}}
+                                {{Registration.BillingAddress.Postcode}}
+                              {{/if_eq}}
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="right" valign="top">
+                              Quote number: {{Quote.QuoteId}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="right" valign="top">
+                              Service address:
+                              {{#if Registration.SiteAddress.AddressLine1}} {{Registration.SiteAddress.AddressLine1}}, {{/if}}
+                              {{#if Registration.SiteAddress.AddressLine2}} {{Registration.SiteAddress.AddressLine2}}, {{/if}}
+                              {{#if Registration.SiteAddress.Town}} {{Registration.SiteAddress.Town}}, {{/if}}
+                              {{#if Registration.SiteAddress.County}} {{Registration.SiteAddress.County}}, {{/if}}
+                              {{Registration.SiteAddress.Postcode}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- HEADER SECTION -->
+
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top" style="padding: 1.2em 0;">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter-s mobileOnly" width="12" align="left" valign="top">&nbsp;</td>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Hi {{Registration.FirstName}},
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Unfortunately your {{Registration.FuelType}} application has been declined based on your credit history and any previous bankruptcies and/or defaults.
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          We obtained your information from one or more of the credit reporting bureaus listed below.  We recommend that you contact these bureaus directly to ensure the information they hold about you is accurate. You can request a free copy of your credit file from each bureau.
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="center" valign="top">
+                                          <table class="container mobileFont" width="1200" border="0" cellspacing="0" cellpadding="0" style="width: 1200px;">
+                                            <tr>
+                                              <th class="mobileFont" width="33%" height="30" bgcolor="#0D8924" style="color: #FFFFFF; border-right: 1.5px solid #000000; border-radius: 5px 0 0 5px;">Bureau</th>
+                                              <th class="mobileFont" width="33%" height="30" bgcolor="#0D8924" style="color: #FFFFFF; border-right: 1.5px solid #000000">Phone number</th>
+                                              <th class="mobileFont" width="33%" height="30" bgcolor="#0D8924" style="color: #FFFFFF; border-radius: 0 5px 5px 0;">Web address</th>
+                                            </tr>
+                                            <tr>
+                                            <td height="30" align="left" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <a href="https://www.mycreditfile.com.au">Equifax</a>
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <b>138 332</b>
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px;">
+                                              <b>mycreditfile.com.au</b>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="30" align="left" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <a href="https://www.experian.com.au">Experian</a>
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <b>(03) 8622 1600</b>
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px;">
+                                              <b>experian.com.au</b>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="30" align="left" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <a href="https://www.illion.com.au">illion</a><br>
+                                              (formerly Dun & Bradstreet)
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px; border-right: 1.5px solid black;">
+                                              <b>1300 734 806</b>
+                                            </td>
+                                            <td height="30" align="center" valign="middle" style="padding: 0 7px;">
+                                              <b>illion.com.au</b>
+                                            </td>
+                                          </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          You can access and seek correction of any inaccurate credit-related personal information we may hold about you. If you have a complaint about the handling of your credit-related information, you can contact our Privacy Officer by writing to:
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr><td align="left" valign="top" style="font-size: 10pt;">The Privacy Officer</td></tr>
+                                      <tr><td align="left" valign="top" style="font-size: 10pt;">EnergyAustralia</td></tr>
+                                      <tr><td align="left" valign="top" style="font-size: 10pt;">Locked Bag 14060</td></tr>
+                                      <tr><td align="left" valign="top" style="font-size: 10pt;">Melbourne City Mail Centre 8001</td></tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Further information can be found in our Privacy Policy and Credit Reporting Policy at: energyaustralia.com.au/privacy
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          Regards.
+                                        </td>
+                                      </tr>
+                                      <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"><br>
+                                          Casey Kaminskyi<br>
+                                          GM - Pods & communities
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td class="gutter-s mobileOnly" width="12" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter mobileOff" width="24" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- BODY SECTION -->
+
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                  </table>
+                  
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- EDM MAIN WRAPPER -->
+
+          </td>
+        </tr>
+      </table>
+    </center>
+    
+  </body>
+</html>
+
+{{!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'museo_sans_rounded300';
+    src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded300_italic';
+    src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+         url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded500_italic';
+    src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded700';
+    src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded700_italic';
+    src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded900_italic';
+    src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}  
+.yFix { }
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+body { width: 100%; margin: 0; padding: 0; background-color: #ffffff; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 100%; -webkit-font-smoothing: antialiased; }
+body, table, td, th, span, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 0px !important; }
+table td { border-collapse: collapse; }
+html { width: 100%; height: 100%; }
+  .header {
+  background: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  }
+
+.text-h1 {
+  color: #333333;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 68px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  font-weight: bold;
+  }
+.text-h2 {
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+.text-h3 { 
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+
+  .text-h4 { 
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+   }
+  .elec_text_benefit {
+    color: #333333;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .elec_subtext_benefit {
+  color: #666666;    
+  font-size: 13px;    
+  letter-spacing: 0;    
+  line-height: 19.6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+  div.elec {
+    visibility: visible;
+    /* height:1000px;*/
+ border-radius: 0px 0px 5px 5px;    
+  }
+</style>
+
+<div style="width: 50%; min-width: 600px; margin-left: 25%; margin-top: 20px; padding-bottom: 20px; box-sizing: border-box; height: auto ; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">[[Registration.CreatedDateTime]] </div>
+    <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">[[Registration.Title]] [[Registration.FirstName]] [[Registration.LastName]]</div>
+  {{#if_eq Registration.BillingAddress.AddressLine1 "" }}
+    <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">[[Registration.SiteAddress.AddressLine1]] [[Registration.SiteAddress.AddressLine2]] [[Registration.SiteAddress.Town]] [[Registration.SiteAddress.County]] [[Registration.SiteAddress.Postcode]]</div>
+  {{else}}
+   <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">[[Registration.BillingAddress.AddressLine1]] [[Registration.BillingAddress.AddressLine2]] [[Registration.BillingAddress.Town]] [[Registration.BillingAddress.County]] [[Registration.BillingAddress.Postcode]]</div>
+ 
+  <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">Service address: [[Registration.SiteAddress.AddressLine1]] [[Registration.SiteAddress.AddressLine2]] , [[Registration.SiteAddress.Town]] [[Registration.SiteAddress.County]] [[Registration.SiteAddress.Postcode]] </div>
+</div>
+  
+<div style="width: 50%; min-width: 600px; margin-left: 25%; margin-top: 20px; padding-bottom: 20px; box-sizing: border-box; height: auto ; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">Hi [[Registration.FirstName]],</div>
+  <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">&nbsp;&nbsp;&nbsp;Unfortunately your [[Registration.FuelType]] application has been declined based on your credit history and any previous bankruptcies and/or defaults.</div>
+    <div class="text-h4" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding:20px;">&nbsp;&nbsp;&nbsp;  We obtained your information from one or more of the credit reporting bureaus listed below.  We recommend that you contact these bureaus directly to ensure the information they hold about you is accurate. You can request a free copy of your credit file from each bureau.
+</div>
+
+</div>
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="width: 50%;min-width: 600px; margin-left: 25%; box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <table style="margin-left: 28.8px;margin-top: 15.5px;margin-bottom: 15.5px;">
+    <tbody>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;"><b>Bureau</b></div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;"><b>Phone number</b></div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;"><b>Web address</b></div></td>
+      </tr>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">[Equifax]</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">138 332</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">mycreditfile.com.au</div></td>
+      </tr>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">[Experian]</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">(03) 8622 1600</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">experian.com.au</div></td>
+      </tr>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">[illion]</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">1300 734 806</div></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">illion.com.au</div></td>
+      </tr>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">(formerly Dun & Bradstreet)</div></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  </div>
+  
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">
+  </div>
+
+<div style="padding-bottom: 20px; width: 50%;min-width: 600px; margin-left: 25%; box-sizing: border-box;  height: auto ;   border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <p class="text-h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can access and seek correction of any inaccurate credit-related personal information we may hold about you. If you have a complaint about the handling of your credit-related information, you can contact our Privacy Officer by writing to:<p>
+  <div class="eleconly">
+     <table style="margin-left: 28.8px;margin-top: 15.5px;margin-bottom: 15.5px;">
+    <tbody>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">The Privacy Officer</div>&nbsp;</td>
+	   </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Energy Australia</div>&nbsp;</td>
+      </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Locked Bag 14060</div>&nbsp;</td>
+      </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Melbourne City Mail Centre 8001</div></td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+    <div class="text-h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Further information can be found in our Privacy Policy and Credit Reporting Policy at: energyaustralia.com.au/privacy
+
+</div>
+
+  </div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="width: 50%;min-width: 600px; margin-left: 25%;box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;  background-color: #FFFFFF;">
+  <table style="margin-left: 28.8px;margin-top: 15.5px;margin-bottom: 15.5px;">
+    <tbody>
+      <tr>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Regards,</div>&nbsp;</td>
+	   </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">[POD leader name]</div>&nbsp;</td>
+      </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">Community Area Manager</div>&nbsp;</td>
+      </tr>
+      <tr>
+       <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 16px;letter-spacing: 0;">[POD name]</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+
+
+<div style="margin-left: 25%; width: 50%;">
+</div>
+
+ --}}

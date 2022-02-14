@@ -1,0 +1,2201 @@
+<!-- UseHandlebars -->
+<!-- require: Registration -->
+<!-- require: TasklistItem -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEIC Initial Email</title>
+
+  <!--  Icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--[if mso]>
+  <noscript>
+      <xml>
+          <o:OfficeDocumentSettings>
+              <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+      </xml>
+  </noscript>
+  <![endif]-->
+
+  <style>
+    @font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+        url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    /* @page {
+      size: A4;
+    } */
+    a {
+      /* color: #0D8924 !important; */
+      color: #97BF0D !important;
+    }
+    ul {
+      list-style-position: inside;
+      text-indent: -22px;
+      margin-left: 22px;
+      padding: 0 0 0 15px;
+    }
+
+    b {
+      /* color: #97BF0D !important; */
+    }
+
+    .btn-url {
+      text-decoration: none !important;
+    }
+
+    .mobileOnly {
+      display: none;
+    }
+    .mobileOff {
+      display: block;
+    }
+
+    /* GUTTERS & SPACERS */
+    .gutter-xs {
+      width: 8px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-s {
+      width: 12px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter {
+      width: 24px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-m {
+      width: 32px;
+      line-height: 0;
+      height: 0;
+    }
+
+    .spacer {
+      line-height: 24px;
+      height: 24px;
+    }
+    .spacer-s {
+      line-height: 16px;
+      height: 16px;
+    }
+    .spacer-xs {
+      line-height: 12px;
+      height: 12px;
+    }
+    .spacer-double {
+      line-height: 50px;
+      height: 50px;
+    }
+    .spacer-add {
+      line-height: 8px;
+      height: 8px;
+    }
+    .spacer-xs-add {
+      line-height: 4px;
+      height: 4px;
+    }
+
+    .btn-spacer {
+      line-height: 10px;
+      height: 10px;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-wrapper {
+      position: relative;
+      color: #FFFFFF;
+      overflow: hidden;
+      border: 1px solid #97BF0D;
+      border-radius: 10px;
+      transition: all 0.2s ease-out;
+      z-index: 1;
+    }
+    .dropdown-wrapper:hover {
+      color: #FFFFFF !important;
+      box-shadow: 0 0px 12px #AAAAAA;
+    }
+    .dropdown-title {
+      cursor: pointer;
+      background: #97BF0D;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dropdown-title:hover {
+      
+    }
+
+    .label-wrap > .dropdown-content {
+      color: #000000;
+      max-height: 0px;
+      padding: 0 12px;
+      overflow: hidden;
+      position: relative;
+      transition: all .4s ease-in-out;
+    }
+    .label-wrap .dropdown-title .remove-outline {
+      display: none;
+    }
+
+    #dropdownWrap,
+    #dropdownWrapTwo {
+      display: none;
+    }
+    #dropdownWrap:checked + .label-wrap > .dropdown-content,
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-content {
+      max-height: 200px;
+      padding: 15px 12px;
+    }
+    #dropdownWrap:checked + .label-wrap > .dropdown-title > .down-outline { display: none; }
+    #dropdownWrap:checked + .label-wrap > .dropdown-title > .remove-outline { display: block; }
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-title > .down-outline { display: none; }
+    #dropdownWrapTwo:checked + .label-wrap > .dropdown-title > .remove-outline { display: block; }
+
+    .material-icons {
+      font-size: 30px;
+    }
+    /* Dropdown Styling */
+
+    @media only screen and (max-width: 599px) {
+      .container { width: 100% !important; }
+
+      .mobileOnly {
+        display: block !important;
+      }
+      .mobileOff {
+        display: none !important;
+      }
+      .mobileFont {
+        font-size: 10.5pt;
+      }
+    }
+  </style>
+</head>
+<body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12pt; line-height: 15pt;">
+
+  <center>
+    <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="800" cellspacing="0" cellpadding="0" style="width: 800px !important;">
+      <tr>
+        <td align="left" valign="top">
+
+          <!-- EDM MAIN WRAPPER -->
+          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+            <tr>
+              <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              <td align="left" valign="top">
+                
+                <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                  <tr>
+                    <td align="left" valign="top">
+
+                      <!-- BODY SECTION -->
+                      <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                        <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                        <tr>
+                          <td align="left" valign="top">
+
+                            <table class="container" width="100%" bgcolor="#005321" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-radius: 7px; color: #FFFFFF; padding: 10px 15px;">
+                              <tr>
+                                <td align="left" valign="top" style="font-size: 18pt; line-height: 21pt;">
+                                  {{#if_eq Registration.CustomerType "Residential"}}
+                                    <b>Hi {{Registration.FirstName}}</b>
+                                  {{else}}
+                                    <b>Hi {{Registration.BusinessContactFirstName}}</b>
+                                  {{/if_eq}}
+                                </td>
+                              </tr>
+
+                              <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                              <tr>
+                                <td align="left" valign="top" style="font-size: 16pt;">
+                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        <b>Let's confirm your details</b>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+
+                              <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                              <tr>
+                                <td align="left" valign="top" style="font-size: 12.5pt;">
+                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        We’re just one step away from setting up your new energy plan.
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+
+                            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                              <tr>
+                                <td align="left" valign="top">
+                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                    <tr>
+                                      <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                      <td align="left" valign="top">
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <b>Connection Address</b>
+                                            </td>
+                                          </tr>
+
+                                          <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              {{#if Registraiton.SiteAddress.AddressLine1}}{{Registration.SiteAddress.AddressLine1}} {{/if}}{{#if Registration.SiteAddress.AddressLine2{{Registration.SiteAddress.AddressLine2}}, {{/if}}<br>
+                                              {{#if Registration.SiteAddress.Town}}{{Registration.SiteAddress.Town}} {{/if}}
+                                              {{#if Registration.SiteAddress.County}}{{Registration.SiteAddress.County}} {{/if}}
+                                              {{#if Registration.SiteAddress.Postcode}}{{Registration.SiteAddress.Postcode}}{{/if}}
+                                            </td>
+                                          </tr>
+
+                                          {{#if_neq Registration.BusinessName null}}
+                                          <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <b>Business Name:</b><br>
+                                              {{Registration.BusinessName}}
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <b>Trading as:</b><br>
+                                              {{Registration.TradingName}}
+                                            </td>
+                                          </tr>
+                                          <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <b>ABN/ACN:</b><br>
+                                              {{Registration.CompanyRegistrationNo}}
+                                            </td>
+                                          </tr>
+                                          {{/if_neq}}
+                                          
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                        </table>
+
+                                        <!--  Electricity Module  -->
+                                        {{#if_neq Registration.FuelType "Gas"}}
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                  <td width="4%" align="left" valign="middle">
+                                                    <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Brand_electricity.png" width="20px">
+                                                  </td>
+                                                  <td align="left" valign="middle" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Electricity</b>
+                                                  </td>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+
+                                              <!--  Table content section  -->
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    <table class="container" width="50%" border="0" cellspacing="0" cellpadding="0" style="width: 50%; font-size: 14pt; border: 1px solid #97BF0D; border-radius: 5px; padding: 10px 7px;">
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b>Your plan details</b>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                {{Registration.NewQuote.ProductVersionName}}
+                                                                {{#if Registration.NewQuote.HasGuaranteedDiscount}} <b>with a guaranteed {{Registration.NewQuote.GuaranteedDiscount}}%  discount</b> off the energy charges.{{/if}} 
+                                                                {{#if_neq Registration.NewQuote.ComparisonPercentage 0}}This is {{Registration.NewQuote.ComparisonPercentage}}% less than the reference price.{{/if_neq}}
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}with rates the same as the reference price.{{/if_eq}}
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "No Frills (Home)"}} with simple low rates and built-in savings.{{/if_eq}}            
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                You can find the key details of this plan in the 
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}} 
+                                                                  {{#if_eq Registration.CustomerType "Residential"}}
+                                                                    <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">basic plan information document</a>
+                                                                  {{else}}
+                                                                    <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">basic plan information document</a>
+                                                                  {{/if_eq}}
+                                                                {{else}}
+                                                                  {{#if_eq Registration.CustomerType "Residential"}}
+                                                                    <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">energy price fact sheet</a>
+                                                                  {{else}}
+                                                                    <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">energy price fact sheet</a>
+                                                                  {{/if_eq}}.
+                                                                {{/if_eq}}
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                {{#if_neq Registration.FuelType "***restricted plan***"}}          
+                                                                  Select Electricity, {{Registration.CustomerType}}, enter your post code and select {{Registration.NewQuote.ProductVersionName}}.
+                                                                {{else}}
+                                                                  If you would like to see the {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}basic plan information document{{else}}energy price fact sheet{{/if_eq}}, please let us know.
+                                                                {{/if_neq}}
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}. No exit fees or lock-in contract.
+                                                        </td>
+                                                      </tr>
+                                                      {{else}}
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}. {{Registration.ElectricityTariff.ExitFees}} exit fees applies.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                      <!--{{#if Registration.NewQuote.HasCredit}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Welcome credit:</b> [$xx] credit on your first gas bill.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if}}-->
+
+                                                      {{#if Registration.NewQuote.QuoteAttributes.Bundle}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                <b>Bundle offer:</b> Bonus 1% discount on electricity usage rates and daily supply charge when you have both fuels with us.
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if}}
+
+                                                      {{#if_eq Registration.FuelType "***carbon neutral***"}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                100% carbon neutral at no extra cost, we’ll offset the carbon emissions from your household electricity.
+                                                                <!--  This starts from your 6-month anniversary as an EnergyAustralia customer. --> <!--  Find variable condition for this to appear when the customer is still not 6 monthsn with EA - NOT PRESENT FOR NOW  -->
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                      {{#if_eq Registration.FuelType "***power response***"}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                You’re eligible for our electricity PowerResponse program.
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                      {{#if_eq Registration.NewQuote.CountSolarRates 1}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                <b>Solar Feed-in Tariff:</b>
+                                                                {{#each Registration.NewQuote.Rates}}
+                                                                  {{#if_eq this.GroupName "Solar"}}
+                                                                    {{this.Rate}} {{this.Unit}}
+                                                                  {{/if_eq}}
+                                                                {{/each}}
+                                                                single rate (excl. GST). Rates may change but we'll let you know in advance if this happens.
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                We'll also pay for your GST if your Solar generation is registered for GST
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                      {{#if_eq Registration.NewQuote.CountSolarRates 3}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                <b>Solar Feed-in Tariff:</b>
+                                                                Time of use solar feed-in tariffs (excl. GST). Rates may change but we’ll let you know in advance if this happens.<br>
+                                                                {{#each Registration.NewQuote.Rates}}
+                                                                  {{#if_eq this.GroupName "Solar"}}
+                                                                    <ul>
+                                                                      <li>{{this.Name}}: {{this.Rate}} {{this.Unit}} ({{this.Description}})</li>
+                                                                    </ul>
+                                                                  {{/if_eq}}
+                                                                {{/each}}
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                We'll also pay for your GST if your Solar generation is registered for GST
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+                                                    </table>
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                        <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          All amounts are GST inclusive, unless stated otherwise.
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+
+                                                    <!-- DIVIDER -->
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                            <tr>
+                                                              <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                    </table>
+                                                    <!-- DIVIDER -->
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <!--
+                                                        I'll need to wait for the EDM test to be sent to me in order to get the dropdown done as I can't see exactly what it would look like.
+                                                      -->
+                                                      <tr>
+                                                        <td align="left" valign="top" colspan="3">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top" colspan="3">
+
+                                                                <div class="dropdown-wrapper" id="dropdown-wrap">
+                                                                  <input type="checkbox" id="dropdownWrap" />
+                                                                  <label class="label-wrap" for="dropdownWrap">
+                                                                    <div class="dropdown-title">
+                                                                      <b style="font-size: 14pt; line-height: 16pt;">Detailed Energy Charges</b>
+                                                                      <i class="material-icons down-outline">keyboard_arrow_down</i>
+                                                                      <i class="material-icons remove-outline">remove</i>
+                                                                    </div>
+                                                                    <div class="dropdown-content">
+                                                                      {{#each Registration.NewQuote.Rates}}
+                                                                          {{#if_neq this.GroupName "Solar"}}
+                                                                            {{#if_neq this.Name "Discount "}}
+                                                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                                                <tr>
+                                                                                  <td align="left" valign="top">
+                                                                                    {{this.Name}} {{#if_neq this.Description null}} ({{this.Description}}) {{/if_neq}}
+                                                                                  </td>
+                                                                                  <td align="left" valign="top">
+                                                                                    {{this.RateWithVat}} {{this.Unit}}
+                                                                                  </td>
+                                                                                  <td align="left" valign="top">
+                                                                                    {{this.DateRange}}
+                                                                                  </td>
+                                                                                </tr>
+                                                                              </table>
+                                                                            {{/if_neq}}
+                                                                          {{/if_neq}}
+                                                                        {{/each}}
+                                                                    </div>
+                                                                  </label>
+                                                                </div>
+
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top" colspan="3" style="font-size: 11pt; line-height: 13pt;">
+                                                          Usage rates and daily supply charge are {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}fixed for {{Registration.NewQuote.BenefitTerm}} {{Registration.NewQuote.BenefitTermUnits}}{{else}} variable{{/if_eq}}.
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      {{#if_eq Registration.SiteAddress.County "VIC"}}
+                                                      <tr>
+                                                        <td align="left" valign="top" style="font-size: 11pt; line-height: 13pt;">
+                                                          Your estimated annual cost for electricity is {{Registration.NewQuote.TotalFormatted}} based on annual usage of {{Registration.NewQuote.TotalUsage}}kWh on a {{Registration.NewQuote.TariffTypeDescription}}.
+                                                          The information used to calculate your estimate was based on 
+                                                          {{#if_eq Registration.FuelType "***quote basis***"}}
+                                                            your previous usage. 
+                                                          {{else}}
+                                                            {{#if_neq Registration.NewQuote.TotalUsage 0}}        
+                                                              the usage information you supplied to us.
+                                                            {{else}}        
+                                                              the low/medium/high estimate you selected.
+                                                              <!--  Find out what the LOW/MEDIUM/HIGH variable is in handlebars  -->
+                                                            {{/if_neq}}
+                                                          {{/if_eq}}
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top" style="font-size: 11pt; line-height: 13pt;">
+                                                          <b>Electricity reference price:</b> The estimated annual cost of electricity based on the benchmark usage set by the energy regulator is {{Registration.NewQuote.TotalForComparisonFormatted}} for a {{Registration.CustomerType}} customer on a {{Registration.NewQuote.TariffTypeDescription}} using {{Registration.NewQuote.ComparisonUsage}}kWh per year in the {{#if_eq Registration.Distributor "EASTERN"}}AusNet{{/if_eq}}{{#if_eq Registration.Distributor "POWCP"}}Powercor{{/if_eq}} network.
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top" style="font-size: 11pt; line-height: 13pt;">
+                                                          Your bills may vary based on actual usage over the year.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+                                                    </table>
+
+                                                  </td>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+                                              <!--  Table content section  -->
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        {{/if_neq}}
+                                        <!--  Electricity Module  -->
+
+                                        <!--  Gas Module  -->
+                                        {{#if_neq Registration.FuelType "Electricity"}}
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                  <td width="4%" align="left" valign="middle">
+                                                    <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Brand_gas.png" width="20px">
+                                                  </td>
+                                                  <td align="left" valign="middle" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Gas</b>
+                                                  </td>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="4" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+
+                                              <!--  Table content section  -->
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    <table class="container" width="50%" border="0" cellspacing="0" cellpadding="0" style="width: 50%; font-size: 14pt; border: 1px solid #97BF0D; border-radius: 5px; padding: 10px 7px;">
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b>Your plan details</b>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                {{Registration.NewQuote.ProductVersionName}}
+                                                                {{#if Registration.NewQuote.HasGuaranteedDiscount}} with guaranteed {{Registration.NewQuote.GuaranteedDiscount}}%  discount off the supply charge.{{/if}}
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}standard rates with no discounts.{{/if_eq}}
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "No Frills (Home)"}} with simple low rates and built-in savings.{{/if_eq}}
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                You can find the key details of this plan in the 
+                                                                {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}} 
+                                                                  {{#if_eq Registration.CustomerType "Residential"}}
+                                                                    <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">basic plan information document</a>
+                                                                  {{else}}
+                                                                    <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">basic plan information document</a>
+                                                                  {{/if_eq}}
+                                                                {{else}}
+                                                                  {{#if_eq Registration.CustomerType "Residential"}}
+                                                                    <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">energy price fact sheet</a>
+                                                                  {{else}}
+                                                                    <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">energy price fact sheet</a>.
+                                                                  {{/if_eq}}
+                                                                {{/if_eq}}
+                                                              </td>
+                                                            </tr>
+                                                            <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                {{#if_neq Registration.FuelType "***restricted plan***"}}          
+                                                                  Select Gas, {{Registration.CustomerType}}, enter your post code and select {{Registration.NewQuote.ProductVersionName}}.
+                                                                {{else}}
+                                                                  If you would like to see the {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}basic plan information document{{else}}energy price fact sheet{{/if_eq}}, please let us know.
+                                                                {{/if_neq}}
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}. No exit fees or lock-in contract.
+                                                        </td>
+                                                      </tr>
+                                                      {{else}}
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}. {{Registration.ElectricityTariff.ExitFees}} exit fees applies.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                      {{#if Registration.NewQuote.HasCredit}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <b>Welcome credit:</b> [$xx] credit on your first gas bill.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if}}
+
+                                                      {{#if Registration.NewQuote.QuoteAttributes.Bundle}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                <b>Bundle offer:</b> Bonus 1% discount On gas usage rates and daily supply charge when you have both fuels with us.
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if}}
+
+                                                      {{#if_eq Registration.FuelType "***carbon neutral***"}}
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <img width="18" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png">
+                                                        </td>
+                                                        <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top">
+                                                                100% carbon neutral at no extra cost, we’ll offset the carbon emissions from your household electricity.
+                                                                <!--  This starts from your 6-month anniversary as an EnergyAustralia customer. --> <!--  Find variable condition for this to appear when the customer is still not 6 monthsn with EA - NOT PRESENT FOR NOW  -->
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+
+                                                    </table>
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                                        <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                        <td align="left" valign="top">
+                                                          All amounts are GST inclusive, unless stated otherwise.
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+
+                                                    <!-- DIVIDER -->
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                            <tr>
+                                                              <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                    </table>
+                                                    <!-- DIVIDER -->
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <!--
+                                                        I'll need to wait for the EDM test to be sent to me in order to get the dropdown done as I can't see exactly what it would look like.
+                                                      -->
+                                                      <tr>
+                                                        <td align="left" valign="top" colspan="3">
+                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                            <tr>
+                                                              <td align="left" valign="top" colspan="3">
+
+                                                                <div class="dropdown-wrapper" id="dropdown-wrap">
+                                                                  <input type="checkbox" id="dropdownWrapTwo" />
+                                                                  <label class="label-wrap" for="dropdownWrapTwo">
+                                                                    <div class="dropdown-title">
+                                                                      <b style="font-size: 14pt; line-height: 16pt;">Detailed Energy Charges</b>
+                                                                      <i class="material-icons down-outline">keyboard_arrow_down</i>
+                                                                      <i class="material-icons remove-outline">remove</i>
+                                                                    </div>
+                                                                    <div class="dropdown-content">
+                                                                      {{#each Registration.NewQuote.Rates}}
+                                                                        {{#if_neq this.Name "Discount "}}
+                                                                          <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                                            <tr>
+                                                                              <td align="left" valign="top">
+                                                                                {{this.Name}}:
+                                                                              </td>
+                                                                              <td align="left" valign="top">
+                                                                                {{this.RateWithVatNotRounded}} {{this.Unit}}
+                                                                              </td>
+                                                                            </tr>
+                                                                          </table>
+                                                                        {{/if_neq}}
+                                                                      {{/each}}
+                                                                    </div>
+                                                                  </label>
+                                                                </div>
+
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top" colspan="3" style="font-size: 11pt; line-height: 13pt;">
+                                                          Usage rates and daily supply charge are {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}fixed for {{Registration.NewQuote.BenefitTerm}} {{Registration.NewQuote.BenefitTermUnits}}{{else}} variable{{/if_eq}}.
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      {{#if_eq Registration.SiteAddress.County "VIC"}}
+                                                      <tr>
+                                                        <td align="left" valign="top" style="font-size: 11pt; line-height: 13pt;">
+                                                          Your estimated annual cost for electricity is {{Registration.NewQuote.TotalFormatted}} based on annual usage of {{Registration.NewQuote.TotalUsage}}MJ on a {{Registration.NewQuote.TariffTypeDescription}}.
+                                                          The information used to calculate your estimate was based on 
+                                                          {{#if_eq Registration.FuelType "***quote basis***"}}
+                                                            your previous usage. 
+                                                          {{else}}
+                                                            {{#if_neq Registration.NewQuote.TotalUsage 0}}        
+                                                              the usage information you supplied to us.
+                                                            {{else}}        
+                                                              the low/medium/high estimate you selected.
+                                                              <!--  Find out what the LOW/MEDIUM/HIGH variable is in handlebars  -->
+                                                            {{/if_neq}}
+                                                          {{/if_eq}}
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top" style="font-size: 11pt; line-height: 13pt;">
+                                                          Your bills may vary based on actual usage over the year.
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_eq}}
+                                                    </table>
+
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                              <!--  Table content section  -->
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        {{/if_neq}}
+                                        <!--  Gas Module  -->
+
+                                        <!-- DIVIDER -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                        </table>
+                                        <!-- DIVIDER -->
+
+                                        <!-- Bill and delivery method + Additional information -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Bill and communication method</b>
+                                                  </td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+                                              
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Bill delivery</b>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          {{#if_eq Registration.billandCommunicationsDelivery "Post"}}
+                                                            Paper bill via post. A paper bill fee of $1.69 per bill may apply.<br>
+                                                          {{else}}
+                                                            Email
+                                                          {{/if_eq}}
+                                                        </td>
+                                                      </tr>
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Communication delivery</b>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          {{Registration.billandCommunicationsDelivery}}
+                                                        </td>
+                                                      </tr>
+                                                      <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Bill frequency</b>
+                                                        </td>
+                                                      </tr>
+                                                      {{#if_neq Registration.FuelType "Gas"}}
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          <b>Electricity: </b>{{Registration.electricityBillFrequency}}
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_neq}}
+                                                      {{#if_neq Registration.FuelType "Electricity"}}
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          <b>Gas: </b>{{Registration.gasBillFrequency}}
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_neq}}
+                                                    </table>
+
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+
+                                              {{#if_eq Registration.CustomerType "Residential"}}
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Concessions </b>
+                                                  </td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          {{#if Registration.HasConcessions}}
+                                                            Yes, registered.
+                                                          {{else}}
+                                                            No. Remember to tell us if anyone at your home has a concession card.
+                                                          {{/if}}
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+                                              {{/if_eq}}
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Life support </b>
+                                                  </td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                      {{#if_neq Registration.FuelType "Gas"}}
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Electricity</b>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          {{#if Registration.HasLifeSupport}}
+                                                            Yes, you have advised us that somebody at your home depends on life support equipment.
+                                                          {{else}}
+                                                            Nobody at your property or intending to reside at your property depends on life support equipment. Please let us know if this changes.
+                                                          {{/if}}
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_neq}}
+
+                                                      {{#if_neq Registration.FuelType "Electricity"}}
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Gas</b>
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          {{#if Registration.HasLifeSupport}}
+                                                            Yes, you have advised us that somebody at your home depends on life support equipment.
+                                                          {{else}}
+                                                            Nobody at your property or intending to reside at your property depends on life support equipment. Please let us know if this changes.
+                                                          {{/if}}
+                                                        </td>
+                                                      </tr>
+                                                      {{/if_neq}}
+                                                    </table>
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Other information </b>
+                                                  </td>
+                                                </tr>
+                                                <tr><td class="spacer-xs-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Connection fee</b>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          Connection fees advised over the phone
+                                                        </td>
+                                                      </tr>
+                                                      <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+                                                      <tr>
+                                                        <td align="left" valign="top">
+                                                          <b style="font-size: 13pt;">Carbon neutral</b>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td align="left" valign="top" style="color: #898989;">
+                                                          You’ll receive occasional updates on the program via email, you can also find more information and the full terms & conditions at <a href="www.energyaustralia.com.au/go-neutral">www.energyaustralia.com.au/go-neutral</a>
+                                                        </td>
+                                                      </tr>
+
+                                                    </table>
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- Bill and delivery method + Additional information -->
+
+                                        <!-- Other fees -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>View other fees</b>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    A paper bill fee of $1.69 per bill may apply. Credit card payment fees: 0.36% for Visa/Mastercard; 1.5% for American Express. {{#if_neq Registration.SiteAddress.County "VIC"}}Late payment fees: Up to $12 may be charged if full payment isn't made by the due date.{{/if_neq}} Special meter read fees may apply if clear access is not available to your meter.
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- Other fees -->
+
+                                        <!-- TyCs -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 21pt;">
+                                                    <b>Privacy policy, verification checks & T’s & C’s</b>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    You can view our Privacy Policy and Credit Reporting Policy here or ask us to send you a copy. They explain how we use and disclose your personal and credit information, your rights to access any information we hold and the credit reporting bodies that we exchange information with.<br>
+                                                    We may verify your ID or credit card details with the document issuer or official record holder. We may also contact you in the future to check your feedback or quality of the sale.
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- TyCs -->
+
+                                        <!-- Plan Start Date & Cooling Off -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              {{#if_eq Registration.IsMoveIn "No"}}   
+                                                {{#if_neq Registration.FuelType "Gas"}}
+                                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                    <tr>
+                                                      <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                        <b>Plan start date</b>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+
+                                                  <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                    <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                    <tr>
+                                                      <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                      <td align="left" valign="top">
+                                                        Your new {{Registration.FuelType}} plan is expected to start with us from {{Registration.SignUp.ProposedSupplyStartDate}}. This is based on 
+                                                        {{#if Registration.SignUp.IsRetrospectiveTransfer}}
+                                                          a recent 
+                                                        {{else}}
+                                                          your next 
+                                                        {{/if}}
+                                                        meter read. The expected start date may change depending on when we receive your acceptance, and you’ll see the updated date in your welcome email.
+                                                      </td>
+                                                      <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                    </tr>
+                                                  </table>
+                                                {{/if_neq}}
+                                              {{/if_eq}}
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-bottom: 3px solid #005321;">
+                                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td align="left" valign="top" style="font-size: 16pt; line-height: 19pt;">
+                                                    <b>Cooling off</b>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                <tr><td class="spacer-xs" height="12" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                  <td align="left" valign="top">
+                                                    You’ll receive a Welcome Pack within {{#if_eq Registration.billandCommunicationsDelivery "E-mail"}}1 day{{else}}5 days{{/if_eq}} that sets out your full terms, rates, charges and payment options. You have a 10 business day cooling off period in which you can cancel your contract without incurring any charges. This begins the day after you receive your Welcome Pack.<br>
+                                                    {{#if_eq Registration.IsMoveIn "No"}}     
+                                                      Your service will transfer to us within the next 90 days.<br>
+                                                    {{/if_eq}}
+                                                    You can cancel by completing the form in your Welcome Pack or by contacting us. After the cooling off period, you can end your contract anytime in the ways set out in your contract.
+                                                  </td>
+                                                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- Plan Start Date & Cooling Off -->
+
+                                        <!-- DIVIDER -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                        </table>
+                                        <!-- DIVIDER -->
+
+                                        <!-- Offer Acceptance -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    To accept this energy offer, please confirm that you:
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                              
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    <ul>
+                                                      <li>Understand and agree to proceed with the energy service described above;</li>
+                                                      <li>Aknowledge that we may perform a <a target="_blank" href="https://www.energyaustralia.com.au/creditstatement">credit check</a></li>
+                                                      <li>May not be able to revert to your old plan if you decide to cancel</li>
+                                                      <li>Have read and accept our <a href="https://www.energyaustralia.com.au/marketcontract">Market Retail Contract</a>{{#if_neq Registration.NewQuote.CountSolarRates 0}} and your <a href="https://www.energyaustralia.com.au/sites/default/files/2020-01/130919_WP_SolarT%26C_VIC_FINAL_0.pdf">Solar</a>{{/if_neq}} terms and conditions</li>
+                                                    </ul>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- Offer Acceptance -->
+
+                                        <!-- CTA Button -->
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table width="" border="0" cellspacing="0" cellpadding="0">
+                                                <tr><td class="spacer-xs-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+
+                                                <tr>
+                                                  <td align="center" valign="top">
+                                                    <a class="btn-url" href="https://customer-nonprod.energyaustralia.com.au/api/onlineconfirmations/Sales.Consent.EIC/{{TasklistItem.SourceKey}}/Acceptance" target="_blank">
+                                                      <table class="" width="100%" bgcolor="#0D8924" border="0" cellspacing="0" cellpadding="0" style="width: 100% !important; border-radius: 5px; padding: 0 32px !important;">
+                                                        <tr><td class="btn-spacer" height="10" align="left" valign="top">&nbsp;</td></tr>
+                                                        <tr>
+                                                          <td align="center" valign="middle" width="100%" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: bold; color: #FFFFFF;">
+                                                            Accept and Confirm
+                                                          </td>
+                                                        </tr>
+                                                        <tr><td class="btn-spacer" height="10" align="left" valign="top">&nbsp;</td></tr>
+                                                      </table>
+                                                    </a>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- CTA Button -->
+
+                                        <!-- DIVIDER -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                                          <tr>
+                                            <td align="left" valign="top">
+                                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                                <tr>
+                                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+
+                                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                        </table>
+                                        <!-- DIVIDER -->
+
+                                        <!-- Unsubscribed -->
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    To stop receiving communications about this energy offer(s), click <a href="https://customer-nonprod.energyaustralia.com.au/api/OnlineConfirmations/Sales.Consent.EIC/{{TasklistItem.SourceKey}}/Unsubscribe">Unsubscribe</a>
+                                                  </td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    We also have a standing offer available. This is known as our Basic ({{#if_eq Registration.CustomerType "Residential"}}Home{{else}}Business{{/if_eq}}) Plan 
+                                                    {{#if_neq Registration.SiteAddress.County "ACT"}}
+                                                      and is equivalent to the 
+                                                      {{#if_eq Registration.SiteAddress.County "VIC"}}Victorian Default Offer{{else}}Default Market Offer{{/if_eq}}.
+                                                    {{/if_neq}}
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- Unsubscribed -->
+
+                                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+
+                                          <tr>
+                                            <td align="left" valign="top">
+
+                                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    Regards.
+                                                  </td>
+                                                </tr>
+                                                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                                <tr>
+                                                  <td align="left" valign="top">
+                                                    <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"><br>
+                                                    Casey Kaminskyi<br>
+                                                    GM - Pods & communities
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                      <td class="gutter-s" width="12" align="left" valign="top">&nbsp;</td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+
+                        <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                      </table>
+                      <!-- BODY SECTION -->
+
+                      <!-- FOOTER SECTION -->
+                      <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                        <tr>
+                          <td align="left" valign="top">
+
+                            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                              
+                              <!-- DIVIDER -->
+                              <tr>
+                                <td align="left" valign="top">
+                                  <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                    <tr>
+                                      <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                              <!-- DIVIDER -->
+
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                              <!-- Company Details -->
+                              <tr>
+                                <td align="left" valign="top">
+                                  <table class="container" width="100%" height="0" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                    <tr>
+                                      <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                        <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                        ABN 99 086 014 968<br>
+                                        Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- FOOTER SECTION -->
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+              <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+            </tr>
+            <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+          </table>
+          <!-- EDM MAIN WRAPPER -->
+
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>
+
+<!--
+  <!-- UseHandlebars -->
+<!-- require: Registration -->
+<!-- require: TasklistItem -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'museo_sans_rounded300';
+    src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded300_italic';
+    src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+         url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded500_italic';
+    src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded700';
+    src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded700_italic';
+    src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'museo_sans_rounded900_italic';
+    src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}  
+.yFix { }
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+body { width: 100%; margin: 0; padding: 0; background-color: #ffffff; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 100%; -webkit-font-smoothing: antialiased; }
+body, table, td, th, span, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 0px !important; }
+table td { border-collapse: collapse; }
+html { width: 100%; height: 100%; }
+  .header {
+  background: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  }
+
+.text-h1 {
+  color: #333333;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 68px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  font-weight: bold;
+  }
+.text-h2 {
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+.text-h3 { 
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  }
+
+  .text-h4 { 
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+   }
+  .text_benefit {
+    color: #333333;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .subtext_benefit {
+  color: #666666;    
+  font-size: 13px;    
+  letter-spacing: 0;    
+  line-height: 19.6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+
+</style>
+
+<body style="padding-left: 0px;background-color:#EAEAEA; min-width:1200px;">
+
+<!--<div style="background-color:#EAEAEA; width: 100%; height: auto;"> -->
+  <div style="min-width: 600px; margin-left: 25%; box-sizing: border-box; height: auto; width: 50%; border: 1px solid #EAEAEA; border-bottom: 0px;  border-radius: 5px 5px 0px 0px;  background-color: #FFFFFF;">
+ 
+  <div class="header" style="min-height: 164px ; background-color:rgb(18, 70, 18) ; border-radius: 5px 5px 0px 0px; ">
+    <div style="padding-bottom: 0px; border: 0px;padding-top: 30px; padding-left: 20px; height: 48px;width: 70%;color: #FFFFFF;font-size: 30px;letter-spacing: 0;font-weight: bold;">Hi {{Registration.FirstName}},</div>
+    <div style="padding-bottom: 0px; border: 0px;padding-left: 20px; width: 70%;color: #FFFFFF;font-size: 25px;letter-spacing: 0;font-weight: bold;">Let's confirm your details.</div>
+    <div style="padding-bottom: 0px; border: 0px;padding-top: 18px;padding-bottom: 10px;padding-left: 20px; width: 55%;color: #FFFFFF;font-size: 16px;letter-spacing: 0;">We're just one step away from setting up your new energy plan.</div>
+  </div>
+
+  <div style="height: auto ;width: 100%; background-color: #FFFFFF ;">
+
+    <div style="margin-left: 20.5px;">
+      <div style="font-weight: bold; padding-top: 18px; height: 24px;color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;">Connection Address</div>
+      <div class="text-h2" style="margin-left: 0px;">{{Registration.SiteAddress.AddressLine1}} {{Registration.SiteAddress.AddressLine2}}, {{Registration.SiteAddress.Town}} {{Registration.SiteAddress.County}} {{Registration.SiteAddress.Postcode}}</div>
+    </div>
+{{#if_neq Registration.BusinessName null}}    
+    <div style="margin-left: 20.5px;">
+      <div style="font-weight: bold; padding-top: 18px; height: 24px;color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;">Business Name:</div>
+      <div class="text-h2" style="margin-left: 0px;">{{Registration.BusinessName}}</div>
+    </div>    
+    <div style="margin-left: 20.5px;">
+      <div style="font-weight: bold; padding-top: 10px; height: 24px;color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;">Trading as:</div>
+      <div class="text-h2" style="margin-left: 0px;">{{Registration.TradingName}}</div>
+    </div>    
+    <div style="margin-left: 20.5px;">
+      <div style="font-weight: bold; padding-top: 10px; height: 24px;color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;">ABN/ACN:</div>
+      <div class="text-h2" style="margin-left: 0px;">{{Registration.CompanyRegistrationNo}}</div>
+    </div>        
+{{/if_neq}}
+
+  </div>
+</div>
+
+<!-- Electricity Block (skip if Gas only) -->
+
+{{#if_neq Registration.FuelType "Gas"}}  
+<div style="padding-bottom: 20px; width: 50%; min-width: 600px; margin-left: 25%;box-sizing: border-box; height:auto;  border-color: #EAEAEA;  border-top:0px; border-bottom: 0px; border-left: 1px; border-right: 1px ; background-color: #FFFFFF;">
+
+<div style="padding-bottom: 20px; margin-left: 20px; margin-right: 20px; box-sizing: border-box;  height: auto;  width: auto;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <table style="margin-left: 28.8px;margin-top: 15.5px;margin-bottom: 15.5px;">
+    <tbody>
+      <tr>
+        <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Brand_electricity.png"></td>
+        <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 20px;letter-spacing: 0;"><b>Electricity</b></div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="font-size: 1px; min-height: 1px; margin-left: 20.5px; margin-right: 20.5px;  box-sizing: border-box;  height: 1px;  width: auto;  border-top: 1px; border-bottom: 0px; border-left: 0px; border-right: 0px; border-style: solid; border-color: #EAEAEA;">&nbsp;</div>
+  
+  <table style="margin-left: 28.8px;margin-right: 28.8px;">
+      <tbody>
+             <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>   
+          <td class = "text_benefit">{{Registration.NewQuote.ProductVersionName}}{{#if Registration.NewQuote.HasGuaranteedDiscount}} with guaranteed {{Registration.NewQuote.GuaranteedDiscount}}%  discount off usage rates and daily supply charge.{{/if}} 
+            {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}with rates the same as the reference price.{{/if_eq}}
+            {{#if_eq Registration.NewQuote.ProductVersionName "No Frills (Home)"}} with simple low rates and built-in savings.{{/if_eq}}            
+            {{#if_neq Registration.NewQuote.ComparisonPercentage 0}}This is {{Registration.NewQuote.ComparisonPercentage}}% less than the reference price.{{/if_neq}}
+        </tr>
+        <tr>
+          <td></td><td class = "text_benefit">You can find the key details of this plan in the 
+          {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}} 
+            {{#if_eq Registration.CustomerType "Residential"}}
+               <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">basic plan information document</a>
+            {{else}}
+               <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">basic plan information document</a>
+            {{/if_eq}}
+          {{else}}
+            {{#if_eq Registration.CustomerType "Residential"}}
+               <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">energy price fact sheet</a>
+            {{else}}
+               <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">energy price fact sheet</a>{{/if_eq}}.</td>
+           {{/if_eq}}
+        </tr>
+        <tr>
+          <td></td><td class = "text_benefit">
+          {{#if_neq Registration.FuelType "***restricted plan***"}}          
+             Select Electricity, {{Registration.CustomerType}}, enter your post code and select {{Registration.NewQuote.ProductVersionName}}.
+          {{else}}
+             If you would like to see the {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}basic plan information document{{else}}energy price fact sheet{{/if_eq}}, please let us know.</td>
+          {{/if_neq}}          
+        </tr>
+        {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit"><b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}. No exit fees or lock-in contract.</td>
+        </tr>
+        {{/if_eq}}
+        {{#if Registration.NewQuote.HasCredit}}
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit"><b>Welcome credit:</b> [$xx] credit on your [first] gas bill.</td>
+        </tr>
+        {{/if}}
+        {{#if Registration.NewQuote.QuoteAttributes.Bundle}} 
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit"><b>Bundle offer:</b> Bonus 1% discount.</td>
+        </tr>
+        <tr>
+          <td></td>   
+          <td><div class="subtext_benefit">On electricity usage rates and daily supply charge when you have both fuels with us.</div> </td>
+        </tr>
+        {{/if}}
+        {{#if_eq Registration.FuelType "***carbon neutral***"}}
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit">100% carbon neutral at no extra cost.</td>
+        </tr>
+        {{/if_eq}}
+        {{#if_eq Registration.FuelType "***power response***"}}
+        <tr> 
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit">You’re eligible for PowerResponse</td>
+        </tr>
+        {{/if_eq}}
+        {{#if_eq Registration.NewQuote.CountSolarRates 1}} 
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit"><b>Solar Feed-in Tariff (Single rate)</b> </td>
+        </tr>
+        {{#each Registration.NewQuote.Rates}}
+          {{#if_eq this.GroupName "Solar"}}
+               <tr><td></td> <td class = "subtext_benefit" style="padding-top: 0px;padding-left: 12px;height: 0px">{{this.Rate}}&nbsp;{{this.Unit}}</td></tr>
+          {{/if_eq}}
+        {{/each}}                    
+        <tr>
+          <td></td>   
+          <td><div class="subtext_benefit" style="padding-left: 12px;">Excluding GST. Rates may change but we'll let you know in advance if that happens.</div> </td> 
+        </tr>
+        {{/if_eq}}
+        {{#if_eq Registration.NewQuote.CountSolarRates 3}} 
+        <tr>
+          <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+          <td class = "text_benefit"><b>Solar Feed-in Tariff (Time Of Use)</b> </td>
+        </tr>
+        <tr><td></td><td><ul  style="margin-top: 0px;margin-bottom: 0px;">
+          {{#each Registration.NewQuote.Rates}}
+            {{#if_eq this.GroupName "Solar"}}
+              <li class = "subtext_benefit" style="padding-top: 0px;">{{this.Name}}:&nbsp;{{this.Rate}}&nbsp;{{this.Unit}}&nbsp;({{this.Description}})</li>
+            {{/if_eq}}
+          {{/each}} 
+          </ul></td></tr>
+         <tr>
+          <td></td>   
+          <td><div class="subtext_benefit" style="padding-left: 12px;">Excluding GST. Rates may change but we'll let you know in advance if that happens.</div> </td> 
+        </tr>
+        {{/if_eq}}
+      </tbody> 
+    </table> 
+    <table style="margin-top:20px; margin-left: 28.8px;margin-right: 28.8px;">
+      <tbody>
+        <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;line-height: 19.6px"> All amounts are GST inclusive, unless stated otherwise.</td></tr>
+        <tr><td colspan="3" style="padding-top:10px; color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;"><b>Usage rates and daily supply charges</b></td></tr>
+        {{#each Registration.NewQuote.Rates}}
+          {{#if_neq this.GroupName "Solar"}}
+            {{#if_neq this.Name "Discount "}}
+         <tr>
+           <td class="subtext_benefit" style="width: 30%; padding-top: 0px;padding-bottom: 0px;">{{this.Name}} {{#if_neq this.Description null}} ({{this.Description}}) {{/if_neq}}</td>
+           <td class="subtext_benefit" style="width: 15%; padding-top: 0px;padding-bottom: 0px;">{{this.RateWithVat}} {{this.Unit}} </td>
+           <td class="subtext_benefit" style="width: 30%; padding-top: 0px;padding-bottom: 0px;">{{this.DateRange}} </td>
+        </tr>
+<!--        <tr><td class="subtext_benefit" style="padding-top: 0px;padding-bottom: 0px;">{{this.Name}}: {{this.RateWithVat}} {{this.Unit}} {{this.Description}}</td></tr> -->
+            {{/if_neq}}
+          {{/if_neq}}
+        {{/each}}        
+         <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;">Usage rates and daily supply charge are {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}fixed for {{Registration.NewQuote.BenefitTerm}}  {{Registration.NewQuote.BenefitTermUnits}}{{else}} variable{{/if_eq}}.</td></tr>
+        {{#if_eq Registration.SiteAddress.County "VIC"}}
+          <tr><td colspan="3" style="padding-top:20px; color: #333333;font-size: 13px;letter-spacing: 0;line-height: 19.6px;">Your estimated annual cost for electricity is {{Registration.NewQuote.TotalFormatted}} based on annual usage of {{Registration.NewQuote.TotalUsage}}kWh on a {{Registration.NewQuote.TariffTypeDescription}}.
+           The information used to calculate your estimate was based on 
+{{#if_eq Registration.FuelType "***quote basis***"}}
+            your previous usage. 
+    {{else}}
+    {{#if_neq Registration.NewQuote.TotalUsage 0}}        
+            the usage information you supplied to us. 
+       {{else}}        
+            the [low/medium/high] estimate you selected.   
+    {{/if_neq}}
+{{/if_eq}}
+            </td></tr>
+          <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;line-height: 19.6px;">Estimate only as bills may vary based on actual usage over the year. </td></tr> 
+        {{/if_eq}} 
+    		<tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;line-height: 19.6px;"><b>Electricity reference price:</b> The estimated annual cost of electricity based on the benchmark usage set by the energy regulator is {{Registration.NewQuote.TotalForComparisonFormatted}} for a {{Registration.CustomerType}} customer on a {{Registration.NewQuote.TariffTypeDescription}} using {{Registration.NewQuote.ComparisonUsage}}kWh per year in the {{#if_eq Registration.Distributor "EASTERN"}}AusNet{{/if_eq}}{{#if_eq Registration.Distributor "POWCP"}}Powercor{{/if_eq}} network.</td></tr>       
+      </tbody>
+    </table>
+  </div>
+</div>
+{{/if_neq}}
+
+<!-- Gas Block (skip if Electricity only)-->
+
+{{#if_neq Registration.FuelType "Electricity"}}
+<div style="padding-bottom: 20px; width: 50%; min-width: 600px; margin-left: 25%;box-sizing: border-box; height:auto;  border-color: #EAEAEA;  border-top:0px; border-bottom: 0px; border-left: 1px; border-right: 1px ; background-color: #FFFFFF;">
+
+  <div style="padding-bottom: 20px; margin-left: 20px; margin-right: 20px; box-sizing: border-box;  height: auto;  width: auto;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <table style="margin-left: 28.8px;margin-top: 15.5px;margin-bottom: 15.5px;">
+      <tbody>
+        <tr>
+          <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Brand_gas.png"></td>
+          <td><div style="margin-left: 28.8px; vertical-align: middle; color: #333333;font-size: 20px;letter-spacing: 0;"><b>Gas</b></div></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div style="font-size: 1px; min-height: 1px; margin-left: 20.5px; margin-right: 20.5px;  box-sizing: border-box;  height: 1px;  width: auto;  border-top: 1px; border-bottom: 0px; border-left: 0px; border-right: 0px; border-style: solid; border-color: #EAEAEA;">&nbsp;</div>
+    
+    <table style="margin-left: 28.8px;margin-right: 28.8px;">
+        <tbody>
+          <tr>
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>   
+           <td class = "text_benefit">{{Registration.NewQuote.ProductVersionName}}{{#if Registration.NewQuote.HasGuaranteedDiscount}} with guaranteed {{Registration.NewQuote.GuaranteedDiscount}}%  discount off usage rates and daily supply charge.{{/if}}
+              {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}standard rates with no discounts.{{/if_eq}}
+              {{#if_eq Registration.NewQuote.ProductVersionName "No Frills (Home)"}} with simple low rates and built-in savings.{{/if_eq}}
+           </td>                      
+          </tr>
+        <tr>
+          <td></td><td class = "text_benefit">You can find the key details of this plan in the 
+          {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}} 
+            {{#if_eq Registration.CustomerType "Residential"}}
+               <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">basic plan information document</a>
+            {{else}}
+               <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">basic plan information document</a>
+            {{/if_eq}}
+          {{else}}
+            {{#if_eq Registration.CustomerType "Residential"}}
+               <a href="https://www.energyaustralia.com.au/home/electricity-and-gas/energy-plan-information/">energy price fact sheet</a>
+            {{else}}
+               <a href="https://www.energyaustralia.com.au/business/electricity-and-gas/small-business/plans">energy price fact sheet</a>{{/if_eq}}.</td>
+           {{/if_eq}}
+        </tr>
+        <tr>
+          <td></td><td class = "text_benefit">
+          {{#if_neq Registration.FuelType "***restricted plan***"}}          
+             Select Gas, {{Registration.CustomerType}}, enter your post code and select {{Registration.NewQuote.ProductVersionName}}.
+          {{else}}
+             If you would like to see the {{#if_eq Registration.NewQuote.ProductVersionName "Basic (Home)"}}basic plan information document{{else}}energy price fact sheet{{/if_eq}}, please let us know.</td>
+          {{/if_neq}}          
+        </tr>
+          {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}
+          <tr>
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+            <td class = "text_benefit"><b>Benefit period:</b> {{Registration.NewQuote.BenefitTerm}}. No exit fees or lock-in contract.</td>
+          </tr>
+          {{/if_eq}}
+          {{#if Registration.NewQuote.HasCredit}}
+          <tr>
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+            <td class = "text_benefit"><b>Welcome credit:</b> [$xx] credit on your [first] gas bill.</td>
+          </tr>
+          {{/if}}
+          {{#if Registration.NewQuote.QuoteAttributes.Bundle}} 
+          <tr>
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+            <td class = "text_benefit"><b>Bundle offer:</b> Bonus 1% discount.</td>
+          </tr>
+          <tr>
+            <td></td>   
+            <td><div class="subtext_benefit">On gas usage rates and daily supply charge when you have both fuels with us.</div> </td>
+          </tr>
+          {{/if}}
+          {{#if_eq Registration.FuelType "***carbon neutral***"}}
+          <tr>
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+            <td class = "text_benefit">100% carbon neutral at no extra cost.</td>
+          </tr>
+          {{/if_eq}}
+          {{#if_eq Registration.FuelType "***power response***"}}
+          <tr> 
+            <td><img style="padding-top: 20px;" src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_green_tick.png"></td>
+            <td class = "text_benefit">You’re eligible for PowerResponse</td>
+          </tr>
+          {{/if_eq}}
+        </tbody> 
+      </table> 
+      <table style="margin-top:20px; margin-left: 28.8px;margin-right: 28.8px;">
+        <tbody>
+          <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;line-height: 19.6px"> All amounts are GST inclusive, unless stated otherwise.</td></tr>
+          <tr><td colspan="3" style="padding-top:10px; color: #757575;font-size: 16px;letter-spacing: 0;line-height: 24px;"><b>Usage rates and daily supply charges</b></td></tr>
+          {{#each Registration.NewQuote.Rates}}
+           {{#if_neq this.Name "Discount "}}
+           <tr>
+             <td class="subtext_benefit" style="width: 70%; padding-top: 0px;padding-bottom: 0px;">{{this.Name}}: </td>
+			 <td class="subtext_benefit" style="width: 20%; padding-left: 0px; text-align:right; padding-top: 0px;padding-bottom: 0px;">{{this.RateWithVatNotRounded}} {{this.Unit}} </td>
+             <td style="width: 5%;"></td>
+           </tr>
+           {{/if_neq}}
+          {{/each}}        
+           <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;">Usage rates and daily supply charge are {{#if_eq Registration.NewQuote.QuoteAttributes.TariffType "Fixed"}}fixed for {{Registration.NewQuote.BenefitTerm}}{{else}} variable{{/if_eq}}.</td></tr>
+          {{#if_eq Registration.SiteAddress.County "VIC"}}
+            <tr><td colspan="3" style="padding-top:20px; color: #333333;font-size: 16px;letter-spacing: 0;line-height: 24px;"> Your estimated annual cost for gas is {{Registration.NewQuote.TotalFormatted}} based on annual usage of {{Registration.NewQuote.TotalUsage}} MJ. </td></tr>
+            <tr><td colspan="3" style="padding-top:10px; color: #666666;font-size: 13px;letter-spacing: 0;line-height: 19.6px;">Your bills may vary based on actual usage over the year. </td></tr> 
+          {{/if_eq}} 
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/if_neq}}
+
+
+<div style="width: 50%; min-width: 600px; margin-left: 25%; margin-top: 20px; padding-bottom: 20px; box-sizing: border-box; height: auto ; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h1">Bill Preferences</div>
+  <div style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px;padding-bottom: 20px; box-sizing: border-box;  height: auto; width: auto ;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="text-h2" style="font-weight: bold;">Bill delivery</div>
+{{#if_eq Registration.billandCommunicationsDelivery "Post"}}    
+    <div class="text-h3">Paper bill via post. A paper bill fee of $1.69 per bill may apply</div>
+{{else}}
+    <div class="text-h3">{{Registration.billandCommunicationsDelivery}}</div>
+{{/if_eq}}
+  </div>
+  <div style="margin-top: 20px; margin-left: 20px; margin-right: 20px;  box-sizing: border-box; height: auto;  width: auto;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="text-h2">Bill frequency</div>
+    {{#if_neq Registration.FuelType "Gas"}}
+    <div class="text-h3" >Electricity</div><br>
+    <div class="text-h4">{{Registration.electricityBillFrequency}}</div><br>
+    {{/if_neq}}
+    {{#if_neq Registration.FuelType "Electricity"}}
+    <div class="text-h3">Gas</div><br>
+    <div class="text-h4">{{Registration.gasBillFrequency}}</div><br>
+    {{/if_neq}}
+  </div>
+</div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+{{#if_eq Registration.CustomerType "Residential"}}
+<div style="padding-bottom: 20px;width: 50%;min-width: 600px; margin-left: 25%; box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h1">Concessions</div>
+  {{#if Registration.HasConcessions}}
+    <div class="text-h4">Yes, registered.</div><br>
+  {{else}}
+    <div class="text-h4">No. Remember to tell us if anyone at your home has a concession card.</div>
+  {{/if}}  
+</div>
+{{/if_eq}}
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="padding-bottom: 20px; width: 50%;min-width: 600px; margin-left: 25%; box-sizing: border-box;  height: auto ;   border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h1">Life support</div>
+  {{#if_neq Registration.FuelType "Gas"}}
+  <div class="eleconly">
+    <div style="color: #757575;  font-size: 16px;  letter-spacing: 0;  line-height: 42px;  margin-left: 20px;  margin-right: 20px;  font-weight: bold;">Electricity</div>
+    <!-- needs no/yes check -->
+    {{#if Registration.HasLifeSupport}}
+    <div class="text-h4">Yes, you have advised us that somebody at your home depends on life support equipment.</div>
+	{{else}}
+    <div class="text-h4">Nobody at your property or intending to reside at your property depends on life support equipment. Please let us know if this changes.</div> 
+	{{/if}}
+  </div>  
+  {{/if_neq}}
+  {{#if_neq Registration.FuelType "Electricity"}}
+  <div>
+    <div style="color: #757575;  font-size: 16px;  letter-spacing: 0;  line-height: 42px;  margin-left: 20px;  margin-right: 20px;  font-weight: bold;">Gas</div>
+    <!-- needs no/yes check -->
+    {{#if Registration.HasLifeSupport}}
+    <div class="text-h4">Yes, you have advised us that somebody at your home depends on life support equipment.</div>
+	{{else}}
+    <div class="text-h4">Nobody at your property or intending to reside at your property depends on life support equipment. Please let us know if this changes.</div> 
+	{{/if}}
+  </div>  
+  {{/if_neq}}
+  </div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="padding-bottom:20px; width: 50%;min-width: 600px; margin-left: 25%;box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;"> 
+{{#if_eq Registration.IsMoveIn "Yes"}}     
+  <div class="text-h1">Connection fee</div>
+  <div class="text-h4">Connection fees advised over the phone.</div>
+{{/if_eq}}
+  <div class="text-h1">Additional Information</div>
+  <div class="text-h4">A paper bill fee of $1.69 per bill may apply. Credit card payment fees: 0.36% for Visa/Mastercard; 1.5% for American Express. {{#if_neq Registration.SiteAddress.County "VIC"}}Late payment fees: Up to $12 may be charged if full payment isn't made by the due date.{{/if_neq}} Special meter read fees may apply if clear access is not available to your meter.</div>
+  <br>
+{{#if_eq Registration.IsMoveIn "No"}}   
+  {{#if_neq Registration.FuelType "Gas"}}  
+  <div class="text-h4"><b>Plan start date:</b> Your new electricity plan is expected to start with us from {{Registration.SignUp.ProposedSupplyStartDate}}. This is based on 
+    {{#if Registration.SignUp.IsRetrospectiveTransfer}}
+        a recent
+    {{else}}
+        your next
+    {{/if}}
+    meter read. The expected start date may change depending on when we receive your acceptance, and you’ll see the updated date in your welcome email.
+  </div>
+  <br>
+  {{/if_neq}}
+{{/if_eq}}
+  <div class="text-h4"><b>Cooling off:</b> You’ll receive a Welcome Pack within {{#if_eq Registration.billandCommunicationsDelivery "E-mail"}}1 day{{else}}5 days{{/if_eq}} that sets out your full terms, rates, charges and payment options. You have a 10 business day cooling off period in which you can cancel your contract without incurring any charges. This begins the day after you receive your Welcome Pack.
+{{#if_eq Registration.IsMoveIn "No"}}     
+    Your service will transfer to us within the next 90 days.
+{{/if_eq}}
+    You can cancel by completing the form in your Welcome Pack or by contacting us. After the cooling off period, you can end your contract anytime in the ways set out in your contract. </div>
+</div>
+
+</div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="padding-bottom:20px; width: 50%;min-width: 600px; margin-left: 25%;box-sizing: border-box;  height: auto; border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h1">Privacy policy & verification checks</div>
+  <div class="text-h4">You can view our Privacy Policy and Credit Reporting Policy <a href="https://www.energyaustralia.com.au/privacy" style="color: #0D8924">here</a> or ask us to send you a copy. They explain how we use and disclose your personal and credit information, your rights to access any information we hold and the credit reporting bodies that we exchange information with. </div>
+  <div class="text-h4">We may verify your ID or credit card details with the document issuer or official record holder. We may also contact you in the future to check your feedback or quality of the sale.</div>
+</div>
+
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+
+  
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+
+<div style="width: 50%;min-width: 600px; margin-left: 25%; box-sizing: border-box;  height: auto;   border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+  <div class="text-h4" style="padding-top: 20px;">
+    To accept this energy offer, please confirm that you:
+    <ul>
+      <li>Understand and agree to proceed with the energy service described above</li>
+{{#if_eq Registration.IsMoveIn "No"}}      
+      <li>Acknowledge that we may perform a credit check</li>
+{{/if_eq}}
+{{#if_eq Registration.FuelType "***plan change***"}}      
+      <li>May not be able to revert to your old plan if you decide to cancel</li>
+{{/if_eq}}
+      <li>Have read and accept our <a href="https://www.energyaustralia.com.au/marketcontract">Market Retail Contract</a>{{#if_neq Registration.NewQuote.CountSolarRates 0}} and your <a href="https://www.energyaustralia.com.au/sites/default/files/2020-01/130919_WP_SolarT%26C_VIC_FINAL_0.pdf">Solar</a>{{/if_neq}} terms and conditions</li>
+    </ul>
+    By clicking Accept and Confirm, you are confirming that you have read, understood and agree to the terms and conditions described above.</div>
+  <div style="margin-top:10px; margin-left: 180px;margin-right: 179px; margin-bottom: 20px; min-height: 44px;  min-width: 241px; max-width: 241px;  border-radius: 5px;  background-color: #0D8924;">
+    <a href="https://customer-nonprod.energyaustralia.com.au/api/onlineconfirmations/Sales.Consent.EIC/{{TasklistItem.SourceKey}}/Acceptance" style="margin-left:38px; line-height:48px; text-decoration: none; color: #FFFFFF; font-size: 20px;letter-spacing: 0;">Accept and confirm</a>
+  </div>
+</div>
+  
+<div style="min-height: 20px; width: 50%; min-width: 600px; margin-left: 25%;">&nbsp;</div>
+  
+<div style="margin-left: 25%; width: 50%;">  
+  <div class="text-h4">To stop receiving communications about this energy offer(s), click <a href="https://customer-nonprod.energyaustralia.com.au/api/OnlineConfirmations/Sales.Consent.EIC/{{TasklistItem.SourceKey}}/Unsubscribe">Unsubscribe</a></div>
+  <div class="text-h4" style="padding-top: 10px;">We also have a standing offer available. This is known as our Basic ({{#if_eq Registration.CustomerType "Residential"}}Home{{else}}Business{{/if_eq}}) Plan 
+    {{#if_neq Registration.SiteAddress.County "ACT"}}
+       and is equivalent to the 
+       {{#if_eq Registration.SiteAddress.County "VIC"}}Victorian Default Offer{{else}}Default Market Offer{{/if_eq}}.
+    {{/if_neq}}
+  </div>
+</div>  
+<div style="margin-left: 25%; width: 50%;">
+{{INCLUDE:Footer.Supplier}}  
+</div> 
+</body>
+-->

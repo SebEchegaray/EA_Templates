@@ -1,0 +1,838 @@
+/**********************************************************************
+ ** Screen only styles to approximate how the printed page will look **
+ **********************************************************************/
+@media screen {
+    body {
+        background-color: #aaa;
+
+    }
+    .page {
+        height:297mm;
+        width:210mm;
+        background-color: white;
+        border: 0.4in solid white;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+
+/**************************************************
+ ** Workaround and reset for pre-existing styles **
+ **************************************************/
+body,
+body > .container-fluid,
+body > .container-fluid > .row,
+body > .container-fluid > .row > .main,
+body > .container-fluid > .row > .main > div[ng-view],
+body > .container-fluid > .row > .main > div[ng-view] > statement,
+body > .container-fluid > .row > .main > div[ng-view] > statement > ng-include {
+    display: block;
+    height: 100%;
+    padding:0;
+    margin:0;
+    border:0;
+    background-color: grey;
+}
+
+body div.container-fluid {
+    /* workaround for added unkown margin */
+
+}
+
+
+/*************
+ ** General **
+ *************/
+.statement {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.statement .page {
+    break-after: page;
+
+}
+
+.inner-page {
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+a{
+    color: black;
+}
+a[href]:after {
+    content: none !important;
+}
+
+.page-section {
+    break-inside: avoid;
+    margin-bottom: 12px;
+}
+
+.todo,
+.todo-1 {
+    color: red !important;
+}
+
+@media screen {
+    .todo-2 {
+        color: blue !important;
+    }
+}
+
+.tbd {
+    display: none !important;
+}
+
+/*************
+ ** Barcode **
+ *************/
+.page .page-section:last-child {
+    padding-bottom: 50px !important; /* to allow for barcode height */
+}
+
+.page-barcode {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.page-barcode.todo {
+    border: 2px solid red;
+    opacity: 75%;
+}
+
+/***********************
+ ** First Page Header **
+ ***********************/
+
+.header-statement-title{
+    color: white !important;
+    font-size: 20px;
+}
+.header-b2b {
+    background-color: #005321 !important;
+    border: 0;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.header-b2b  .header-text  .title{
+    color: white !important;
+    font-size: 16pt;
+}
+
+.header-b2b .header-text .company-info {
+    font-size: 9pt;
+    color: white !important;
+}
+
+.header-b2b .header-sections {
+    display:flex;
+}
+.header-b2b .customer-address {
+    background-color: white !important;
+    width: 70%;
+    border-radius: 7px;
+    padding: 10px;
+    flex-basis: 40%;
+}
+
+.header-b2b .header-address{
+    flex-basis: 40%;
+}
+.header-b2b .header-enquiries{
+    flex-basis: 40%;
+}
+
+.header-b2b .header-enquiries-text{
+    color: white !important;
+    font-size: 16px;
+}
+
+.header-b2b .header-faults{
+    border-left: solid white 1px;
+    flex-basis: 20%;
+    padding-left: 10px;
+}
+
+
+.header-b2b .header-faults-text{
+    color: white !important;
+    font-size: 16px;
+}
+
+.company-logo-round {
+    position: relative;
+    left: 90%;
+    top: 80px;
+}
+.first-page .header {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 20px;
+}
+
+.first-page .header .header-icon {
+    padding-right: 20px;
+}
+
+.first-page .header .header-text {
+    flex-grow: 1;
+}
+
+.first-page .header .header-text .title {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.first-page .header .header-text .company-info {
+    font-size: 9pt;
+}
+
+/********************************
+ ** First Page Contact Details **
+ ********************************/
+.first-page .contact-details {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.customer-details {
+    flex-basis: 60%;
+}
+.first-page .customer-details .customer-address {
+    font-size: 11pt;
+    margin-bottom: 15px;
+}
+
+.first-page .invoice-details .invoice-detail {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.invoice-detail .invoice-detail-name {
+    min-width: 200px;
+    font-weight: bold;
+}
+
+.first-page .company-details-group {
+    margin-bottom: 15px;
+}
+
+.first-page .company-details-group .contact-heading {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.first-page .company-details .contact {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 2px;
+}
+
+.first-page .company-details .contact .contact-icon {
+    padding-right: 10px;
+    min-width: 20px;
+    padding-bottom:5px;
+}
+
+.first-page .company-details .contact .contact-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.plan-details {
+    flex-basis:40%;
+
+}
+/*****************************
+ ** First Page Bill Details **
+ *****************************/
+.first-page .bill-details {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.first-page .bill-details .bill-breakdown {
+    padding-right: 10px;
+    flex-basis: 60%;
+}
+
+.first-page .billing-contacts {
+    max-width: 350px;
+}
+
+.first-page .billing-contacts .name{
+    display: inline-block;
+}
+
+.first-page .bill-details .bill-ammount-summary {
+    padding-left: 10px;
+    flex-basis: 50%;
+}
+
+.bill-ammount-summary-b2b {
+    padding-left: 10px;
+    flex-basis: 40%;
+}
+
+.bill-amount-summary-gst{
+    color:white !important;
+    font-size: 10px;
+    padding-left: 20px;
+}
+.billing-period{
+
+}
+
+.first-page .bill-details .bill-breakdown-title,
+.first-page .bill-details .bill-ammount-summary-title {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.first-page .bill-details .bill-ammount-summary-title {
+    text-align: center;
+}
+
+.bill-breakdown-bill-message{
+    border: solid 1px #0C8923 !important;
+    border-radius: 7px;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.bill-breakdown-bill-message-title{
+    color: #0C8923 !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.first-page .bill-details .bill-breakdown .bill-breakdown-item {
+
+    justify-content: space-between;
+    padding-top: 2px;
+}
+
+.first-page .bill-details .bill-breakdown .bill-breakdown-item-title {
+    padding-right: 10px;
+}
+
+.first-page .bill-details .bill-breakdown .bill-breakdown-item-value {
+    min-width: 70px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.first-page .bill-details .bill-breakdown .bill-breakdown-item-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #000000 !important;
+    margin-top:    12px;
+    margin-bottom: 12px;
+}
+
+.first-page .bill-details .bill-breakdown .bill-breakdown-value-suffix {
+    padding-left: 5px;
+    float: right;
+}
+
+.first-page .bill-details .bill-breakdown .bill-breakdown-total {
+    font-weight: bold;
+    border-top:solid;
+    border-top-width: 1px;
+}
+.first-page .bill-details .bill-breakdown .bill-breakdown-total-b2b {
+    font-weight: bold;
+    border-top:solid;
+    border-top-width: 1px;
+}
+
+.account-summary-header {
+    font-size: 20px;
+    border-bottom: solid #005321 3px;
+    font-weight: normal;
+}
+.current-balance-header {
+    font-size: 18px;
+    border-bottom: solid #005321 1px;
+    padding-top: 10px;
+    display: flex;
+    font-weight: normal;
+}
+.current-balance-header-due {
+    color: white !important;
+    background-color: #005321 !important;
+    text-align: center;
+    font-width: normal;
+}
+.bill-breakdown-total-title{
+    padding-top:5px;
+}
+.bill-breakdown-total-value{
+    padding-top:5px;
+}
+.bill-breakdown-total-title-b2b{
+    padding-top:5px;
+    background-color: #9DCA6C !important;
+}
+.bill-breakdown-total-value-b2b {
+    padding-top:5px;
+    color:white !important;
+    background-color: #005321 !important ;
+}
+.bill-breakdown-total-suffix-b2b{
+    padding-top:5px;
+    color:white !important;
+    background-color: #005321 !important ;
+}
+.bill-breakdown-total-b2b{
+    background-color: #005321 !important ;
+}
+.bill-breakdown-total-suffix{
+    padding-top:5px;
+}
+.bill-breakdown-post-amble {
+    margin-top: 20px;
+    font-size: 7pt;
+}
+
+.first-page .bill-details .bill-ammount-summary-container {
+    background-color: #82bD00 !important;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.first-page .bill-details  .bill-ammount-summary-header-b2b {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #005321  !important;
+    color: white !important;
+    padding-left: 20px;
+    padding-top: 5px;
+
+}
+
+.first-page .bill-details .bill-ammount-summary-container-b2b {
+    background-color: #0C8923 !important;
+}
+
+.first-page .bill-details .bill-ammount-summary-due-date {
+    background-color: #0C8923 !important;
+    color: white !important;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.first-page .bill-details .bill-ammount-summary-due-date-b2b {
+    background-color: #005321 !important;
+    color: white !important;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.first-page .bill-details .bill-ammount-summary-due-date .bill-ammount-summary-due-date-title,
+.first-page .bill-details .bill-ammount-summary-due-date .bill-ammount-summary-due-date-value,
+
+.first-page .bill-details .bill-ammount-summary-due-date-b2b .bill-ammount-summary-due-date-title,
+.first-page .bill-details .bill-ammount-summary-due-date-b2b .bill-ammount-summary-due-date-value{
+    color: white !important;
+}
+
+.first-page .bill-details .bill-ammount-summary-due-date .bill-ammount-summary-due-date-title,
+.first-page .bill-details .bill-ammount-summary-due-date-b2b .bill-ammount-summary-due-date-title{
+    padding-right: 5px;
+    padding-left:20px;
+}
+
+.first-page .bill-details .bill-ammount-summary-container,
+.first-page .bill-details .bill-ammount-summary-container-b2b,
+.first-page .bill-details .bill-ammount-summary-due-date {
+    padding: 10px;
+}
+
+.first-page .bill-details .bill-ammount-summary-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding-bottom: 5px;
+}
+
+.first-page .bill-details .bill-ammount-summary-icon-group {
+    text-align: center;
+}
+
+.first-page .bill-details .bill-ammount-summary-text {
+    background-color: #FFFFFF !important;
+    border-radius: 7px;
+    padding: 5px;
+    text-align: center;
+}
+
+.first-page .bill-details .bill-ammount-summary-discounts,
+.first-page .bill-details .bill-ammount-summary-total {
+
+}
+
+.first-page .bill-details .bill-ammount-summary-discount-title,
+.first-page .bill-details .bill-ammount-summary-total-title {
+    padding-right: 20px;
+}
+
+.first-page .bill-details .bill-ammount-summary-discounts {
+    font-size: 8pt;
+    margin-bottom:7px;
+}
+
+.first-page .bill-details .bill-ammount-summary-total {
+    font-size: 12pt;
+}
+
+.account-details-title {
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+
+.plan-details-title {
+    padding-top: 5px;
+    font-size: 20px;
+}
+/*******************************
+** First Page Payment Options **
+********************************/
+.first-page .payment-options {
+    margin-bottom: 30px;
+}
+
+.first-page .payment-options .payment-options-title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.first-page .payment-options .payment-options-explanation {
+    padding-bottom: 10px;
+}
+
+.first-page .payment-options .payment-option {
+    width: 35%;
+    font-size: smaller;
+}
+
+.first-page .payment-options .payment-option-title {
+    font-weight: bold;
+}
+
+.first-page .payment-options .payment-option-sub-text {
+    padding-top: 5px;
+    font-size: 9pt;
+}
+
+.first-page .payment-options .payment-option-sub-text .payment-option-bpay-logo {
+    float: left;
+    padding-right: 5px;
+}
+
+.first-page .payment-options .payment-option-sub-text .payment-option-bpay-logo img {
+    height: 32px;
+}
+
+.payment-option-bpay-biller-code {
+    font-size: xx-small;
+}
+
+.payment-option-bpay-reference {
+    font-size: xx-small;
+}
+
+/****************************
+** First Page Payment Help **
+*****************************/
+.first-page .payment-help .payment-help-title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+/***********************************
+** Second Page Meter Read Details **
+************************************/
+
+.page-background {
+    background-color: #F2F2F2 !important;
+}
+.second-page .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.second-page .meter-read-details .meter-read-details-title {
+    font-size: 12pt;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.second-page .meter-read-details .meter-read-details-title-b2b {
+    font-size: 20pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.second-page .meter-read-details table {
+    font-size: 12px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.second-page .meter-read-details td,
+.second-page .meter-read-details th {
+    vertical-align: top;
+}
+
+.second-page .meter-read-details table td:not(:first-of-type),
+.second-page .meter-read-details table th:not(:first-of-type) {
+    padding-left: 10px;
+}
+
+.second-page .meter-read-details table td,
+.second-page .meter-read-details table th {
+    padding-bottom: 5px;
+}
+
+.second-page .meter-read-details .meter-reading-for-bill .nmi,
+.second-page .meter-read-details .meter-reading-for-bill .meter-number {
+    white-space: nowrap;
+}
+
+.second-page .usage-details {
+}
+
+.second-page .usage-details .usage-details-title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+.second-page .usage-details .usage-details-title-b2b {
+    font-size: 20px;
+}
+.usage-details-total
+{
+    background-color: rgb(217,217,217) !important;
+}
+
+.usage-details-body{
+    display: flex;
+}
+
+.usage-details-plan{
+    flex-basis:20%
+}
+.usage-details-table{
+    flex-basis:80%
+}
+
+.usage-details-section {
+    background-color: #D9D9D9 !important;
+}
+.usage-table-b2b{
+    border-bottom: solid grey 1px;
+}
+
+.usage-table-b2b tr {
+    border-bottom: solid grey 1px;
+}
+
+.usage-detail-plan-tab{
+    background-color: #9DCA6C !important;
+    border-bottom-right-radius: 7px;
+}
+
+.best-offer-container{
+    margin-top: 20px;
+    border: solid #0C8923 !important;
+    width: 160px;
+    margin-left:auto;
+}
+
+.best-offer-container .best-offer-container-b2b{
+    width: 220px;
+}
+.best-offer-header{
+    background-image: url("/app/custom/energyaustralia/images/BO_Blank.png") !important;
+    color:white !important;
+    text-align:center;
+    padding: 5px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.best-offer-title{
+    color:white !important;
+    font-size: 20px;
+    margin: 10px;
+}
+.best-offer-main{
+    color:white !important;
+    font-size: 14px;
+    margin: 10px;
+}
+.best-offer-online{
+    color: #0C8923 !important;
+}
+.best-offer-postamble{
+    font-size: x-small;
+}
+
+.best-offer-footer{
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+.second-page .usage-details table {
+    font-size: 12px;
+    width: 100%;
+}
+
+.second-page .usage-details table .product-name {
+    font-weight: bold;
+}
+
+.season-text{
+    font-size: xx-small;
+}
+.reading-type-text{
+    font-size: xx-small;
+}
+.second-page .usage-details table .component td:first-child {
+    padding-left: 20px;
+}
+
+.second-page .usage-comparison {
+
+    display: flex;
+}
+
+.usage-comparison-historic {
+    flex-basis: 50%;
+}
+
+
+.usage-comparison-title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.usage-comparison-title-b2b {
+    font-size: 20pt;
+}
+
+.second-page .usage-comparison .usage-comparison-household {
+    display: flex;
+    flex-basis: 50%;
+    flex-flow: column nowrap;
+    border-left: solid;
+    padding-left: 20px;
+}
+
+.usage-comparison-household-breakdown {
+    height:305px;
+}
+.second-page .usage-comparison .usage-comparison-household-description,
+.second-page .usage-comparison .usage-comparison-household-info {
+    margin-bottom: 5px;
+}
+
+.second-page .usage-comparison .usage-comparison-household-info {
+    font-size: 9pt;
+}
+
+.second-page .usage-comparison .usage-comparison-household-info .household-icon {
+    float: left;
+    margin-right: 10px;
+    min-width: 38px;
+}
+
+.second-page .usage-comparison .usage-comparison-household-info .household-icon img {
+    height: 32px;
+}
+
+.second-page .usage-comparison .usage-comparison-household-sub-text {
+    font-size: 7pt;
+}
+
+
+/********************************
+** Second Page Contact Details **
+*********************************/
+.third-page .contact-details .contact-details-title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.third-page .contact-details .contact-details-title-b2b {
+    font-size: 20pt;
+}
+
+.third-page .contact-details table {
+    font-size: inherit;
+    width: 100%;
+}
+
+.third-page .contact-details table th {
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.third-page .contact-details table th,
+.third-page .contact-details table td {
+
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.third-page .contact-details table td.icon {
+    width: 34px;
+}
+
+.third-page .contact-details table td.icon img {
+    width: 24px;
+}
+
+.third-page .contact-details table td.contact {
+    white-space: nowrap;
+}
+
+/**********************************
+** Third Page Meter Read Details **
+***********************************/
+
+.third-page .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+
+.third-page .payment-options-title {
+    font-size: 20px;
+}
+
+.third-page .payment-option {
+    border: solid black 1px;
+    width: 300px;
+}

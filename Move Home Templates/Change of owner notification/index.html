@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Change of owner notification</title>
 
   <!--[if mso]>
   <noscript>
@@ -107,7 +107,6 @@
               <td align="left" valign="top">
                 
                 <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
-                  <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
                   <tr>
                     <td align="left" valign="top">
 
@@ -129,7 +128,7 @@
                             <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                               <tr>
                                 <td align="left" valign="top">
-                                  <b>We’ve requested a [service order subtype]</b>
+                                  <b>We’ve been notified of a new owner/tenant at your address</b>
                                 </td>
                               </tr>
 
@@ -184,19 +183,50 @@
                                   <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                                     <tr>
                                       <td align="left" valign="top">
-                                        Hi {{Account.FirstName}},
+                                        Hi {{Account.FirstName}}, <!-- Variable: FirstName Primary Account Holder -->
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        This is a courtesy message to confirm that we’ve requested a [service order subtype] at [service address] for [scheduled SO date]. [There is a fee associated to this work of [$fee amount] incl of GST.]
+                                        This is a courtesy message about your {{Account.SingleServiceName}} at 
+                                        {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                        {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                        {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                        {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                        {{Account.SiteAddress.Postcode}}.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        [For clear and safe access to your meter please make sure there are no restrictions or hazards such as locked gates or unrestrained animals.]
+                                        We’ve been notified of a new owner/tenant who will be moving in.
+                                      </td>
+                                    </tr>
+                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        Your account will be finalised on [move in date – 1 calendar day.] We will send your final bill to [Email Address/Postal Address]. If you need your final bill sent elsewhere, or if you are not moving out, please contact us.
+                                      </td>
+                                    </tr>
+                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        [You also have Life Support registered on your [electricity/gas] account so it is important that you contact us to confirm your move out details.]
+                                      </td>
+                                    </tr>
+                                    <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        Thanks for choosing EnergyAustralia.
+                                      </td>
+                                    </tr>
+                                    <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                                    <tr>
+                                      <td align="left" valign="top">
+                                        <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png"><br>
+                                        Casey Kaminskyi<br>
+                                        GM - Pods & communities
                                       </td>
                                     </tr>
                                   </table>
@@ -213,9 +243,52 @@
                       </table>
                       <!-- BODY SECTION -->
 
+                      <!-- FOOTER SECTION -->
+                      <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                        <tr>
+                          <td align="left" valign="top">
+
+                            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                              
+                              <!-- DIVIDER -->
+                              <tr>
+                                <td align="left" valign="top">
+                                  <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                    <tr>
+                                      <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                              <!-- DIVIDER -->
+
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                              <!-- Company Details -->
+                              <tr>
+                                <td align="left" valign="top">
+                                  <table class="container" width="100%" height="0" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                    <tr>
+                                      <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                        <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                        ABN 99 086 014 968<br>
+                                        Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+
+                              <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- FOOTER SECTION -->
+
                     </td>
                   </tr>
-                  <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
                 </table>
 
               </td>
