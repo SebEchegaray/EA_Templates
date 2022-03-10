@@ -127,7 +127,7 @@
 
                             <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
                               <tr>
-                                <td align="left" valign="top">
+                                <td align="left" valign="top" style="font-size: 22px;">
                                   <b>We’ve requested a [service order subtype]</b>
                                 </td>
                               </tr>
@@ -189,19 +189,25 @@
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        This is a courtesy message to confirm that we’ve requested a [service order subtype] at [service address] for [scheduled SO date]. [There is a fee associated to this work of [$fee amount] incl of GST.]
+                                        This is a courtesy message to confirm that we’ve requested a [service order subtype] at 
+                                        {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                        {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                        {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                        {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                        {{Account.SiteAddress.Postcode}} 
+                                        for [scheduled SO date]. There is a fee associated to this work of [$fee amount] incl of GST.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        [For clear and safe access to your meter please make sure there are no restrictions or hazards such as locked gates or unrestrained animals.]
+                                        For clear and safe access to your meter please make sure there are no restrictions or hazards such as locked gates or unrestrained animals.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>
                                     <tr>
                                       <td align="left" valign="top">
-                                        [A [letter / email] will be sent advising you when your meter will be exchanged. You will also receive a reminder SMS the day before the technician arrives and another SMS on the day of the installation.]
+                                        A [letter / email] will be sent advising you when your meter will be exchanged. You will also receive a reminder SMS the day before the technician arrives and another SMS on the day of the installation.
                                       </td>
                                     </tr>
                                     <tr><td class="spacer-s" height="16" align="left" valign="top">&nbsp;</td></tr>

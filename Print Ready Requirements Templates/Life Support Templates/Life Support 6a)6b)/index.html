@@ -1,0 +1,577 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Support Registration confirmation</title>
+
+  <style>
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+    @page { size: 210mm 297mm; }
+
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5rem;
+      font-size: 10px;
+    }
+
+    .green { color: #97BF0D !important; }
+
+    .page {
+      position: relative;
+      top: -4mm;
+      left: -4mm;
+      width: 218mm;
+      height: 305mm;
+      margin-bottom: 5rem;
+      padding: 4mm;
+      font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+      font-size: 5rem;
+      background: #FFFFFF;
+      border: 0.1rem solid green;
+    }
+
+    /* Content styling */
+    .content__header {
+      position: relative;
+      top: 30mm;
+      margin-bottom: 2.4rem;
+      font-size: 2.5rem;
+      line-height: 3.2rem;
+    }
+    .content__header-details {
+      position: relative;
+      margin: 0 0 1rem;
+      padding: 2mm;
+      left: 29mm;
+      width: 95mm;
+      height: 45mm;
+    }
+    .barcode-2d {
+      margin-left: 5mm;
+      margin-bottom: 0.5rem;
+      width: 71mm;
+      height: 8mm;
+    }
+    .content__customer-name { margin-left: 5mm; }
+    .content__header-title {
+      position: relative;
+      top: 25mm;
+      padding: 0 8.7rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+
+    .content {
+      position: relative;
+      top: 51mm;
+      padding: 0 8.7rem;
+      width: 100%;
+    }
+    .content__copy {
+      position: relative;
+      margin-bottom: 2rem;
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+    /* Content styling */
+
+    /* PAGE 2 Styling */
+    .page-2 { padding: 20mm 4mm; }
+    .page-2 .content {
+      top: 10mm;
+      margin-bottom: 4rem;
+    }
+
+    .page-2 .content__copy p {
+      margin-bottom: 0.7rem;
+    }
+
+    .page-2 .content__signature {
+      line-height: 0.7rem;
+      margin-bottom: 2rem;
+    }
+    .page-2 .content__signature img { margin: 1rem 0; }
+
+    .content__footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 2.4rem 8.7rem;
+    }
+    /* PAGE 2 Styling */
+
+    /* Common styling */
+    .content__header-details,
+    .content__bottom-line,
+    .content__footer {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+
+    .content__header,
+    .content__body-account-details,
+    .content__body-copy {
+      width: 100%;
+    }
+
+    .margin_b-5 { margin-bottom: 0.5rem; }
+
+    ul {
+      list-style-position: outside;
+      margin-left: 2.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    hr {
+      margin: 6rem auto 2.4rem;
+      width: 100%;
+    }
+    /* Common styling */
+
+    /* GUTTERS & SPACERS */
+    .gutter-xxs {
+      width: 2px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-xs {
+      width: 8px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-s {
+      width: 12px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter {
+      width: 24px;
+      line-height: 0;
+      height: 0;
+    }
+    .spacer-add {
+      line-height: 8px;
+      height: 8px;
+    }
+    /* GUTTERS & SPACERS */
+  </style>
+</head>
+<body>
+  <section class="page page-1">
+
+    <section class="content__header">
+      <div class="content__header-details">
+        <div class="barcode-2d">&nbsp;</div>
+        <div class="content__customer-name">
+          <p>{{General.Today}}</p><br>
+          {{Account.Title}} {{Account.FirstName}} {{Account.Surname}}<br>
+          {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}<br>
+          {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}<br>
+          {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+          {{Account.SiteAddress.Postcode}}
+        </div>
+      </div>
+
+      <div class="content__header-title">
+        <b>We’re sorry that you won’t be joining us</b>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content__copy">
+        <p>Hi {{Account.FirstName}},</p><br>
+
+        <p>We can now confirm that life support is permanently registered on your {{Account.SingleServiceName}} account for 
+          {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+          {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+          {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+          {{Account.SiteAddress.Postcode}}.
+        </p><br>
+        <p class="margin_b-5"><b>Important information</b></p>
+        <p>Your network provider <b>{{Account.Distributor.Name}}</b> is responsible for your electricity supply and unfortunately, unplanned interruptions can occur, if this happens you can contact <b>{{Account.Distributor.Name}}</b> on {{Account.Distributor.PhoneNumber}}, or us on <b class="green">1300 258 763</b>, Monday to Friday, between 9am – 5pm.</p> <br>
+        <p>Planned interruptions to your supply can also occur when we or {{Account.Distributor.Name}} need to perform work to your meter or supply. When a planned interruption is needed, we or {{Account.Distributor.Name}} are required to provide advanced notice so that you can plan ahead.</p>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="page page-2"> <!--  PAGE 2 START  -->
+
+    <section class="content">
+      <div class="content__copy">
+        <p>Speaking of planning ahead, we recommend that you have a plan in the event of outages, and this should include the following: </p>
+
+        <ul>
+          <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+          <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+          <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+          <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+        </ul>
+
+        <p>We hope that you’re happy with our services and stick with us, but if you do ever change retailers, please advise your new retailer of your requirement for life support equipment.</p>
+
+        <div class="content__signature">
+          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+          <p>Casey Kaminsky</p>
+          <p>GM</p>
+          <p>Pods & communities</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content__footer">
+      <hr />
+      <p><b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b></p>
+      <p>ABN 99 086 014 968</p>
+      <p>Locked Bag 14060, Melburne City Mail Centre Victoria 8001</p>
+    </section>
+
+  </section>
+</body>
+</html>
+
+<!--
+  <!-- UseHandlebars -->
+<!-- require: Account -->
+<!-- require: LifeSupport -->
+<!-- require: General -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Electricity Medical Form Letter</title>
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <style>
+      @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      /* @page {
+        size: A4;
+      } */
+      a {
+        /* color: #0D8924 !important; */
+        color: #97BF0D !important;
+      }
+
+      b {
+        /* color: #97BF0D !important; */
+      }
+
+      .btn-url {
+        text-decoration: none !important;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      /* GUTTERS & SPACERS */
+      .gutter {
+        width: 24px;
+        line-height: 0;
+        height: 0;
+      }
+      .gutter-m {
+        width: 32px;
+        line-height: 0;
+        height: 0;
+      }
+
+      .spacer {
+        line-height: 24px;
+        height: 24px;
+      }
+      .spacer-double {
+        line-height: 50px;
+        height: 50px;
+      }
+      .spacer-add {
+        line-height: 8px;
+        height: 8px;
+      }
+      .spacer-xs-add {
+        line-height: 4px;
+        height: 4px;
+      }
+
+      .btn-spacer {
+        line-height: 10px;
+        height: 10px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        .container { width: 100% !important; }
+
+        .mobileOnly {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: #EAEAEA; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 11.5pt;">
+
+    <center>
+      <table class="container" role="presentation" bgcolor="#FFFFFF" border="0" width="100%" cellspacing="0" cellpadding="0" style="width: 100%; ">
+        <tr>
+          <td align="left" valign="top">
+
+            <!-- EDM MAIN WRAPPER -->
+            <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+              <tr>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                <td align="left" valign="top">
+                  
+                  <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+
+                    [[INCLUDE:Letter.Header.Handlebar]]
+
+                    <!-- HEADER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              Hello {{Account.FirstName}} {{Account.Surname}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              {{#if Account.SiteAddress.AddressLine1}}{{Account.SiteAddress.AddressLine1}}{{/if}}<br>
+                              {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}<br>
+                              {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                              {{Account.SiteAddress.Postcode}}
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <tr>
+                            <td align="right" valign="top">
+                              {{Account.SingleServiceName}} Account number: {{Account.Id}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="right" valign="top">
+                              Service address:
+                              {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                              {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                              {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                              {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                              {{Account.SiteAddress.Postcode}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- HEADER SECTION -->
+
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- BODY SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" height="50" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr>
+                            <td align="left" valign="top" style="padding: 1.2em 0;">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td align="left" valign="top">
+                                          <p>
+                                            Hi {{Account.FirstName}},<br />
+                                            <br />
+                                            We can now confirm that life support is permanently registered on your {{Account.SingleServiceName}} account for 
+                                            {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+                                            {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+                                            {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+                                            {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+                                            {{Account.SiteAddress.Postcode}}<br /><br />
+                                            
+                                            <b style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; line-height: 30px; font-weight: 700;">Important information</b><br>
+                                            Your network provider {{Account.SingleServiceName}} distributor: {{Account.Distributor.Name}} is responsible for your {{Account.SingleServiceName}} supply and unfortunately, unplanned interruptions can occur, if this happens you can contact {{Account.Distributor.Name}} on {{Account.Distributor.PhoneNumber}}, or contact us on <b>1300 258 763</b>, Monday to Friday, between 9am – 5pm.<br><br>
+
+                                            Planned interruptions to your supply can also occur when we or {{Account.Distributor.Name}} need to perform work to your meter or supply. When a planned interruption is needed, we or {{Account.Distributor.Name}} are required to provide advanced notice so that you can plan ahead.<br><br>
+
+                                            Speaking of planning ahead, we recommend that you have a plan in the event of outages, and this should include the following: <br />
+                                            <ul class="special-formatting">
+                                              <li>Regularly check the back-up battery of your life support equipment so it's fully charged and ready for use at all times.</li>
+                                              <li>Have access to a telephone that doesn’t require power to operate and a battery-operated radio to keep up to date with restoration of power supply during severe weather events.</li>
+                                              <li>Make sure you have important information such as names, addresses and telephone numbers of your doctor, the nearest hospital and family and friends who can help you.</li>
+                                              <li>Consider making an emergency plan with your doctor for extended outages and emergencies.</li>
+                                            </ul>
+                                          </p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                  <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td align="left" valign="top">
+                                          We hope that you’re happy with our services and stick with us, but if you do ever change retailers, please advise your new retailer of your requirement for life support equipment.
+                                        </td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="left" valing="top">
+                                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      <tr>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td align="left" valign="top">
+                                          <br>
+                                          Thanks.<br>
+                                          <br>
+                                          <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+                                          <br>
+                                          Casey Kaminskyi<br>
+                                          GM - Pods & communities<br>
+                                        </td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                        <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- BODY SECTION -->
+
+                    <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                    <!-- FOOTER SECTION -->
+                    <tr>
+                      <td align="left" valign="top">
+                        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                      
+                          <!-- DIVIDER -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%; height: 1px;">
+                                <tr>
+                                  <td align="left" valign="top" style="background: #CCCCCC;"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <!-- DIVIDER -->
+
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                          <!-- Company Details -->
+                          <tr>
+                            <td align="left" valign="top">
+                              <table class="container" width="100%" height="1" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                <tr>
+                                  <td align="center" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;">
+                                    <b style="color: #97BF0D !important;">EnergyAustralia Pty Ltd</b><br>
+                                    ABN 99 086 014 968<br>
+                                    Locked Bag 14060, Melburne City Mail Centre Victoria 8001
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          
+                          <tr><td class="spacer" height="24" align="left" valign="top">&nbsp;</td></tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- FOOTER SECTION -->
+                  
+                  </table>
+                  
+                </td>
+                <td class="gutter" width="24" align="left" valign="top">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- EDM MAIN WRAPPER -->
+
+          </td>
+        </tr>
+      </table>
+    </center>
+    
+  </body>
+</html>
+-->

@@ -1,0 +1,194 @@
+* { padding: 0; margin: 0; box-sizing: border-box; }
+@page { size: 210mm 297mm; }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  font-size: 10px;
+}
+
+.green { color: #97BF0D !important; }
+
+.page {
+  position: relative;
+  top: -4mm;
+  left: -4mm;
+  width: 218mm;
+  height: 305mm;
+  /*margin-bottom: 5rem;*/  /* This is for when a new page is added so they are splitted */
+  padding: 4mm;
+  font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+  background: #FFFFFF;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 2.4rem;
+  font-size: 2.5rem;
+  line-height: 3.2rem;
+}
+.header__details {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 2mm;
+  top: 30mm;
+  left: 29mm;
+  width: 95mm;
+  height: 45mm;
+}
+.header__title {
+  position: relative;
+  top: 41mm;
+  padding: 0 8.7rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+.barcode-2d {
+  margin-left: 5mm;
+  margin-bottom: 0.5rem;
+  width: 71mm;
+  height: 8mm;
+}
+.header__customer-address {
+  margin-left: 5mm;
+}
+
+.content {
+  position: relative;
+  top: 41mm;
+  padding: 0 8.7rem;
+  width: 100%;
+}
+.content__copy {
+  position: relative;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.content__table { width: 100%; }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 2.4rem 8.7rem;
+}
+.footer__pod-details {
+  position: absolute;
+  top: 0;
+  align-self: flex-start;
+  line-height: 1rem;
+}
+
+
+/* Common styling */
+.header__details,
+.header__customer-address,
+.footer {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+hr {
+  margin: 5rem auto 1.5rem;
+  width: 100%;
+}
+/* Common styling */
+
+/* GUTTERS & SPACERS */
+.gutter-xxs {
+  width: 2px;
+  line-height: 0;
+  height: 0;
+}
+.gutter-xs {
+  width: 8px;
+  line-height: 0;
+  height: 0;
+}
+.gutter-s {
+  width: 12px;
+  line-height: 0;
+  height: 0;
+}
+.gutter {
+  width: 24px;
+  line-height: 0;
+  height: 0;
+}
+.spacer-add {
+  line-height: 8px;
+  height: 8px;
+}
+.spacer-xs {
+  line-height: 12px;
+  height: 12px;
+}
+/* GUTTERS & SPACERS */
+
+/* FONTS */
+@font-face {
+  font-family: 'museo_sans_rounded300';
+  src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded300_italic';
+  src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded500';
+  src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+       url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded500_italic';
+  src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded700';
+  src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded700_italic';
+  src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded900';
+  src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_sans_rounded900_italic';
+  src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+       url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,157 @@
+* { padding: 0; margin: 0; box-sizing: border-box; }
+@page { size: 210mm 297mm; }
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  font-size: 10px;
+}
+
+.green { color: #97BF0D !important; }
+
+.page {
+  position: relative;
+  top: -4mm;
+  left: -4mm;
+  width: 218mm;
+  height: 305mm;
+  margin-bottom: 5rem;
+  padding: 4mm;
+  font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+  background: #FFFFFF;
+  /* border: 0.1rem solid red; */
+}
+
+/* Content styling */
+.content__header {
+  position: relative;
+  top: 30mm;
+  margin-bottom: 2.4rem;
+  font-size: 2.5rem;
+  line-height: 3.2rem;
+}
+.content__header-details {
+  position: relative;
+  padding: 2mm;
+  left: 29mm;
+  width: 95mm;
+  height: 45mm;
+}
+.barcode-2d {
+  margin-left: 5mm;
+  margin-bottom: 0.5rem;
+  width: 71mm;
+  height: 8mm;
+}
+.content__customer-name { margin-left: 5mm; }
+.content__header-title {
+  position: relative;
+  top: 30mm;
+  padding: 0 8.7rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.content {
+  position: relative;
+  top: 41mm;
+  padding: 0 8.7rem;
+  width: 100%;
+}
+.content__copy {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+/* Content styling */
+
+/* PAGE 2 Styling */
+.page-2 { padding: 20mm 4mm; }
+.page-2 .content {
+  top: 10mm;
+  margin-bottom: 4rem;
+}
+
+.page-2 .content__copy p {
+  margin-bottom: 0.7rem;
+}
+
+.page-2 .content__signature {
+  line-height: 0.7rem;
+  margin-bottom: 2rem;
+}
+.page-2 .content__signature img { margin: 1rem 0; }
+
+.content__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 2.4rem 8.7rem;
+}
+/* PAGE 2 Styling */
+
+/* Common styling */
+.content__header-details,
+.content__bottom-line,
+.content__footer {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.content__header,
+.content__body-account-details,
+.content__body-copy {
+  width: 100%;
+}
+
+.margin_b-5 { margin-bottom: 0.5rem; }
+
+ul {
+  list-style-position: outside;
+  margin-left: 2.5rem;
+}
+li { margin-bottom: 0.4rem; }
+
+hr {
+  margin: 6rem auto 2.4rem;
+  width: 100%;
+}
+/* Common styling */
+
+/* GUTTERS & SPACERS */
+.gutter-xxs {
+  width: 2px;
+  line-height: 0;
+  height: 0;
+}
+.gutter-xs {
+  width: 8px;
+  line-height: 0;
+  height: 0;
+}
+.gutter-s {
+  width: 12px;
+  line-height: 0;
+  height: 0;
+}
+.gutter {
+  width: 24px;
+  line-height: 0;
+  height: 0;
+}
+.spacer-add {
+  line-height: 8px;
+  height: 8px;
+}
+/* GUTTERS & SPACERS */

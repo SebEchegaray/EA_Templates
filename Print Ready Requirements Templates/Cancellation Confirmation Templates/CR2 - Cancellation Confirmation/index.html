@@ -1,0 +1,871 @@
+<!-- UseHandlebars -->
+<!-- require: Account -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote cancellation confirmation</title>
+
+  <style>
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+    @page { size: 210mm 297mm; }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .green {
+      color: #97BF0D !important;
+    }
+
+    .page {
+      position: relative;
+      top: -4mm;
+      left: -4mm;
+      width: 218mm;
+      height: 305mm;
+      /*margin-bottom: 5rem;*/  /* This is for when a new page is added so they are splitted */
+      padding: 4mm;
+      font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+      font-size: 5rem;
+      background: #FFFFFF;
+    }
+
+    /* Content styling */
+    .content__header {
+      position: relative;
+      margin-bottom: 2.4rem;
+      font-size: 2.5rem;
+      line-height: 3.2rem;
+    }
+    .content__header-details {
+      position: relative;
+      padding: 2mm;
+      top: 30mm;
+      left: 29mm;
+      width: 95mm;
+      height: 45mm;
+    }
+    .content__header-title {
+      position: relative;
+      top: 30mm;
+      padding: 0 8.7rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+    .barcode-2d {
+      margin-left: 5mm;
+      margin-bottom: 0.5rem;
+      width: 71mm;
+      height: 8mm;
+    }
+    .content__customer-name {
+      margin-left: 5mm;
+    }
+
+    .content {
+      position: relative;
+      top: 41mm;
+      padding: 0 8.7rem;
+      width: 100%;
+    }
+    .content__copy {
+      position: relative;
+      margin-bottom: 2rem;
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+    .content__table {
+      width: 100%;
+      font-family: 'museo_sans_rounded300', Arial, Helvetica, sans-serif;
+    }
+    .content__bottom-line {
+      margin: 2rem 0;
+    }
+
+    .content__footer {
+      position: relative;
+      top: 41mm;
+      padding: 0 8.7rem;
+    }
+    /* Content styling */
+
+
+    /* Common styling */
+    .content__header-details,
+    .content__bottom-line,
+    .content__footer {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+
+    .content__header,
+    .content__body-account-details,
+    .content__body-copy {
+      width: 100%;
+    }
+
+    .margin_b-5 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* GUTTERS & SPACERS */
+    .gutter-xxs {
+      width: 2px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-xs {
+      width: 8px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-s {
+      width: 12px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter {
+      width: 24px;
+      line-height: 0;
+      height: 0;
+    }
+    .spacer-add {
+      line-height: 8px;
+      height: 8px;
+    }
+    /* GUTTERS & SPACERS */
+
+
+    /* FONTS */
+    @font-face {
+      font-family: 'museo_sans_rounded300';
+      src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded300_italic';
+      src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded500_italic';
+      src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded700';
+      src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded700_italic';
+      src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded900';
+      src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded900_italic';
+      src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <section class="page page-1">
+
+    <section class="content__header">
+      <div class="content__header-details">
+        <div class="barcode-2d">&nbsp;</div>
+        <div class="content__customer-name">
+          {{Account.Title}} {{Account.FirstName}} {{Account.Surname}}<br>
+          {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}<br>
+          {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}<br>
+          {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+          {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+          {{Account.SiteAddress.Postcode}}
+        </div>
+      </div>
+
+      <div class="content__header-title">
+        <b>We’re sorry that you won’t be joining us</b>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content__copy">
+        <p>Hi [[Account.FirstName]],</p><br>
+
+        <p>Your request to cancel your [[Account.SingleServiceName]] quote has been processed, which means that you won’t be transferring to us.</p><br>
+        <p class="margin_b-5"><b>We're sorry to see you go</b></p>
+        <p>If you’re still trying to decide what energy plan is best for you, we’d be happy to help compare our plans with your current energy plan or with any new offers that you may have received, please contact us on <b class="green">1300 258 763</b>, Monday to Friday, between 9am – 5pm</p>
+      </div>
+
+      <div class="content__table">
+        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+          <tr>
+            <td align="left" valign="top" colspan="3">
+              
+              <table class="container" bgcollor="#005321" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; background: #005321; border-radius: 0.7rem;">
+                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                <tr>
+                  <td class="gutter-xxs" width="2" align="left" valign="top">&nbsp;</td>
+                    <th align="left" style="font-size: 1rem; color: #FFFFFF;">Why choose EnergyAustralia?</th>
+                  <td class="gutter-xxs" width="2" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+              </table>
+
+            </td>
+          </tr>
+          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+          <tr>
+            <td align="left" valign="top" style="font-size: 0.9rem;">
+              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                <tr>
+                  <td align="left" valign="top" style="border-right: 0.1rem solid #000000; padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Competitive plans</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          With no rate increases during your benefit period
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align="left" valign="top" style="border-right: 0.1rem solid #000000; padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Award winning</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          Awarded #1 digital customer experience 2019 by Global Reviews
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align="left" valign="top" style="padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Powering Australia</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          We are the energy provider for more than 1.7 million Australian customers
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="content__bottom-line">
+        <p>We hope to hear from you,</p>
+      </div>
+    </section>
+
+    <section class="content__footer">
+      <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+      <p>Casey Kaminsky</p>
+      <p>GM</p>
+      <p>Pods & communities</p>
+    </section>
+
+  </section>
+</body>
+</html>
+
+<!--
+  NEW VERSION FROM SEBASTIAN ECHEGARAY
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote cancellation confirmation</title>
+
+  <style>
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+    @page { size: 210mm 297mm; }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .green {
+      color: #97BF0D !important;
+    }
+
+    .page {
+      background: #FFFFFF;
+      position: relative;
+      top: -3mm;
+      left: -3mm;
+      width: 216mm;
+      min-height: 303mm;
+      padding: 12.7mm;
+      font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif;
+      font-size: 5rem;
+      /*border: 0.1rem solid black;*/
+    }
+
+    /* Content styling */
+    .content__header {
+      position: relative;
+      margin-bottom: 2.4rem;
+      padding: 0 2rem 1.2rem;
+      font-size: 2.5rem;
+      line-height: 3.2rem;
+      border-bottom: 0.2rem solid #0D8924;
+    }
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0rem 2.4rem;
+    }
+    .content__body {
+      margin-bottom: 2.4rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      font-family: 'museo_sans_rounded300', Arial, Helvetica, sans-serif;
+    }
+    .content__body-account-details {
+      text-align: right;
+      position: relative;
+      margin-bottom: 2.4rem;
+    }
+
+    .content__table {
+      width: 100%;
+      font-family: 'museo_sans_rounded300', Arial, Helvetica, sans-serif;
+    }
+
+    .content__bottom-line {
+      font-size: 1.6rem;
+      margin: 2.4rem 0;
+    }
+
+    .content__footer {
+      padding: 0rem 2.4rem;
+      font-size: 1.6rem;
+    }
+    /* Content styling */
+
+
+    /* Common styling */
+    .content__header,
+    .content__body-account-details,
+    .content__body-copy {
+      width: 100%;
+    }
+
+    .margin_b-5 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* GUTTERS & SPACERS */
+    .gutter-xs {
+      width: 8px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter-s {
+      width: 12px;
+      line-height: 0;
+      height: 0;
+    }
+    .gutter {
+      width: 24px;
+      line-height: 0;
+      height: 0;
+    }
+    .spacer-add {
+      line-height: 8px;
+      height: 8px;
+    }
+    /* GUTTERS & SPACERS */
+
+
+    /* FONTS */
+    @font-face {
+      font-family: 'museo_sans_rounded300';
+      src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded300_italic';
+      src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded500';
+      src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+          url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded500_italic';
+      src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded700';
+      src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded700_italic';
+      src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded900';
+      src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'museo_sans_rounded900_italic';
+      src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+          url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+
+    <section class="content__header">
+      <b>We’re sorry that you won’t be joining us</b>
+    </section>
+
+    <section class="content">
+
+      <div class="content__body">
+        <div class="content__body-account-details">
+          <div class="content__body-account-number">{{Account.SingleServiceName}} Account number: {{Account.Id}}</div>
+          <div class="content__body-address">
+            Service address:
+            {{#if Account.SiteAddress.AddressLine1}} {{Account.SiteAddress.AddressLine1}}, {{/if}}
+            {{#if Account.SiteAddress.AddressLine2}} {{Account.SiteAddress.AddressLine2}}, {{/if}}
+            {{#if Account.SiteAddress.Town}} {{Account.SiteAddress.Town}}, {{/if}}
+            {{#if Account.SiteAddress.County}} {{Account.SiteAddress.County}}, {{/if}}
+            {{Account.SiteAddress.Postcode}}
+          </div>
+        </div>
+
+        <div class="content__body-copy">
+          <p>Hi [[Account.FirstName]],</p><br>
+
+          <p>Your request to cancel your [[Account.SingleServiceName]] quote has been processed, which means that you won’t be transferring to us.</p><br>
+          <p class="margin_b-5"><b>We're sorry to see you go</b></p>
+          <p>If you’re still trying to decide what energy plan is best for you, we’d be happy to help compare our plans with your current energy plan or with any new offers that you may have received, please contact us on <b class="green">1300 258 763</b>, Monday to Friday, between 9am – 5pm</p>
+        </div>
+      </div>
+
+      <div class="content__table">
+        <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+          <tr>
+            <td align="left" valign="top" colspan="3">
+              
+              <table class="container" bgcollor="#005321" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; background: #005321; border-radius: 0.7rem;">
+                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+                <tr>
+                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                    <th align="left" style="font-size: 1.5rem; color: #FFFFFF;">Why choose EnergyAustralia?</th>
+                  <td class="gutter-xs" width="8" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+              </table>
+
+            </td>
+          </tr>
+          <tr><td class="spacer-add" height="8" align="left" valign="top">&nbsp;</td></tr>
+          <tr>
+            <td align="left" valign="top" style="font-size: 1.2rem;">
+              <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                <tr>
+                  <td align="left" valign="top" style="border-right: 0.1rem solid #000000; padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Competitive plans</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          With no rate increases during your benefit period
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align="left" valign="top" style="border-right: 0.1rem solid #000000; padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Award winning</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          Awarded #1 digital customer experience 2019 by Global Reviews
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align="left" valign="top" style="padding: 0.4rem 0.7rem;">
+                    <table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <b>Powering Australia</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">
+                          We are the energy provider for more than 1.7 million Australian customers
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="content__bottom-line">
+        <p>We hope to hear from you,</p>
+      </div>
+    </section>
+
+    <section class="content__footer">
+      <img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Casey Signature.png">
+      <p>Casey Kaminsky</p>
+      <p>GM</p>
+      <p>Pods & communities</p>
+    </section>
+
+  </section>
+</body>
+</html>
+-->
+
+
+
+
+<!--
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'museo_sans_rounded300';
+    src: url('assets/fonts/exljbris_-_museosansrounded-300-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded300_italic';
+    src: url('exljbris_-_museosansrounded-300italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-300italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded500';
+    src: url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff2') format('woff2'),
+         url('assets/fonts/exljbris_-_museosansrounded-500-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded500_italic';
+    src: url('exljbris_-_museosansrounded-500italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-500italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded700';
+    src: url('exljbris_-_museosansrounded-700-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded700_italic';
+    src: url('exljbris_-_museosansrounded-700italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-700italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('exljbris_-_museosansrounded-900-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_sans_rounded900_italic';
+    src: url('exljbris_-_museosansrounded-900italic-webfont.woff2') format('woff2'),
+         url('exljbris_-_museosansrounded-900italic-webfont.woff') format('woff');
+    font-weight: normal;
+   font-style: normal;
+}  
+
+.yFix { }
+.ReadMsgBody { width: 100%; background-color: #ffffff; }
+.ExternalClass { width: 100%; background-color: #ffffff; }
+body { width: 100%; margin: 0; padding: 0; background-color: #ffffff; font-family: 'museo_sans_rounded500', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 100%; -webkit-font-smoothing: antialiased; }
+body, table, td, th, span, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 0px !important; }
+table td { border-collapse: collapse; }
+html { width: 100%; height: 100%; }
+  .header {
+  background: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  }
+
+.header {
+  background-image: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group.png');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  }
+
+  .subheader {
+  background-image: url('https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Group_4.png');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  }
+
+.body-h1 {
+  height: 35px;
+  width: 500px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px; 
+  }
+.body-h2 {
+  height: 30px;
+  width: 500px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+  }
+.body-h3 { 
+  height: 34px;
+  width: 500px;
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  }
+
+.text-h1 {
+  height: 28px;
+  width: 335px;
+  color: #333333;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 68px;
+  margin-left: 20.5px;
+  
+  }
+.text-h2 {
+  height: 24px;
+  width: 185px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 44px;
+  margin-left: 20px;
+  }
+.text-h3 { 
+  height: 22px;
+  width: 295px;
+  color: #757575;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 20px;}
+
+  .text-h4 { 
+   color: #333333;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 35px;
+   }
+  .elec_text_benefit {
+    height: 48px;
+    width: 491px;
+    color: #333333;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+  }
+  .elec_subtext_benefit {
+  height: 39.2px;    
+  width: 491px;    
+  color: #666666;    
+  font-size: 13px;    
+  letter-spacing: 0;    
+  line-height: 19.6px;
+  }
+  .elec {
+    visibility: visible;
+    /* height:1000px;*/
+ border-radius: 0px 0px 5px 5px;    
+  }
+  .eleconly {
+    visibility: visible;
+    height: 1000px
+    border-radius: 0px 0px 5px 5px;    
+  }
+  .gas {
+    visibility: hidden;
+    height: 0px;
+    border-radius: 0px 0px 5px 5px;
+  }
+
+</style>
+
+<body>
+
+<div style="padding-left: 0px;background-color:#EAEAEA; min-width: 1200px">
+
+<div style="margin-left: 25%; box-sizing: border-box;   height: 449px;   width: 601px;  border: 1px solid #EAEAEA;  border-radius: 5px; background-color: #FFFFFF;  position: center;">
+ 
+  <div class="header" style="height: 164px;min-height: 164px; width: 600px;background-color:rgb(18, 70, 18) ;">
+    <div style="padding-top: 38px; margin-left: 20px; height: 164px;width: 320px;color: #FFFFFF;font-size: 30px;letter-spacing: 0;line-height: 42px"><b>We're sorry you won't be joining us</b></div>
+  </div>
+
+  <div style="margin-left: 20.5px;">
+    <div class="body-h3" style="margin-top: 28px;">Hi [[Account.FirstName]],</div>
+    <div class="body-h2" style="margin-top: 0px;"><b>Your energy quote has been cancelled.</b></div>
+    <div class="body-h3" style="margin-left: 0px;">Your request to cancel your [[if (Account.SingleServiceName == "Electricity")]]electricity[[else]]gas[[end-if]] quote has been processed, which means that you won’t be transferring to us.</div><br>
+    <div class="body-h2" style="margin-top: 28px;"><b>We're sorry to see you go.</b></div>
+    <div class="body-h3" style="margin-left: 0px;">If you’re still trying to decide what energy plan is best for you, we’d be happy to help compare our plans with your current energy plan or with any new offers that you may have received.</div><br>
+  </div>
+
+</div>
+
+<div style="margin-left: 25%;margin-top: 20px;box-sizing: border-box;  height: 208px;  width: 601px;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF;">
+    <div class="text-h1" style="width: 500px;height: 40px; padding-top: 8px;"><b>It's easy to connect with us</b></div><br>
+    <table  style="margin-left: 20.5px;">
+        <tbody>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_phone.png"></td>
+            <td class = "elec_text_benefit" style="padding-left: 10px;">Call us on <b>1300 258 763</b> (Mon-Fri 9am – 5pm AEDT)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class = "elec_text_benefit" style="margin-left: 20.5px;">Whenever you choose to connect with us, you’ll always be supported by the same small team of energy partner consultants.</div>
+      <a href="https://www.energyaustralia.com.au/meetyourteam" style="margin-left: 20.5px; color: #0D8924;">Meet your team of energy partners</a>
+  </div>
+
+<div style="margin-left: 25%;margin-top: 20px;padding-bottom: 20px;box-sizing: border-box;    width: 601px;  border: 1px solid #EAEAEA;  border-radius: 5px;  background-color: #FFFFFF; position: center;">
+
+    <div class="text-h1" style="width: 500px;height: 40px; padding-top: 8px;"><b>Why choose EnergyAustralia</b></div><br>
+    
+
+    <table  style="margin-left: 20.5px;">
+        <tbody>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Price_Tag.png"></td>
+            <td class = "elec_text_benefit" style="padding-left: 10px;">Competitive plans with no rate increases during your benefit period</td>
+          </tr>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Award.png"></td>
+            <td class="elec_text_benefit" style="padding-left: 10px;">Awarded #1 digital customer experience 2019 by Global Reviews</td>
+          </tr>
+          <tr>
+            <td><img src="https://ea-prod-public-assets.s3-ap-southeast-2.amazonaws.com/email/Icons_Australia.png"></td>
+            <td class="elec_text_benefit" style="padding-left: 10px;">Powering Australia. We are the energy provider for more than 1.7 million Australian customers</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  
+
+<div style="margin-left: 25%;">
+  <div class = "body-h2" style="height: 40px;padding-top: 20px;">We hope to hear from you,</div>
+  <div class = "body-h2" style="height: 24px;"><b>Casey Kaminskyj</b></div>
+  <div class = "body-h2">GM - Pods & communities</div>
+</div>
+<div style="margin-left: 25%;width: 50%;">
+[[INCLUDE:Footer.Supplier]]  
+</div>
+  
+-->
